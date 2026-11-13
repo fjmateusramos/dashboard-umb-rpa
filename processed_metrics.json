@@ -1,0 +1,4894 @@
+{
+  "summary": {
+    "total_emails": 414,
+    "unique_tickets": 226,
+    "reprocessed_tickets_count": 72,
+    "reprocessed_tickets_pct": 31.86,
+    "single_send_tickets": 154,
+    "single_send_pct": 68.14,
+    "estudios_tickets": 220,
+    "horarios_tickets": 6,
+    "max_sends": 15,
+    "phase_counts": {
+      "Julio (Fase Pruebas/Alistamiento)": 126,
+      "Septiembre (Fase \"Producci\u00f3n\" / En Ejecuci\u00f3n)": 288
+    }
+  },
+  "date_distribution": [
+    [
+      "2026-07-02",
+      4
+    ],
+    [
+      "2026-07-14",
+      1
+    ],
+    [
+      "2026-07-15",
+      8
+    ],
+    [
+      "2026-07-16",
+      8
+    ],
+    [
+      "2026-07-17",
+      10
+    ],
+    [
+      "2026-07-22",
+      22
+    ],
+    [
+      "2026-07-24",
+      19
+    ],
+    [
+      "2026-07-27",
+      19
+    ],
+    [
+      "2026-07-28",
+      35
+    ],
+    [
+      "2026-09-04",
+      5
+    ],
+    [
+      "2026-09-08",
+      19
+    ],
+    [
+      "2026-09-09",
+      18
+    ],
+    [
+      "2026-09-10",
+      29
+    ],
+    [
+      "2026-09-11",
+      12
+    ],
+    [
+      "2026-09-12",
+      16
+    ],
+    [
+      "2026-09-13",
+      4
+    ],
+    [
+      "2026-09-14",
+      18
+    ],
+    [
+      "2026-09-15",
+      13
+    ],
+    [
+      "2026-09-16",
+      49
+    ],
+    [
+      "2026-09-17",
+      39
+    ],
+    [
+      "2026-09-18",
+      15
+    ],
+    [
+      "2026-09-19",
+      3
+    ],
+    [
+      "2026-09-21",
+      10
+    ],
+    [
+      "2026-09-22",
+      14
+    ],
+    [
+      "2026-09-23",
+      8
+    ],
+    [
+      "2026-09-24",
+      9
+    ],
+    [
+      "2026-09-25",
+      7
+    ]
+  ],
+  "hour_distribution": [
+    [
+      0,
+      4
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      11,
+      23
+    ],
+    [
+      12,
+      45
+    ],
+    [
+      13,
+      72
+    ],
+    [
+      14,
+      16
+    ],
+    [
+      15,
+      55
+    ],
+    [
+      16,
+      11
+    ],
+    [
+      17,
+      53
+    ],
+    [
+      18,
+      10
+    ],
+    [
+      19,
+      46
+    ],
+    [
+      21,
+      43
+    ],
+    [
+      22,
+      3
+    ],
+    [
+      23,
+      22
+    ]
+  ],
+  "reprocess_distribution": [
+    [
+      1,
+      154
+    ],
+    [
+      2,
+      27
+    ],
+    [
+      3,
+      20
+    ],
+    [
+      4,
+      10
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      15,
+      2
+    ]
+  ],
+  "top_reprocessed": [
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "sends": 15,
+      "first_send": "2026-09-12 17:06:15",
+      "last_send": "2026-09-16 16:55:54",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "sends": 15,
+      "first_send": "2026-09-12 17:05:13",
+      "last_send": "2026-09-16 16:54:03",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48285990934",
+      "student": "Juan David",
+      "type": "Estudios",
+      "sends": 8,
+      "first_send": "2026-09-08 17:28:09",
+      "last_send": "2026-09-10 15:05:13",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48577974328",
+      "student": "Andres Grueso Balanta",
+      "type": "Estudios",
+      "sends": 7,
+      "first_send": "2026-09-14 19:51:44",
+      "last_send": "2026-09-16 17:05:51",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48299028153",
+      "student": "Wilson Andres Carrillo Ortiz",
+      "type": "Estudios",
+      "sends": 7,
+      "first_send": "2026-09-08 17:31:11",
+      "last_send": "2026-09-10 00:35:14",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48372664355",
+      "student": "Melany Sofia",
+      "type": "Estudios",
+      "sends": 6,
+      "first_send": "2026-09-08 21:25:24",
+      "last_send": "2026-09-10 21:05:16",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48585270172",
+      "student": "Juan Camilo Borja V\u00e9lez",
+      "type": "Estudios",
+      "sends": 6,
+      "first_send": "2026-09-14 21:07:01",
+      "last_send": "2026-09-16 17:07:03",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48584522855",
+      "student": "Daniel Esteban Castro Reyes",
+      "type": "Estudios",
+      "sends": 6,
+      "first_send": "2026-09-16 23:06:32",
+      "last_send": "2026-09-17 18:32:49",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48622499907",
+      "student": "Nykol Juliana Bola\u00f1os Arias",
+      "type": "Estudios",
+      "sends": 6,
+      "first_send": "2026-09-16 19:05:59",
+      "last_send": "2026-09-17 14:24:00",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47968411215",
+      "student": "Francy Helena",
+      "type": "Estudios",
+      "sends": 5,
+      "first_send": "2026-09-17 11:04:30",
+      "last_send": "2026-09-17 17:04:27",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48571617721",
+      "student": "Santiago Velasco Bacca",
+      "type": "Estudios",
+      "sends": 5,
+      "first_send": "2026-09-15 15:09:07",
+      "last_send": "2026-09-16 03:32:02",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48567834265",
+      "student": "Haider Camilo",
+      "type": "Estudios",
+      "sends": 5,
+      "first_send": "2026-09-12 17:09:18",
+      "last_send": "2026-09-13 11:09:11",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48575576382",
+      "student": "Valerin Yadira",
+      "type": "Estudios",
+      "sends": 5,
+      "first_send": "2026-09-12 17:08:16",
+      "last_send": "2026-09-13 11:08:10",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48594843688",
+      "student": "Nicole Valentina Contreras D\u00edaz",
+      "type": "Estudios",
+      "sends": 5,
+      "first_send": "2026-09-16 21:07:41",
+      "last_send": "2026-09-17 14:27:05",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48559417245",
+      "student": "Magnolia Rocio Lara Gualteros",
+      "type": "Estudios",
+      "sends": 5,
+      "first_send": "2026-09-16 03:34:08",
+      "last_send": "2026-09-16 17:08:21",
+      "reprocessed": "SI"
+    }
+  ],
+  "tickets": [
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "sends": 15,
+      "first_send": "2026-09-12 17:06:15",
+      "last_send": "2026-09-16 16:55:54",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "sends": 15,
+      "first_send": "2026-09-12 17:05:13",
+      "last_send": "2026-09-16 16:54:03",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48285990934",
+      "student": "Juan David",
+      "type": "Estudios",
+      "sends": 8,
+      "first_send": "2026-09-08 17:28:09",
+      "last_send": "2026-09-10 15:05:13",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48577974328",
+      "student": "Andres Grueso Balanta",
+      "type": "Estudios",
+      "sends": 7,
+      "first_send": "2026-09-14 19:51:44",
+      "last_send": "2026-09-16 17:05:51",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48299028153",
+      "student": "Wilson Andres Carrillo Ortiz",
+      "type": "Estudios",
+      "sends": 7,
+      "first_send": "2026-09-08 17:31:11",
+      "last_send": "2026-09-10 00:35:14",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48372664355",
+      "student": "Melany Sofia",
+      "type": "Estudios",
+      "sends": 6,
+      "first_send": "2026-09-08 21:25:24",
+      "last_send": "2026-09-10 21:05:16",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48585270172",
+      "student": "Juan Camilo Borja V\u00e9lez",
+      "type": "Estudios",
+      "sends": 6,
+      "first_send": "2026-09-14 21:07:01",
+      "last_send": "2026-09-16 17:07:03",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48584522855",
+      "student": "Daniel Esteban Castro Reyes",
+      "type": "Estudios",
+      "sends": 6,
+      "first_send": "2026-09-16 23:06:32",
+      "last_send": "2026-09-17 18:32:49",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48622499907",
+      "student": "Nykol Juliana Bola\u00f1os Arias",
+      "type": "Estudios",
+      "sends": 6,
+      "first_send": "2026-09-16 19:05:59",
+      "last_send": "2026-09-17 14:24:00",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47968411215",
+      "student": "Francy Helena",
+      "type": "Estudios",
+      "sends": 5,
+      "first_send": "2026-09-17 11:04:30",
+      "last_send": "2026-09-17 17:04:27",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48571617721",
+      "student": "Santiago Velasco Bacca",
+      "type": "Estudios",
+      "sends": 5,
+      "first_send": "2026-09-15 15:09:07",
+      "last_send": "2026-09-16 03:32:02",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48567834265",
+      "student": "Haider Camilo",
+      "type": "Estudios",
+      "sends": 5,
+      "first_send": "2026-09-12 17:09:18",
+      "last_send": "2026-09-13 11:09:11",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48575576382",
+      "student": "Valerin Yadira",
+      "type": "Estudios",
+      "sends": 5,
+      "first_send": "2026-09-12 17:08:16",
+      "last_send": "2026-09-13 11:08:10",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48594843688",
+      "student": "Nicole Valentina Contreras D\u00edaz",
+      "type": "Estudios",
+      "sends": 5,
+      "first_send": "2026-09-16 21:07:41",
+      "last_send": "2026-09-17 14:27:05",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48559417245",
+      "student": "Magnolia Rocio Lara Gualteros",
+      "type": "Estudios",
+      "sends": 5,
+      "first_send": "2026-09-16 03:34:08",
+      "last_send": "2026-09-16 17:08:21",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47034353585",
+      "student": "Michael",
+      "type": "Estudios",
+      "sends": 4,
+      "first_send": "2026-07-22 12:26:11",
+      "last_send": "2026-07-28 13:18:10",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "46741120821",
+      "student": "Alejandro",
+      "type": "Estudios",
+      "sends": 4,
+      "first_send": "2026-07-15 12:33:07",
+      "last_send": "2026-07-22 12:15:59",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47091803039",
+      "student": "Jessica Andrea",
+      "type": "Estudios",
+      "sends": 4,
+      "first_send": "2026-07-22 12:39:23",
+      "last_send": "2026-07-28 13:19:24",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48609714454",
+      "student": "Paula Lorena Galindo Romero",
+      "type": "Estudios",
+      "sends": 4,
+      "first_send": "2026-09-16 23:10:11",
+      "last_send": "2026-09-17 14:29:35",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48590621214",
+      "student": "David Santiago",
+      "type": "Horarios",
+      "sends": 4,
+      "first_send": "2026-09-19 15:08:26",
+      "last_send": "2026-09-21 13:08:22",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48441892192",
+      "student": "Magnolia Rocio",
+      "type": "Estudios",
+      "sends": 4,
+      "first_send": "2026-09-09 17:26:18",
+      "last_send": "2026-09-10 13:07:12",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48440431959",
+      "student": "Juan Daniel",
+      "type": "Estudios",
+      "sends": 4,
+      "first_send": "2026-09-10 21:11:17",
+      "last_send": "2026-09-11 13:06:24",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "46740667214",
+      "student": "Issy Edith",
+      "type": "Estudios",
+      "sends": 4,
+      "first_send": "2026-07-15 12:23:57",
+      "last_send": "2026-07-22 12:14:37",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "46844468821",
+      "student": "Maria Angelica",
+      "type": "Estudios",
+      "sends": 4,
+      "first_send": "2026-07-22 12:19:00",
+      "last_send": "2026-07-28 13:16:50",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "46719717891",
+      "student": "John Arley",
+      "type": "Estudios",
+      "sends": 4,
+      "first_send": "2026-07-15 12:22:26",
+      "last_send": "2026-07-22 12:13:08",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48373995312",
+      "student": "Alexander",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-09-08 21:26:48",
+      "last_send": "2026-09-09 15:58:41",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47097829260",
+      "student": "Juan Camilo",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-07-24 12:39:53",
+      "last_send": "2026-07-28 13:21:56",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47097674603",
+      "student": "Celis Mafla",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-07-24 12:43:59",
+      "last_send": "2026-07-28 13:24:54",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47088722544",
+      "student": "Dylan Mauricio / Sanchez Martinez",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-07-24 12:53:17",
+      "last_send": "2026-07-28 13:30:30",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47072013216",
+      "student": "Kamila / Su\u00e1rez",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-07-24 12:56:54",
+      "last_send": "2026-07-28 13:31:28",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "46757072207",
+      "student": "Perilla Orjuela",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-07-16 13:10:34",
+      "last_send": "2026-07-22 12:18:00",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47138733591",
+      "student": "Valeria / Cediel Alonso",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-07-24 12:48:17",
+      "last_send": "2026-07-28 13:26:46",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47111488652",
+      "student": "Alejandra",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-07-24 12:54:51",
+      "last_send": "2026-07-28 13:20:39",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47105416474",
+      "student": "Juan Camilo",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-07-24 12:41:38",
+      "last_send": "2026-07-28 13:23:14",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48458507616",
+      "student": "Roc\u00edo Esmeralda",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-09-10 00:41:41",
+      "last_send": "2026-09-10 13:08:14",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47124372288",
+      "student": "Sofia",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-07-24 12:44:42",
+      "last_send": "2026-07-28 13:25:50",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48622520400",
+      "student": "Daniel Chivara",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-09-17 17:11:15",
+      "last_send": "2026-09-18 19:01:15",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48606200342",
+      "student": "Danna Cecilia",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-09-16 23:11:33",
+      "last_send": "2026-09-17 13:11:40",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48592832256",
+      "student": "Samuel David",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-09-16 23:15:32",
+      "last_send": "2026-09-17 13:15:41",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48468037018",
+      "student": "Fabian Felipe",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-09-10 23:09:27",
+      "last_send": "2026-09-11 13:09:33",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48445587985",
+      "student": "Elizabeth Del Carmen",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-09-10 23:11:29",
+      "last_send": "2026-09-11 13:11:37",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48632673678",
+      "student": "Marilyn Dayana Ram\u00edrez Cerquera",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-09-17 21:08:15",
+      "last_send": "2026-09-18 19:04:43",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48436156825",
+      "student": "Yuleidis Modesta",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-09-10 23:08:26",
+      "last_send": "2026-09-11 13:08:29",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48617857446",
+      "student": "Brayan",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-09-16 23:13:57",
+      "last_send": "2026-09-17 13:14:05",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48463951013",
+      "student": "Juan Camilo",
+      "type": "Estudios",
+      "sends": 3,
+      "first_send": "2026-09-10 17:08:20",
+      "last_send": "2026-09-10 21:08:17",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48611668035",
+      "student": "Luz Dary Susa Rinc\u00f3n",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-09-17 17:05:55",
+      "last_send": "2026-09-17 18:31:02",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48559282988",
+      "student": "Leidy",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-09-16 17:10:02",
+      "last_send": "2026-09-16 19:07:47",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48612446489",
+      "student": "Jefferson Hueso Rojas",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-09-17 17:13:49",
+      "last_send": "2026-09-17 18:40:51",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48611670561",
+      "student": "Laura Camila Cardenas Granados",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-09-17 17:09:55",
+      "last_send": "2026-09-17 18:35:33",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48463483255",
+      "student": "Julian Esteban",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-09-10 19:09:29",
+      "last_send": "2026-09-11 15:06:33",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48591855901",
+      "student": "Juan Diego",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-09-15 15:16:02",
+      "last_send": "2026-09-15 19:13:27",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48598555063",
+      "student": "Marvin",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-09-14 19:03:27",
+      "last_send": "2026-09-14 19:48:17",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47208751254",
+      "student": "Andr\u00e9s",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-07-27 15:35:39",
+      "last_send": "2026-07-28 13:35:12",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47214160686",
+      "student": "Juan David / Ram\u00edrez Vargas",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-07-27 15:38:31",
+      "last_send": "2026-07-28 13:37:05",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47210908498",
+      "student": "Valery Sof\u00eda",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-07-27 15:36:52",
+      "last_send": "2026-07-28 13:36:09",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "45691880086",
+      "student": "PRUEBA FRANCISCO (test)",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-07-02 19:03:06",
+      "last_send": "2026-07-02 19:16:44",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "45705605243",
+      "student": "BLUEPRISM NARNAJA PRUEBA 2 (test)",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-07-02 19:18:48",
+      "last_send": "2026-07-02 19:22:51",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "46811412400",
+      "student": "Hector Fabio",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-07-17 14:17:26",
+      "last_send": "2026-07-22 12:21:23",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "46953253529",
+      "student": "John Alexander",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-07-22 12:22:44",
+      "last_send": "2026-07-24 12:49:44",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "46724480844",
+      "student": "Diana Carolina",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-07-14 16:27:56",
+      "last_send": "2026-07-15 12:34:28",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48465997663",
+      "student": "Juan Karlos Cardenas Rincon",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-09-09 22:49:53",
+      "last_send": "2026-09-10 00:40:10",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48560982075",
+      "student": "Gustavo Gomez Castellanos",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-09-16 15:05:40",
+      "last_send": "2026-09-16 16:29:57",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48632233871",
+      "student": "Luisa Mar\u00eda Neme Pinz\u00f3n",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-09-18 21:10:38",
+      "last_send": "2026-09-18 23:08:29",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48638270393",
+      "student": "Leidy Johana Paez Marquez",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-09-18 17:04:22",
+      "last_send": "2026-09-18 19:08:14",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48696830289",
+      "student": "Sara P\u00e1ramo Rojas",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-09-25 17:07:36",
+      "last_send": "2026-09-25 19:07:24",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48404554605",
+      "student": "S\u00e1nchez Espejo / Mar\u00eda Catalina",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-09-08 21:31:40",
+      "last_send": "2026-09-09 13:14:27",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47175154467",
+      "student": "Luisa Cilvana",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-07-27 15:32:49",
+      "last_send": "2026-07-28 13:34:18",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "48362210715",
+      "student": "Nubia",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-09-09 15:53:26",
+      "last_send": "2026-09-09 17:24:54",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47116949790",
+      "student": "Mariyenci",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-07-27 15:24:40",
+      "last_send": "2026-07-28 13:28:39",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47108868715",
+      "student": "Danna / Rodriguez",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-07-27 15:29:11",
+      "last_send": "2026-07-28 13:32:25",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47144168220",
+      "student": "Juan David",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-07-27 15:30:26",
+      "last_send": "2026-07-28 13:33:21",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47120362291",
+      "student": "Maia Ximena",
+      "type": "Estudios",
+      "sends": 2,
+      "first_send": "2026-07-27 15:23:44",
+      "last_send": "2026-07-28 13:27:43",
+      "reprocessed": "SI"
+    },
+    {
+      "ticket": "47073234321",
+      "student": "Garc\u00eda Lozano",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-22 12:37:54",
+      "last_send": "2026-07-22 12:37:54",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47072150305",
+      "student": "Su\u00e1rez",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-22 12:41:23",
+      "last_send": "2026-07-22 12:41:23",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "46834756208",
+      "student": "Juan Nicolas",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-22 12:20:00",
+      "last_send": "2026-07-22 12:20:00",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "46836750441",
+      "student": "Avenda\u00f1o Guti\u00e9rrez",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-17 14:14:24",
+      "last_send": "2026-07-17 14:14:24",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47071391394",
+      "student": "Sara",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-24 12:51:04",
+      "last_send": "2026-07-24 12:51:04",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47052252319",
+      "student": "Mu\u00f1oz",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-22 12:32:25",
+      "last_send": "2026-07-22 12:32:25",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47012999439",
+      "student": "Bogota Jimenez",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-22 12:24:47",
+      "last_send": "2026-07-22 12:24:47",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47022974724",
+      "student": "Monica Marcela",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-22 12:27:33",
+      "last_send": "2026-07-22 12:27:33",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47010684030",
+      "student": "Nubia",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-22 12:28:55",
+      "last_send": "2026-07-22 12:28:55",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47012693680",
+      "student": "Alejandra",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-22 12:30:24",
+      "last_send": "2026-07-22 12:30:24",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "46740676950",
+      "student": "Mart\u00ednez S\u00e1nchez",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-15 12:27:58",
+      "last_send": "2026-07-15 12:27:58",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "46739778711",
+      "student": "Yesica Marcela",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-15 12:35:41",
+      "last_send": "2026-07-15 12:35:41",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "46740777394",
+      "student": "Rojas Reyes",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-15 12:30:08",
+      "last_send": "2026-07-15 12:30:08",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "46740777904",
+      "student": "Sara Valentina",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-15 12:31:37",
+      "last_send": "2026-07-15 12:31:37",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "46755070819",
+      "student": "Garnica Daza",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-16 13:15:30",
+      "last_send": "2026-07-16 13:15:30",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "46756611613",
+      "student": "Jorge Eduardo",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-16 13:13:31",
+      "last_send": "2026-07-16 13:13:31",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47107142714",
+      "student": "Mar\u00eda Camila",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-24 13:24:44",
+      "last_send": "2026-07-24 13:24:44",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47106346067",
+      "student": "Diego Alejandro",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-24 12:58:14",
+      "last_send": "2026-07-24 12:58:14",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47135387009",
+      "student": "Kelly",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-24 12:46:12",
+      "last_send": "2026-07-24 12:46:12",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47127950715",
+      "student": "Pulido Ballesteros",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-24 13:23:09",
+      "last_send": "2026-07-24 13:23:09",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "46850507622",
+      "student": "Maria Alejandra",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-17 14:18:31",
+      "last_send": "2026-07-17 14:18:31",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "46846342757",
+      "student": "Andres Felipe",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-17 14:20:27",
+      "last_send": "2026-07-17 14:20:27",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "46757389167",
+      "student": "Isabella",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-16 13:16:59",
+      "last_send": "2026-07-16 13:16:59",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "46771819267",
+      "student": "Yessika",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-16 13:12:02",
+      "last_send": "2026-07-16 13:12:02",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "46816991784",
+      "student": "Maria Camila",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-17 14:10:56",
+      "last_send": "2026-07-17 14:10:56",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "46825182643",
+      "student": "Adriana Lorena",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-17 14:19:29",
+      "last_send": "2026-07-17 14:19:29",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48382366624",
+      "student": "Pe\u00f1a Pedraza",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-08 21:34:49",
+      "last_send": "2026-09-08 21:34:49",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48380807068",
+      "student": "Quijano Mejia",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-08 17:46:42",
+      "last_send": "2026-09-08 17:46:42",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48378476317",
+      "student": "Andrade Moreno",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-08 21:21:32",
+      "last_send": "2026-09-08 21:21:32",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48373377312",
+      "student": "Gaona Trompa",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-08 21:28:56",
+      "last_send": "2026-09-08 21:28:56",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48362206040",
+      "student": "Rufina",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-08 17:48:08",
+      "last_send": "2026-09-08 17:48:08",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48346161807",
+      "student": "Cuadros Rincon",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-08 17:43:18",
+      "last_send": "2026-09-08 17:43:18",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48347709365",
+      "student": "Pablo Andres",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-08 17:41:30",
+      "last_send": "2026-09-08 17:41:30",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48356259181",
+      "student": "Paola Andrea",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-08 17:44:54",
+      "last_send": "2026-09-08 17:44:54",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48238184488",
+      "student": "Brito Rangel",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-04 18:56:28",
+      "last_send": "2026-09-04 18:56:28",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48245175186",
+      "student": "Oramas Reyes",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-08 17:36:02",
+      "last_send": "2026-09-08 17:36:02",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48313821877",
+      "student": "Fonseca Ardila",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-08 17:39:50",
+      "last_send": "2026-09-08 17:39:50",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47256551602",
+      "student": "Forero Vergara",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-28 13:56:19",
+      "last_send": "2026-07-28 13:56:19",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48140072207",
+      "student": "Juan Jose",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-04 19:00:36",
+      "last_send": "2026-09-04 19:00:36",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48148153611",
+      "student": "Hanna Valeria",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-04 19:03:35",
+      "last_send": "2026-09-04 19:03:35",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48214520074",
+      "student": "Juana",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-04 19:02:05",
+      "last_send": "2026-09-04 19:02:05",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48234145688",
+      "student": "Cuadros Rincon",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-04 18:51:40",
+      "last_send": "2026-09-04 18:51:40",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47235453622",
+      "student": "Yerson",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-28 13:49:17",
+      "last_send": "2026-07-28 13:49:17",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47244446304",
+      "student": "Picon Garcia",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-28 13:51:00",
+      "last_send": "2026-07-28 13:51:00",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47240884111",
+      "student": "Isabela",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-28 13:48:02",
+      "last_send": "2026-07-28 13:48:02",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47238845072",
+      "student": "Ruiz Mena",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-28 13:59:19",
+      "last_send": "2026-07-28 13:59:19",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47226956348",
+      "student": "Paula Valentina",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-28 13:38:03",
+      "last_send": "2026-07-28 13:38:03",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47256551483",
+      "student": "Camacho Orobio",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-28 13:52:44",
+      "last_send": "2026-07-28 13:52:44",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47253609764",
+      "student": "Pineda",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-28 13:54:31",
+      "last_send": "2026-07-28 13:54:31",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47246622998",
+      "student": "Moreno Ramos",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-28 13:46:46",
+      "last_send": "2026-07-28 13:46:46",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47218646886",
+      "student": "Juan Sebastian",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-28 13:38:59",
+      "last_send": "2026-07-28 13:38:59",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47231136793",
+      "student": "Carlos Hennry",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-28 13:57:36",
+      "last_send": "2026-07-28 13:57:36",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47121900563",
+      "student": "Nieto Ayala",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-24 13:00:17",
+      "last_send": "2026-07-24 13:00:17",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47182985734",
+      "student": "Mery",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-28 13:29:34",
+      "last_send": "2026-07-28 13:29:34",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47205357477",
+      "student": "Martinez Bedoya",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-28 13:42:32",
+      "last_send": "2026-07-28 13:42:32",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47201888596",
+      "student": "Luengas Ariza",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-28 13:40:46",
+      "last_send": "2026-07-28 13:40:46",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47213549873",
+      "student": "Maryi",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-28 13:45:03",
+      "last_send": "2026-07-28 13:45:03",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47215383310",
+      "student": "Mar\u00eda Fernanda",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-28 13:43:49",
+      "last_send": "2026-07-28 13:43:49",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47093352754",
+      "student": "Chamorro",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-22 12:47:28",
+      "last_send": "2026-07-22 12:47:28",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47093042091",
+      "student": "Montes Alvarez",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-22 12:45:26",
+      "last_send": "2026-07-22 12:45:26",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47081750277",
+      "student": "Aviles Reina",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-22 12:43:25",
+      "last_send": "2026-07-22 12:43:25",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47085918779",
+      "student": "Anderson Santiago",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-22 12:35:51",
+      "last_send": "2026-07-22 12:35:51",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47073543096",
+      "student": "Ospina Contreras",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-22 12:34:28",
+      "last_send": "2026-07-22 12:34:28",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "47100640426",
+      "student": "Arcos Martinez",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-07-24 13:21:05",
+      "last_send": "2026-07-24 13:21:05",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48561713419",
+      "student": "Wilmer",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-14 19:01:57",
+      "last_send": "2026-09-14 19:01:57",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48385893194",
+      "student": "Herrera Javela",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-08 21:38:14",
+      "last_send": "2026-09-08 21:38:14",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48436433832",
+      "student": "Prieto Espitia",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-09 16:01:03",
+      "last_send": "2026-09-09 16:01:03",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48549884728",
+      "student": "Dilan Santiago",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-11 19:08:21",
+      "last_send": "2026-09-11 19:08:21",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48551796367",
+      "student": "Patricia Arelis",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-14 19:04:45",
+      "last_send": "2026-09-14 19:04:45",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48556186660",
+      "student": "Paula Vanesa",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-16 15:18:04",
+      "last_send": "2026-09-16 15:18:04",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48459117221",
+      "student": "Luis David",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-09 16:09:18",
+      "last_send": "2026-09-09 16:09:18",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48463323277",
+      "student": "Jorge Armando",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-10 15:09:21",
+      "last_send": "2026-09-10 15:09:21",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48535204013",
+      "student": "Paula Katherine",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-11 19:09:24",
+      "last_send": "2026-09-11 19:09:24",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48571618675",
+      "student": "C\u00f3rdoba",
+      "type": "Horarios",
+      "sends": 1,
+      "first_send": "2026-09-16 04:27:25",
+      "last_send": "2026-09-16 04:27:25",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48588419866",
+      "student": "Johan Sebastian",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-15 11:13:31",
+      "last_send": "2026-09-15 11:13:31",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48588409892",
+      "student": "Andrea",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-14 15:26:04",
+      "last_send": "2026-09-14 15:26:04",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48587517974",
+      "student": "Emelin Dayana Bonett Rojas",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-16 17:17:51",
+      "last_send": "2026-09-16 17:17:51",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48587362874",
+      "student": "Michael Lozano Gonz\u00e1lez",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-16 17:16:23",
+      "last_send": "2026-09-16 17:16:23",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48579397665",
+      "student": "Mateo",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-15 21:15:41",
+      "last_send": "2026-09-15 21:15:41",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48581708621",
+      "student": "Juan Diego",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-15 15:13:50",
+      "last_send": "2026-09-15 15:13:50",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48575360391",
+      "student": "Maria Camila Peralta Perez",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-16 17:14:06",
+      "last_send": "2026-09-16 17:14:06",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48575359767",
+      "student": "Juan David Velasquez Rojas",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-16 17:11:45",
+      "last_send": "2026-09-16 17:11:45",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48568507208",
+      "student": "Karol Yaneth",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-14 21:12:53",
+      "last_send": "2026-09-14 21:12:53",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48438699892",
+      "student": "Katherine Orjuela Bischoff",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-09 17:27:47",
+      "last_send": "2026-09-09 17:27:47",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48450536977",
+      "student": "Juan",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-10 17:07:17",
+      "last_send": "2026-09-10 17:07:17",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48446515893",
+      "student": "Yuleidis Modesta",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-10 21:09:17",
+      "last_send": "2026-09-10 21:09:17",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48452879760",
+      "student": "Victor Manuel",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-11 15:07:36",
+      "last_send": "2026-09-11 15:07:36",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48453264824",
+      "student": "Mar\u00eda",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-09 16:07:50",
+      "last_send": "2026-09-09 16:07:50",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48456793353",
+      "student": "Forero Ruano",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-09 15:55:47",
+      "last_send": "2026-09-09 15:55:47",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48458187785",
+      "student": "Cuadros Rincon",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-09 16:04:12",
+      "last_send": "2026-09-09 16:04:12",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48599992480",
+      "student": "Juan Sebastian",
+      "type": "Horarios",
+      "sends": 1,
+      "first_send": "2026-09-16 15:22:27",
+      "last_send": "2026-09-16 15:22:27",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48599822415",
+      "student": "Andy Alexander",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-15 21:10:01",
+      "last_send": "2026-09-15 21:10:01",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48608366468",
+      "student": "Juan Diego Sepulveda Melo",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-18 19:08:49",
+      "last_send": "2026-09-18 19:08:49",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48593069217",
+      "student": "Paula Yisset Macias Monsalve",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-21 15:07:07",
+      "last_send": "2026-09-21 15:07:07",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48592018485",
+      "student": "Laura Sofia",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-15 21:16:53",
+      "last_send": "2026-09-15 21:16:53",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48589823005",
+      "student": "Paula Nathaly",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-14 19:49:44",
+      "last_send": "2026-09-14 19:49:44",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48573617474",
+      "student": "Marvin",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-15 11:12:18",
+      "last_send": "2026-09-15 11:12:18",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48618365542",
+      "student": "Luisa Mar\u00eda Neme Pinz\u00f3n",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-18 19:09:25",
+      "last_send": "2026-09-18 19:09:25",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48620268349",
+      "student": "Nathalia Estupi\u00f1an",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-21 17:07:04",
+      "last_send": "2026-09-21 17:07:04",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48620121357",
+      "student": "Juan David Bayona Torres",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-21 19:07:07",
+      "last_send": "2026-09-21 19:07:07",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48622632301",
+      "student": "Ahileen",
+      "type": "Horarios",
+      "sends": 1,
+      "first_send": "2026-09-21 17:13:31",
+      "last_send": "2026-09-21 17:13:31",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48622717038",
+      "student": "Estiven",
+      "type": "Horarios",
+      "sends": 1,
+      "first_send": "2026-09-17 17:17:01",
+      "last_send": "2026-09-17 17:17:01",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48623402756",
+      "student": "Diego Fernando Jaramillo Reina",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-21 15:08:42",
+      "last_send": "2026-09-21 15:08:42",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48619346483",
+      "student": "Johan Minorta",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-21 19:08:42",
+      "last_send": "2026-09-21 19:08:42",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48617747882",
+      "student": "Magnolia Rocio Lara Gualteros",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-18 21:07:51",
+      "last_send": "2026-09-18 21:07:51",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48613974708",
+      "student": "Willman Steve",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-16 21:10:06",
+      "last_send": "2026-09-16 21:10:06",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48628665349",
+      "student": "Evelyn Mar\u00edn Ordu\u00f1a",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-18 17:01:58",
+      "last_send": "2026-09-18 17:01:58",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48628515612",
+      "student": "Edward Trujillo",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-18 23:09:00",
+      "last_send": "2026-09-18 23:09:00",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48626591522",
+      "student": "Holmer Camilo Velez Gomez",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-17 21:08:46",
+      "last_send": "2026-09-17 21:08:46",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48631145627",
+      "student": "Andres Felipe Due\u00f1as Martinez",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-18 19:10:00",
+      "last_send": "2026-09-18 19:10:00",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48629110565",
+      "student": "Sofia Sandoval Guzm\u00e1n",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-17 18:43:31",
+      "last_send": "2026-09-17 18:43:31",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48632732753",
+      "student": "Ahileen Daniela",
+      "type": "Horarios",
+      "sends": 1,
+      "first_send": "2026-09-21 13:09:40",
+      "last_send": "2026-09-21 13:09:40",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48634694210",
+      "student": "Magnolia Rocio Lara Gualteros",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-18 16:58:47",
+      "last_send": "2026-09-18 16:58:47",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48639485707",
+      "student": "Laura Sofia Rold\u00e1n Hoyos",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-17 14:32:12",
+      "last_send": "2026-09-17 14:32:12",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48639649369",
+      "student": "Saray Tovar Murcia",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-17 18:46:03",
+      "last_send": "2026-09-17 18:46:03",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48641277270",
+      "student": "Ana Julieta Villa Durango",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-21 17:10:07",
+      "last_send": "2026-09-21 17:10:07",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48650609968",
+      "student": "Danna Castillo Rodriguez",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-21 17:08:44",
+      "last_send": "2026-09-21 17:08:44",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48657127030",
+      "student": "Lucia Del Carmen Tarapuez Taimal",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-22 17:12:57",
+      "last_send": "2026-09-22 17:12:57",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48657279513",
+      "student": "Nicolas Esteban Bello Martinez",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-22 15:53:57",
+      "last_send": "2026-09-22 15:53:57",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48662151997",
+      "student": "Nicoll Ruiz Quimbay",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-22 15:48:11",
+      "last_send": "2026-09-22 15:48:11",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48663407142",
+      "student": "Andres Castellanos Rodriguez",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-22 15:55:47",
+      "last_send": "2026-09-22 15:55:47",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48618362981",
+      "student": "Karen Cristal P\u00e9rez Romero",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-18 17:07:30",
+      "last_send": "2026-09-18 17:07:30",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48664343177",
+      "student": "Heidy Alejandra Sabogal Tamayo",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-22 19:11:13",
+      "last_send": "2026-09-22 19:11:13",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48670387480",
+      "student": "Carlos Andr\u00e9s Robles Salas",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-22 17:07:14",
+      "last_send": "2026-09-22 17:07:14",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48673498750",
+      "student": "Juan David Parra Tafur",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-22 21:09:49",
+      "last_send": "2026-09-22 21:09:49",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48670391127",
+      "student": "Paula Yisset Macias Monsalve",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-22 19:10:42",
+      "last_send": "2026-09-22 19:10:42",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48675387828",
+      "student": "Sarita Saray Sierra",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-22 19:08:56",
+      "last_send": "2026-09-22 19:08:56",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48681015643",
+      "student": "Luc\u00eda Del Carmen Tarapuez Taimal",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-22 21:08:28",
+      "last_send": "2026-09-22 21:08:28",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48681169737",
+      "student": "Jhon Kener Sierra Daza",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-22 19:08:29",
+      "last_send": "2026-09-22 19:08:29",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48673809477",
+      "student": "Jeison Yamid Pedraza Pedraza",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-22 21:11:27",
+      "last_send": "2026-09-22 21:11:27",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48681966347",
+      "student": "Luisa Mar\u00eda Neme Pinz\u00f3n",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-23 15:08:30",
+      "last_send": "2026-09-23 15:08:30",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48682400165",
+      "student": "Angelyne Mariana Gal\u00e1n Ortiz",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-22 15:51:07",
+      "last_send": "2026-09-22 15:51:07",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48684272932",
+      "student": "Jhon Kener Sierra Daza",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-22 17:10:00",
+      "last_send": "2026-09-22 17:10:00",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48691871321",
+      "student": "Dayane Cuestas",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-24 21:11:08",
+      "last_send": "2026-09-24 21:11:08",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48698878494",
+      "student": "Darcy Tatiana Olmedo Espitia",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-25 21:08:22",
+      "last_send": "2026-09-25 21:08:22",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48699325522",
+      "student": "Angel Zu\u00f1iga",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-24 21:08:09",
+      "last_send": "2026-09-24 21:08:09",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48699469979",
+      "student": "Anyi Catalina Daza Carvajal",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-24 15:08:26",
+      "last_send": "2026-09-24 15:08:26",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48699472669",
+      "student": "Yeimy Tatiana Olaya Valbuena",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-24 17:07:27",
+      "last_send": "2026-09-24 17:07:27",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48701153201",
+      "student": "Maria Fernanda Cuadros Salamanca",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-23 15:30:45",
+      "last_send": "2026-09-23 15:30:45",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48701203048",
+      "student": "Pedro Pablo Martinez Aldana",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-23 23:11:40",
+      "last_send": "2026-09-23 23:11:40",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48701350685",
+      "student": "Marta Lucia Aparicio Guzman",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-23 17:06:12",
+      "last_send": "2026-09-23 17:06:12",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48701376805",
+      "student": "Joffre Enrique De La Hoz Camargo",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-24 19:05:14",
+      "last_send": "2026-09-24 19:05:14",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48703890592",
+      "student": "Aris Nelson Palacios Mosquera",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-24 15:14:21",
+      "last_send": "2026-09-24 15:14:21",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48704026726",
+      "student": "Sofia Monta\u00f1o Guarnizo",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-23 17:09:17",
+      "last_send": "2026-09-23 17:09:17",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48704051777",
+      "student": "Deivid Santiago Torres Cano",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-24 21:10:59",
+      "last_send": "2026-09-24 21:10:59",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48704341625",
+      "student": "Laura Sof\u00eda Reyes Arevalo",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-23 23:08:54",
+      "last_send": "2026-09-23 23:08:54",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48705968932",
+      "student": "Alfredo Enrique Revollo Casta\u00f1eda",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-25 17:13:17",
+      "last_send": "2026-09-25 17:13:17",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48706487836",
+      "student": "Sarita Saray Sierra",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-25 21:11:36",
+      "last_send": "2026-09-25 21:11:36",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48714942825",
+      "student": "Sharon Catalina Pinto Segura",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-24 15:11:31",
+      "last_send": "2026-09-24 15:11:31",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48718879008",
+      "student": "Danna Valentina Duarte Robayo",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-23 23:07:18",
+      "last_send": "2026-09-23 23:07:18",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48720887322",
+      "student": "Carlos Eduardo Rojas Medina",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-23 15:11:25",
+      "last_send": "2026-09-23 15:11:25",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48740357702",
+      "student": "Angel Zu\u00f1iga",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-24 19:05:08",
+      "last_send": "2026-09-24 19:05:08",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48740686135",
+      "student": "Karen Sof\u00eda Coral Ortiz",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-25 17:10:26",
+      "last_send": "2026-09-25 17:10:26",
+      "reprocessed": "NO"
+    },
+    {
+      "ticket": "48744499107",
+      "student": "Thalia Jazlin Monsalve Nieto",
+      "type": "Estudios",
+      "sends": 1,
+      "first_send": "2026-09-25 21:11:08",
+      "last_send": "2026-09-25 21:11:08",
+      "reprocessed": "NO"
+    }
+  ],
+  "events": [
+    {
+      "ticket": "45691880086",
+      "student": "PRUEBA FRANCISCO (test)",
+      "type": "Estudios",
+      "timestamp": "2026-07-02 19:03:06"
+    },
+    {
+      "ticket": "45691880086",
+      "student": "PRUEBA FRANCISCO (test)",
+      "type": "Estudios",
+      "timestamp": "2026-07-02 19:16:44"
+    },
+    {
+      "ticket": "45705605243",
+      "student": "BLUEPRISM NARNAJA PRUEBA 2 (test)",
+      "type": "Estudios",
+      "timestamp": "2026-07-02 19:18:48"
+    },
+    {
+      "ticket": "45705605243",
+      "student": "BLUEPRISM NARNAJA PRUEBA 2 (test)",
+      "type": "Estudios",
+      "timestamp": "2026-07-02 19:22:51"
+    },
+    {
+      "ticket": "46719717891",
+      "student": "John Arley",
+      "type": "Estudios",
+      "timestamp": "2026-07-15 12:22:26"
+    },
+    {
+      "ticket": "46719717891",
+      "student": "John Arley",
+      "type": "Estudios",
+      "timestamp": "2026-07-16 13:05:42"
+    },
+    {
+      "ticket": "46719717891",
+      "student": "John Arley",
+      "type": "Estudios",
+      "timestamp": "2026-07-17 14:06:28"
+    },
+    {
+      "ticket": "46719717891",
+      "student": "John Arley",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:13:08"
+    },
+    {
+      "ticket": "46724480844",
+      "student": "Diana Carolina",
+      "type": "Estudios",
+      "timestamp": "2026-07-14 16:27:56"
+    },
+    {
+      "ticket": "46724480844",
+      "student": "Diana Carolina",
+      "type": "Estudios",
+      "timestamp": "2026-07-15 12:34:28"
+    },
+    {
+      "ticket": "46739778711",
+      "student": "Yesica Marcela",
+      "type": "Estudios",
+      "timestamp": "2026-07-15 12:35:41"
+    },
+    {
+      "ticket": "46740667214",
+      "student": "Issy Edith",
+      "type": "Estudios",
+      "timestamp": "2026-07-15 12:23:57"
+    },
+    {
+      "ticket": "46740667214",
+      "student": "Issy Edith",
+      "type": "Estudios",
+      "timestamp": "2026-07-16 13:07:08"
+    },
+    {
+      "ticket": "46740667214",
+      "student": "Issy Edith",
+      "type": "Estudios",
+      "timestamp": "2026-07-17 14:07:58"
+    },
+    {
+      "ticket": "46740667214",
+      "student": "Issy Edith",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:14:37"
+    },
+    {
+      "ticket": "46740676950",
+      "student": "Mart\u00ednez S\u00e1nchez",
+      "type": "Estudios",
+      "timestamp": "2026-07-15 12:27:58"
+    },
+    {
+      "ticket": "46740777394",
+      "student": "Rojas Reyes",
+      "type": "Estudios",
+      "timestamp": "2026-07-15 12:30:08"
+    },
+    {
+      "ticket": "46740777904",
+      "student": "Sara Valentina",
+      "type": "Estudios",
+      "timestamp": "2026-07-15 12:31:37"
+    },
+    {
+      "ticket": "46741120821",
+      "student": "Alejandro",
+      "type": "Estudios",
+      "timestamp": "2026-07-15 12:33:07"
+    },
+    {
+      "ticket": "46741120821",
+      "student": "Alejandro",
+      "type": "Estudios",
+      "timestamp": "2026-07-16 13:08:34"
+    },
+    {
+      "ticket": "46741120821",
+      "student": "Alejandro",
+      "type": "Estudios",
+      "timestamp": "2026-07-17 14:09:28"
+    },
+    {
+      "ticket": "46741120821",
+      "student": "Alejandro",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:15:59"
+    },
+    {
+      "ticket": "46755070819",
+      "student": "Garnica Daza",
+      "type": "Estudios",
+      "timestamp": "2026-07-16 13:15:30"
+    },
+    {
+      "ticket": "46756611613",
+      "student": "Jorge Eduardo",
+      "type": "Estudios",
+      "timestamp": "2026-07-16 13:13:31"
+    },
+    {
+      "ticket": "46757072207",
+      "student": "Perilla Orjuela",
+      "type": "Estudios",
+      "timestamp": "2026-07-16 13:10:34"
+    },
+    {
+      "ticket": "46757072207",
+      "student": "Perilla Orjuela",
+      "type": "Estudios",
+      "timestamp": "2026-07-17 14:16:26"
+    },
+    {
+      "ticket": "46757072207",
+      "student": "Perilla Orjuela",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:18:00"
+    },
+    {
+      "ticket": "46757389167",
+      "student": "Isabella",
+      "type": "Estudios",
+      "timestamp": "2026-07-16 13:16:59"
+    },
+    {
+      "ticket": "46771819267",
+      "student": "Yessika",
+      "type": "Estudios",
+      "timestamp": "2026-07-16 13:12:02"
+    },
+    {
+      "ticket": "46811412400",
+      "student": "Hector Fabio",
+      "type": "Estudios",
+      "timestamp": "2026-07-17 14:17:26"
+    },
+    {
+      "ticket": "46811412400",
+      "student": "Hector Fabio",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:21:23"
+    },
+    {
+      "ticket": "46816991784",
+      "student": "Maria Camila",
+      "type": "Estudios",
+      "timestamp": "2026-07-17 14:10:56"
+    },
+    {
+      "ticket": "46825182643",
+      "student": "Adriana Lorena",
+      "type": "Estudios",
+      "timestamp": "2026-07-17 14:19:29"
+    },
+    {
+      "ticket": "46834756208",
+      "student": "Juan Nicolas",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:20:00"
+    },
+    {
+      "ticket": "46836750441",
+      "student": "Avenda\u00f1o Guti\u00e9rrez",
+      "type": "Estudios",
+      "timestamp": "2026-07-17 14:14:24"
+    },
+    {
+      "ticket": "46844468821",
+      "student": "Maria Angelica",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:19:00"
+    },
+    {
+      "ticket": "46844468821",
+      "student": "Maria Angelica",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 12:36:10"
+    },
+    {
+      "ticket": "46844468821",
+      "student": "Maria Angelica",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:10:24"
+    },
+    {
+      "ticket": "46844468821",
+      "student": "Maria Angelica",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:16:50"
+    },
+    {
+      "ticket": "46846342757",
+      "student": "Andres Felipe",
+      "type": "Estudios",
+      "timestamp": "2026-07-17 14:20:27"
+    },
+    {
+      "ticket": "46850507622",
+      "student": "Maria Alejandra",
+      "type": "Estudios",
+      "timestamp": "2026-07-17 14:18:31"
+    },
+    {
+      "ticket": "46953253529",
+      "student": "John Alexander",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:22:44"
+    },
+    {
+      "ticket": "46953253529",
+      "student": "John Alexander",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 12:49:44"
+    },
+    {
+      "ticket": "47010684030",
+      "student": "Nubia",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:28:55"
+    },
+    {
+      "ticket": "47012693680",
+      "student": "Alejandra",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:30:24"
+    },
+    {
+      "ticket": "47012999439",
+      "student": "Bogota Jimenez",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:24:47"
+    },
+    {
+      "ticket": "47022974724",
+      "student": "Monica Marcela",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:27:33"
+    },
+    {
+      "ticket": "47034353585",
+      "student": "Michael",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:26:11"
+    },
+    {
+      "ticket": "47034353585",
+      "student": "Michael",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 12:37:35"
+    },
+    {
+      "ticket": "47034353585",
+      "student": "Michael",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:11:52"
+    },
+    {
+      "ticket": "47034353585",
+      "student": "Michael",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:18:10"
+    },
+    {
+      "ticket": "47052252319",
+      "student": "Mu\u00f1oz",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:32:25"
+    },
+    {
+      "ticket": "47071391394",
+      "student": "Sara",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 12:51:04"
+    },
+    {
+      "ticket": "47072013216",
+      "student": "Kamila / Su\u00e1rez",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 12:56:54"
+    },
+    {
+      "ticket": "47072013216",
+      "student": "Kamila / Su\u00e1rez",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:26:34"
+    },
+    {
+      "ticket": "47072013216",
+      "student": "Kamila / Su\u00e1rez",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:31:28"
+    },
+    {
+      "ticket": "47072150305",
+      "student": "Su\u00e1rez",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:41:23"
+    },
+    {
+      "ticket": "47073234321",
+      "student": "Garc\u00eda Lozano",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:37:54"
+    },
+    {
+      "ticket": "47073543096",
+      "student": "Ospina Contreras",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:34:28"
+    },
+    {
+      "ticket": "47081750277",
+      "student": "Aviles Reina",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:43:25"
+    },
+    {
+      "ticket": "47085918779",
+      "student": "Anderson Santiago",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:35:51"
+    },
+    {
+      "ticket": "47088722544",
+      "student": "Dylan Mauricio / Sanchez Martinez",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 12:53:17"
+    },
+    {
+      "ticket": "47088722544",
+      "student": "Dylan Mauricio / Sanchez Martinez",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:25:35"
+    },
+    {
+      "ticket": "47088722544",
+      "student": "Dylan Mauricio / Sanchez Martinez",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:30:30"
+    },
+    {
+      "ticket": "47091803039",
+      "student": "Jessica Andrea",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:39:23"
+    },
+    {
+      "ticket": "47091803039",
+      "student": "Jessica Andrea",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 12:38:09"
+    },
+    {
+      "ticket": "47091803039",
+      "student": "Jessica Andrea",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:13:14"
+    },
+    {
+      "ticket": "47091803039",
+      "student": "Jessica Andrea",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:19:24"
+    },
+    {
+      "ticket": "47093042091",
+      "student": "Montes Alvarez",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:45:26"
+    },
+    {
+      "ticket": "47093352754",
+      "student": "Chamorro",
+      "type": "Estudios",
+      "timestamp": "2026-07-22 12:47:28"
+    },
+    {
+      "ticket": "47097674603",
+      "student": "Celis Mafla",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 12:43:59"
+    },
+    {
+      "ticket": "47097674603",
+      "student": "Celis Mafla",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:19:46"
+    },
+    {
+      "ticket": "47097674603",
+      "student": "Celis Mafla",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:24:54"
+    },
+    {
+      "ticket": "47097829260",
+      "student": "Juan Camilo",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 12:39:53"
+    },
+    {
+      "ticket": "47097829260",
+      "student": "Juan Camilo",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:16:13"
+    },
+    {
+      "ticket": "47097829260",
+      "student": "Juan Camilo",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:21:56"
+    },
+    {
+      "ticket": "47100640426",
+      "student": "Arcos Martinez",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 13:21:05"
+    },
+    {
+      "ticket": "47105416474",
+      "student": "Juan Camilo",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 12:41:38"
+    },
+    {
+      "ticket": "47105416474",
+      "student": "Juan Camilo",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:17:44"
+    },
+    {
+      "ticket": "47105416474",
+      "student": "Juan Camilo",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:23:14"
+    },
+    {
+      "ticket": "47106346067",
+      "student": "Diego Alejandro",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 12:58:14"
+    },
+    {
+      "ticket": "47107142714",
+      "student": "Mar\u00eda Camila",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 13:24:44"
+    },
+    {
+      "ticket": "47108868715",
+      "student": "Danna / Rodriguez",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:29:11"
+    },
+    {
+      "ticket": "47108868715",
+      "student": "Danna / Rodriguez",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:32:25"
+    },
+    {
+      "ticket": "47111488652",
+      "student": "Alejandra",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 12:54:51"
+    },
+    {
+      "ticket": "47111488652",
+      "student": "Alejandra",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:14:43"
+    },
+    {
+      "ticket": "47111488652",
+      "student": "Alejandra",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:20:39"
+    },
+    {
+      "ticket": "47116949790",
+      "student": "Mariyenci",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:24:40"
+    },
+    {
+      "ticket": "47116949790",
+      "student": "Mariyenci",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:28:39"
+    },
+    {
+      "ticket": "47120362291",
+      "student": "Maia Ximena",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:23:44"
+    },
+    {
+      "ticket": "47120362291",
+      "student": "Maia Ximena",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:27:43"
+    },
+    {
+      "ticket": "47121900563",
+      "student": "Nieto Ayala",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 13:00:17"
+    },
+    {
+      "ticket": "47124372288",
+      "student": "Sofia",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 12:44:42"
+    },
+    {
+      "ticket": "47124372288",
+      "student": "Sofia",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:20:35"
+    },
+    {
+      "ticket": "47124372288",
+      "student": "Sofia",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:25:50"
+    },
+    {
+      "ticket": "47127950715",
+      "student": "Pulido Ballesteros",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 13:23:09"
+    },
+    {
+      "ticket": "47135387009",
+      "student": "Kelly",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 12:46:12"
+    },
+    {
+      "ticket": "47138733591",
+      "student": "Valeria / Cediel Alonso",
+      "type": "Estudios",
+      "timestamp": "2026-07-24 12:48:17"
+    },
+    {
+      "ticket": "47138733591",
+      "student": "Valeria / Cediel Alonso",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:22:47"
+    },
+    {
+      "ticket": "47138733591",
+      "student": "Valeria / Cediel Alonso",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:26:46"
+    },
+    {
+      "ticket": "47144168220",
+      "student": "Juan David",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:30:26"
+    },
+    {
+      "ticket": "47144168220",
+      "student": "Juan David",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:33:21"
+    },
+    {
+      "ticket": "47175154467",
+      "student": "Luisa Cilvana",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:32:49"
+    },
+    {
+      "ticket": "47175154467",
+      "student": "Luisa Cilvana",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:34:18"
+    },
+    {
+      "ticket": "47182985734",
+      "student": "Mery",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:29:34"
+    },
+    {
+      "ticket": "47201888596",
+      "student": "Luengas Ariza",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:40:46"
+    },
+    {
+      "ticket": "47205357477",
+      "student": "Martinez Bedoya",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:42:32"
+    },
+    {
+      "ticket": "47208751254",
+      "student": "Andr\u00e9s",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:35:39"
+    },
+    {
+      "ticket": "47208751254",
+      "student": "Andr\u00e9s",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:35:12"
+    },
+    {
+      "ticket": "47210908498",
+      "student": "Valery Sof\u00eda",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:36:52"
+    },
+    {
+      "ticket": "47210908498",
+      "student": "Valery Sof\u00eda",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:36:09"
+    },
+    {
+      "ticket": "47213549873",
+      "student": "Maryi",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:45:03"
+    },
+    {
+      "ticket": "47214160686",
+      "student": "Juan David / Ram\u00edrez Vargas",
+      "type": "Estudios",
+      "timestamp": "2026-07-27 15:38:31"
+    },
+    {
+      "ticket": "47214160686",
+      "student": "Juan David / Ram\u00edrez Vargas",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:37:05"
+    },
+    {
+      "ticket": "47215383310",
+      "student": "Mar\u00eda Fernanda",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:43:49"
+    },
+    {
+      "ticket": "47218646886",
+      "student": "Juan Sebastian",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:38:59"
+    },
+    {
+      "ticket": "47226956348",
+      "student": "Paula Valentina",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:38:03"
+    },
+    {
+      "ticket": "47231136793",
+      "student": "Carlos Hennry",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:57:36"
+    },
+    {
+      "ticket": "47235453622",
+      "student": "Yerson",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:49:17"
+    },
+    {
+      "ticket": "47238845072",
+      "student": "Ruiz Mena",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:59:19"
+    },
+    {
+      "ticket": "47240884111",
+      "student": "Isabela",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:48:02"
+    },
+    {
+      "ticket": "47244446304",
+      "student": "Picon Garcia",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:51:00"
+    },
+    {
+      "ticket": "47246622998",
+      "student": "Moreno Ramos",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:46:46"
+    },
+    {
+      "ticket": "47253609764",
+      "student": "Pineda",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:54:31"
+    },
+    {
+      "ticket": "47256551483",
+      "student": "Camacho Orobio",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:52:44"
+    },
+    {
+      "ticket": "47256551602",
+      "student": "Forero Vergara",
+      "type": "Estudios",
+      "timestamp": "2026-07-28 13:56:19"
+    },
+    {
+      "ticket": "47968411215",
+      "student": "Francy Helena",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 11:04:30"
+    },
+    {
+      "ticket": "47968411215",
+      "student": "Francy Helena",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 13:04:35"
+    },
+    {
+      "ticket": "47968411215",
+      "student": "Francy Helena",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 14:11:27"
+    },
+    {
+      "ticket": "47968411215",
+      "student": "Francy Helena",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 16:00:12"
+    },
+    {
+      "ticket": "47968411215",
+      "student": "Francy Helena",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 17:04:27"
+    },
+    {
+      "ticket": "48140072207",
+      "student": "Juan Jose",
+      "type": "Estudios",
+      "timestamp": "2026-09-04 19:00:36"
+    },
+    {
+      "ticket": "48148153611",
+      "student": "Hanna Valeria",
+      "type": "Estudios",
+      "timestamp": "2026-09-04 19:03:35"
+    },
+    {
+      "ticket": "48214520074",
+      "student": "Juana",
+      "type": "Estudios",
+      "timestamp": "2026-09-04 19:02:05"
+    },
+    {
+      "ticket": "48234145688",
+      "student": "Cuadros Rincon",
+      "type": "Estudios",
+      "timestamp": "2026-09-04 18:51:40"
+    },
+    {
+      "ticket": "48238184488",
+      "student": "Brito Rangel",
+      "type": "Estudios",
+      "timestamp": "2026-09-04 18:56:28"
+    },
+    {
+      "ticket": "48245175186",
+      "student": "Oramas Reyes",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 17:36:02"
+    },
+    {
+      "ticket": "48285990934",
+      "student": "Juan David",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 17:28:09"
+    },
+    {
+      "ticket": "48285990934",
+      "student": "Juan David",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 17:29:19"
+    },
+    {
+      "ticket": "48285990934",
+      "student": "Juan David",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 21:18:17"
+    },
+    {
+      "ticket": "48285990934",
+      "student": "Juan David",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 22:55:56"
+    },
+    {
+      "ticket": "48285990934",
+      "student": "Juan David",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 01:01:28"
+    },
+    {
+      "ticket": "48285990934",
+      "student": "Juan David",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 01:06:41"
+    },
+    {
+      "ticket": "48285990934",
+      "student": "Juan David",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 13:04:11"
+    },
+    {
+      "ticket": "48285990934",
+      "student": "Juan David",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 15:05:13"
+    },
+    {
+      "ticket": "48299028153",
+      "student": "Wilson Andres Carrillo Ortiz",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 17:31:11"
+    },
+    {
+      "ticket": "48299028153",
+      "student": "Wilson Andres Carrillo Ortiz",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 21:19:41"
+    },
+    {
+      "ticket": "48299028153",
+      "student": "Wilson Andres Carrillo Ortiz",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 15:50:34"
+    },
+    {
+      "ticket": "48299028153",
+      "student": "Wilson Andres Carrillo Ortiz",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 17:22:02"
+    },
+    {
+      "ticket": "48299028153",
+      "student": "Wilson Andres Carrillo Ortiz",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 19:52:04"
+    },
+    {
+      "ticket": "48299028153",
+      "student": "Wilson Andres Carrillo Ortiz",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 22:47:35"
+    },
+    {
+      "ticket": "48299028153",
+      "student": "Wilson Andres Carrillo Ortiz",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 00:35:14"
+    },
+    {
+      "ticket": "48313821877",
+      "student": "Fonseca Ardila",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 17:39:50"
+    },
+    {
+      "ticket": "48346161807",
+      "student": "Cuadros Rincon",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 17:43:18"
+    },
+    {
+      "ticket": "48347709365",
+      "student": "Pablo Andres",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 17:41:30"
+    },
+    {
+      "ticket": "48356259181",
+      "student": "Paola Andrea",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 17:44:54"
+    },
+    {
+      "ticket": "48362206040",
+      "student": "Rufina",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 17:48:08"
+    },
+    {
+      "ticket": "48362210715",
+      "student": "Nubia",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 15:53:26"
+    },
+    {
+      "ticket": "48362210715",
+      "student": "Nubia",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 17:24:54"
+    },
+    {
+      "ticket": "48372664355",
+      "student": "Melany Sofia",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 21:25:24"
+    },
+    {
+      "ticket": "48372664355",
+      "student": "Melany Sofia",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 13:05:12"
+    },
+    {
+      "ticket": "48372664355",
+      "student": "Melany Sofia",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 15:06:18"
+    },
+    {
+      "ticket": "48372664355",
+      "student": "Melany Sofia",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 17:05:11"
+    },
+    {
+      "ticket": "48372664355",
+      "student": "Melany Sofia",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 19:05:21"
+    },
+    {
+      "ticket": "48372664355",
+      "student": "Melany Sofia",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 21:05:16"
+    },
+    {
+      "ticket": "48373377312",
+      "student": "Gaona Trompa",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 21:28:56"
+    },
+    {
+      "ticket": "48373995312",
+      "student": "Alexander",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 21:26:48"
+    },
+    {
+      "ticket": "48373995312",
+      "student": "Alexander",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 13:12:02"
+    },
+    {
+      "ticket": "48373995312",
+      "student": "Alexander",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 15:58:41"
+    },
+    {
+      "ticket": "48378476317",
+      "student": "Andrade Moreno",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 21:21:32"
+    },
+    {
+      "ticket": "48380807068",
+      "student": "Quijano Mejia",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 17:46:42"
+    },
+    {
+      "ticket": "48382366624",
+      "student": "Pe\u00f1a Pedraza",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 21:34:49"
+    },
+    {
+      "ticket": "48385893194",
+      "student": "Herrera Javela",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 21:38:14"
+    },
+    {
+      "ticket": "48404554605",
+      "student": "S\u00e1nchez Espejo / Mar\u00eda Catalina",
+      "type": "Estudios",
+      "timestamp": "2026-09-08 21:31:40"
+    },
+    {
+      "ticket": "48404554605",
+      "student": "S\u00e1nchez Espejo / Mar\u00eda Catalina",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 13:14:27"
+    },
+    {
+      "ticket": "48436156825",
+      "student": "Yuleidis Modesta",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 23:08:26"
+    },
+    {
+      "ticket": "48436156825",
+      "student": "Yuleidis Modesta",
+      "type": "Estudios",
+      "timestamp": "2026-09-11 11:08:13"
+    },
+    {
+      "ticket": "48436156825",
+      "student": "Yuleidis Modesta",
+      "type": "Estudios",
+      "timestamp": "2026-09-11 13:08:29"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "timestamp": "2026-09-12 17:05:13"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "timestamp": "2026-09-12 19:05:09"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "timestamp": "2026-09-12 21:05:12"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "timestamp": "2026-09-12 23:05:12"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "timestamp": "2026-09-13 11:05:08"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 15:23:56"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 18:58:21"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 19:45:12"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 21:05:44"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 02:47:45"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 11:04:55"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 13:04:59"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 15:07:04"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 16:46:58"
+    },
+    {
+      "ticket": "48436301439",
+      "student": "Joaquin Andres Tabares P\u00e9rez",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 16:54:03"
+    },
+    {
+      "ticket": "48436433832",
+      "student": "Prieto Espitia",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 16:01:03"
+    },
+    {
+      "ticket": "48438699892",
+      "student": "Katherine Orjuela Bischoff",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 17:27:47"
+    },
+    {
+      "ticket": "48440431959",
+      "student": "Juan Daniel",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 21:11:17"
+    },
+    {
+      "ticket": "48440431959",
+      "student": "Juan Daniel",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 23:06:23"
+    },
+    {
+      "ticket": "48440431959",
+      "student": "Juan Daniel",
+      "type": "Estudios",
+      "timestamp": "2026-09-11 11:06:12"
+    },
+    {
+      "ticket": "48440431959",
+      "student": "Juan Daniel",
+      "type": "Estudios",
+      "timestamp": "2026-09-11 13:06:24"
+    },
+    {
+      "ticket": "48441892192",
+      "student": "Magnolia Rocio",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 17:26:18"
+    },
+    {
+      "ticket": "48441892192",
+      "student": "Magnolia Rocio",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 00:38:19"
+    },
+    {
+      "ticket": "48441892192",
+      "student": "Magnolia Rocio",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 01:09:44"
+    },
+    {
+      "ticket": "48441892192",
+      "student": "Magnolia Rocio",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 13:07:12"
+    },
+    {
+      "ticket": "48445587985",
+      "student": "Elizabeth Del Carmen",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 23:11:29"
+    },
+    {
+      "ticket": "48445587985",
+      "student": "Elizabeth Del Carmen",
+      "type": "Estudios",
+      "timestamp": "2026-09-11 11:11:14"
+    },
+    {
+      "ticket": "48445587985",
+      "student": "Elizabeth Del Carmen",
+      "type": "Estudios",
+      "timestamp": "2026-09-11 13:11:37"
+    },
+    {
+      "ticket": "48446515893",
+      "student": "Yuleidis Modesta",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 21:09:17"
+    },
+    {
+      "ticket": "48450536977",
+      "student": "Juan",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 17:07:17"
+    },
+    {
+      "ticket": "48452879760",
+      "student": "Victor Manuel",
+      "type": "Estudios",
+      "timestamp": "2026-09-11 15:07:36"
+    },
+    {
+      "ticket": "48453264824",
+      "student": "Mar\u00eda",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 16:07:50"
+    },
+    {
+      "ticket": "48456793353",
+      "student": "Forero Ruano",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 15:55:47"
+    },
+    {
+      "ticket": "48458187785",
+      "student": "Cuadros Rincon",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 16:04:12"
+    },
+    {
+      "ticket": "48458507616",
+      "student": "Roc\u00edo Esmeralda",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 00:41:41"
+    },
+    {
+      "ticket": "48458507616",
+      "student": "Roc\u00edo Esmeralda",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 01:10:46"
+    },
+    {
+      "ticket": "48458507616",
+      "student": "Roc\u00edo Esmeralda",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 13:08:14"
+    },
+    {
+      "ticket": "48459117221",
+      "student": "Luis David",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 16:09:18"
+    },
+    {
+      "ticket": "48463323277",
+      "student": "Jorge Armando",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 15:09:21"
+    },
+    {
+      "ticket": "48463483255",
+      "student": "Julian Esteban",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 19:09:29"
+    },
+    {
+      "ticket": "48463483255",
+      "student": "Julian Esteban",
+      "type": "Estudios",
+      "timestamp": "2026-09-11 15:06:33"
+    },
+    {
+      "ticket": "48463951013",
+      "student": "Juan Camilo",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 17:08:20"
+    },
+    {
+      "ticket": "48463951013",
+      "student": "Juan Camilo",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 19:07:27"
+    },
+    {
+      "ticket": "48463951013",
+      "student": "Juan Camilo",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 21:08:17"
+    },
+    {
+      "ticket": "48465997663",
+      "student": "Juan Karlos Cardenas Rincon",
+      "type": "Estudios",
+      "timestamp": "2026-09-09 22:49:53"
+    },
+    {
+      "ticket": "48465997663",
+      "student": "Juan Karlos Cardenas Rincon",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 00:40:10"
+    },
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "timestamp": "2026-09-12 17:06:15"
+    },
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "timestamp": "2026-09-12 19:06:10"
+    },
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "timestamp": "2026-09-12 21:06:14"
+    },
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "timestamp": "2026-09-12 23:06:15"
+    },
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "timestamp": "2026-09-13 11:06:09"
+    },
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 15:25:00"
+    },
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 19:00:30"
+    },
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 19:47:17"
+    },
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 21:09:19"
+    },
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "timestamp": "2026-09-15 23:12:14"
+    },
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 03:35:41"
+    },
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 11:05:38"
+    },
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 13:05:43"
+    },
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 15:09:21"
+    },
+    {
+      "ticket": "48467588011",
+      "student": "Victor Manuel Castillo Amado",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 16:55:54"
+    },
+    {
+      "ticket": "48468037018",
+      "student": "Fabian Felipe",
+      "type": "Estudios",
+      "timestamp": "2026-09-10 23:09:27"
+    },
+    {
+      "ticket": "48468037018",
+      "student": "Fabian Felipe",
+      "type": "Estudios",
+      "timestamp": "2026-09-11 11:09:13"
+    },
+    {
+      "ticket": "48468037018",
+      "student": "Fabian Felipe",
+      "type": "Estudios",
+      "timestamp": "2026-09-11 13:09:33"
+    },
+    {
+      "ticket": "48535204013",
+      "student": "Paula Katherine",
+      "type": "Estudios",
+      "timestamp": "2026-09-11 19:09:24"
+    },
+    {
+      "ticket": "48549884728",
+      "student": "Dilan Santiago",
+      "type": "Estudios",
+      "timestamp": "2026-09-11 19:08:21"
+    },
+    {
+      "ticket": "48551796367",
+      "student": "Patricia Arelis",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 19:04:45"
+    },
+    {
+      "ticket": "48556186660",
+      "student": "Paula Vanesa",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 15:18:04"
+    },
+    {
+      "ticket": "48559282988",
+      "student": "Leidy",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 17:10:02"
+    },
+    {
+      "ticket": "48559282988",
+      "student": "Leidy",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 19:07:47"
+    },
+    {
+      "ticket": "48559417245",
+      "student": "Magnolia Rocio Lara Gualteros",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 03:34:08"
+    },
+    {
+      "ticket": "48559417245",
+      "student": "Magnolia Rocio Lara Gualteros",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 11:07:57"
+    },
+    {
+      "ticket": "48559417245",
+      "student": "Magnolia Rocio Lara Gualteros",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 13:08:03"
+    },
+    {
+      "ticket": "48559417245",
+      "student": "Magnolia Rocio Lara Gualteros",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 15:14:21"
+    },
+    {
+      "ticket": "48559417245",
+      "student": "Magnolia Rocio Lara Gualteros",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 17:08:21"
+    },
+    {
+      "ticket": "48560982075",
+      "student": "Gustavo Gomez Castellanos",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 15:05:40"
+    },
+    {
+      "ticket": "48560982075",
+      "student": "Gustavo Gomez Castellanos",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 16:29:57"
+    },
+    {
+      "ticket": "48561713419",
+      "student": "Wilmer",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 19:01:57"
+    },
+    {
+      "ticket": "48567834265",
+      "student": "Haider Camilo",
+      "type": "Estudios",
+      "timestamp": "2026-09-12 17:09:18"
+    },
+    {
+      "ticket": "48567834265",
+      "student": "Haider Camilo",
+      "type": "Estudios",
+      "timestamp": "2026-09-12 19:09:10"
+    },
+    {
+      "ticket": "48567834265",
+      "student": "Haider Camilo",
+      "type": "Estudios",
+      "timestamp": "2026-09-12 21:09:17"
+    },
+    {
+      "ticket": "48567834265",
+      "student": "Haider Camilo",
+      "type": "Estudios",
+      "timestamp": "2026-09-12 23:09:20"
+    },
+    {
+      "ticket": "48567834265",
+      "student": "Haider Camilo",
+      "type": "Estudios",
+      "timestamp": "2026-09-13 11:09:11"
+    },
+    {
+      "ticket": "48568507208",
+      "student": "Karol Yaneth",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 21:12:53"
+    },
+    {
+      "ticket": "48571617721",
+      "student": "Santiago Velasco Bacca",
+      "type": "Estudios",
+      "timestamp": "2026-09-15 15:09:07"
+    },
+    {
+      "ticket": "48571617721",
+      "student": "Santiago Velasco Bacca",
+      "type": "Estudios",
+      "timestamp": "2026-09-15 19:08:54"
+    },
+    {
+      "ticket": "48571617721",
+      "student": "Santiago Velasco Bacca",
+      "type": "Estudios",
+      "timestamp": "2026-09-15 21:08:49"
+    },
+    {
+      "ticket": "48571617721",
+      "student": "Santiago Velasco Bacca",
+      "type": "Estudios",
+      "timestamp": "2026-09-15 23:08:53"
+    },
+    {
+      "ticket": "48571617721",
+      "student": "Santiago Velasco Bacca",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 03:32:02"
+    },
+    {
+      "ticket": "48571618675",
+      "student": "C\u00f3rdoba",
+      "type": "Horarios",
+      "timestamp": "2026-09-16 04:27:25"
+    },
+    {
+      "ticket": "48573617474",
+      "student": "Marvin",
+      "type": "Estudios",
+      "timestamp": "2026-09-15 11:12:18"
+    },
+    {
+      "ticket": "48575359767",
+      "student": "Juan David Velasquez Rojas",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 17:11:45"
+    },
+    {
+      "ticket": "48575360391",
+      "student": "Maria Camila Peralta Perez",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 17:14:06"
+    },
+    {
+      "ticket": "48575576382",
+      "student": "Valerin Yadira",
+      "type": "Estudios",
+      "timestamp": "2026-09-12 17:08:16"
+    },
+    {
+      "ticket": "48575576382",
+      "student": "Valerin Yadira",
+      "type": "Estudios",
+      "timestamp": "2026-09-12 19:08:11"
+    },
+    {
+      "ticket": "48575576382",
+      "student": "Valerin Yadira",
+      "type": "Estudios",
+      "timestamp": "2026-09-12 21:08:16"
+    },
+    {
+      "ticket": "48575576382",
+      "student": "Valerin Yadira",
+      "type": "Estudios",
+      "timestamp": "2026-09-12 23:08:16"
+    },
+    {
+      "ticket": "48575576382",
+      "student": "Valerin Yadira",
+      "type": "Estudios",
+      "timestamp": "2026-09-13 11:08:10"
+    },
+    {
+      "ticket": "48577974328",
+      "student": "Andres Grueso Balanta",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 19:51:44"
+    },
+    {
+      "ticket": "48577974328",
+      "student": "Andres Grueso Balanta",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 21:10:38"
+    },
+    {
+      "ticket": "48577974328",
+      "student": "Andres Grueso Balanta",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 03:37:12"
+    },
+    {
+      "ticket": "48577974328",
+      "student": "Andres Grueso Balanta",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 11:06:24"
+    },
+    {
+      "ticket": "48577974328",
+      "student": "Andres Grueso Balanta",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 13:06:30"
+    },
+    {
+      "ticket": "48577974328",
+      "student": "Andres Grueso Balanta",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 15:10:40"
+    },
+    {
+      "ticket": "48577974328",
+      "student": "Andres Grueso Balanta",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 17:05:51"
+    },
+    {
+      "ticket": "48579397665",
+      "student": "Mateo",
+      "type": "Estudios",
+      "timestamp": "2026-09-15 21:15:41"
+    },
+    {
+      "ticket": "48581708621",
+      "student": "Juan Diego",
+      "type": "Estudios",
+      "timestamp": "2026-09-15 15:13:50"
+    },
+    {
+      "ticket": "48584522855",
+      "student": "Daniel Esteban Castro Reyes",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 23:06:32"
+    },
+    {
+      "ticket": "48584522855",
+      "student": "Daniel Esteban Castro Reyes",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 11:06:29"
+    },
+    {
+      "ticket": "48584522855",
+      "student": "Daniel Esteban Castro Reyes",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 13:06:36"
+    },
+    {
+      "ticket": "48584522855",
+      "student": "Daniel Esteban Castro Reyes",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 14:25:21"
+    },
+    {
+      "ticket": "48584522855",
+      "student": "Daniel Esteban Castro Reyes",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 17:07:21"
+    },
+    {
+      "ticket": "48584522855",
+      "student": "Daniel Esteban Castro Reyes",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 18:32:49"
+    },
+    {
+      "ticket": "48585270172",
+      "student": "Juan Camilo Borja V\u00e9lez",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 21:07:01"
+    },
+    {
+      "ticket": "48585270172",
+      "student": "Juan Camilo Borja V\u00e9lez",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 02:51:41"
+    },
+    {
+      "ticket": "48585270172",
+      "student": "Juan Camilo Borja V\u00e9lez",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 11:07:08"
+    },
+    {
+      "ticket": "48585270172",
+      "student": "Juan Camilo Borja V\u00e9lez",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 13:07:13"
+    },
+    {
+      "ticket": "48585270172",
+      "student": "Juan Camilo Borja V\u00e9lez",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 15:12:58"
+    },
+    {
+      "ticket": "48585270172",
+      "student": "Juan Camilo Borja V\u00e9lez",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 17:07:03"
+    },
+    {
+      "ticket": "48587362874",
+      "student": "Michael Lozano Gonz\u00e1lez",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 17:16:23"
+    },
+    {
+      "ticket": "48587517974",
+      "student": "Emelin Dayana Bonett Rojas",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 17:17:51"
+    },
+    {
+      "ticket": "48588409892",
+      "student": "Andrea",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 15:26:04"
+    },
+    {
+      "ticket": "48588419866",
+      "student": "Johan Sebastian",
+      "type": "Estudios",
+      "timestamp": "2026-09-15 11:13:31"
+    },
+    {
+      "ticket": "48589823005",
+      "student": "Paula Nathaly",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 19:49:44"
+    },
+    {
+      "ticket": "48590621214",
+      "student": "David Santiago",
+      "type": "Horarios",
+      "timestamp": "2026-09-19 15:08:26"
+    },
+    {
+      "ticket": "48590621214",
+      "student": "David Santiago",
+      "type": "Horarios",
+      "timestamp": "2026-09-19 19:08:40"
+    },
+    {
+      "ticket": "48590621214",
+      "student": "David Santiago",
+      "type": "Horarios",
+      "timestamp": "2026-09-19 21:08:25"
+    },
+    {
+      "ticket": "48590621214",
+      "student": "David Santiago",
+      "type": "Horarios",
+      "timestamp": "2026-09-21 13:08:22"
+    },
+    {
+      "ticket": "48591855901",
+      "student": "Juan Diego",
+      "type": "Estudios",
+      "timestamp": "2026-09-15 15:16:02"
+    },
+    {
+      "ticket": "48591855901",
+      "student": "Juan Diego",
+      "type": "Estudios",
+      "timestamp": "2026-09-15 19:13:27"
+    },
+    {
+      "ticket": "48592018485",
+      "student": "Laura Sofia",
+      "type": "Estudios",
+      "timestamp": "2026-09-15 21:16:53"
+    },
+    {
+      "ticket": "48592832256",
+      "student": "Samuel David",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 23:15:32"
+    },
+    {
+      "ticket": "48592832256",
+      "student": "Samuel David",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 11:15:22"
+    },
+    {
+      "ticket": "48592832256",
+      "student": "Samuel David",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 13:15:41"
+    },
+    {
+      "ticket": "48593069217",
+      "student": "Paula Yisset Macias Monsalve",
+      "type": "Estudios",
+      "timestamp": "2026-09-21 15:07:07"
+    },
+    {
+      "ticket": "48594843688",
+      "student": "Nicole Valentina Contreras D\u00edaz",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 21:07:41"
+    },
+    {
+      "ticket": "48594843688",
+      "student": "Nicole Valentina Contreras D\u00edaz",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 23:07:51"
+    },
+    {
+      "ticket": "48594843688",
+      "student": "Nicole Valentina Contreras D\u00edaz",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 11:07:48"
+    },
+    {
+      "ticket": "48594843688",
+      "student": "Nicole Valentina Contreras D\u00edaz",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 13:07:53"
+    },
+    {
+      "ticket": "48594843688",
+      "student": "Nicole Valentina Contreras D\u00edaz",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 14:27:05"
+    },
+    {
+      "ticket": "48598555063",
+      "student": "Marvin",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 19:03:27"
+    },
+    {
+      "ticket": "48598555063",
+      "student": "Marvin",
+      "type": "Estudios",
+      "timestamp": "2026-09-14 19:48:17"
+    },
+    {
+      "ticket": "48599822415",
+      "student": "Andy Alexander",
+      "type": "Estudios",
+      "timestamp": "2026-09-15 21:10:01"
+    },
+    {
+      "ticket": "48599992480",
+      "student": "Juan Sebastian",
+      "type": "Horarios",
+      "timestamp": "2026-09-16 15:22:27"
+    },
+    {
+      "ticket": "48606200342",
+      "student": "Danna Cecilia",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 23:11:33"
+    },
+    {
+      "ticket": "48606200342",
+      "student": "Danna Cecilia",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 11:11:27"
+    },
+    {
+      "ticket": "48606200342",
+      "student": "Danna Cecilia",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 13:11:40"
+    },
+    {
+      "ticket": "48608366468",
+      "student": "Juan Diego Sepulveda Melo",
+      "type": "Estudios",
+      "timestamp": "2026-09-18 19:08:49"
+    },
+    {
+      "ticket": "48609714454",
+      "student": "Paula Lorena Galindo Romero",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 23:10:11"
+    },
+    {
+      "ticket": "48609714454",
+      "student": "Paula Lorena Galindo Romero",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 11:10:06"
+    },
+    {
+      "ticket": "48609714454",
+      "student": "Paula Lorena Galindo Romero",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 13:10:17"
+    },
+    {
+      "ticket": "48609714454",
+      "student": "Paula Lorena Galindo Romero",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 14:29:35"
+    },
+    {
+      "ticket": "48611668035",
+      "student": "Luz Dary Susa Rinc\u00f3n",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 17:05:55"
+    },
+    {
+      "ticket": "48611668035",
+      "student": "Luz Dary Susa Rinc\u00f3n",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 18:31:02"
+    },
+    {
+      "ticket": "48611670561",
+      "student": "Laura Camila Cardenas Granados",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 17:09:55"
+    },
+    {
+      "ticket": "48611670561",
+      "student": "Laura Camila Cardenas Granados",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 18:35:33"
+    },
+    {
+      "ticket": "48612446489",
+      "student": "Jefferson Hueso Rojas",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 17:13:49"
+    },
+    {
+      "ticket": "48612446489",
+      "student": "Jefferson Hueso Rojas",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 18:40:51"
+    },
+    {
+      "ticket": "48613974708",
+      "student": "Willman Steve",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 21:10:06"
+    },
+    {
+      "ticket": "48617747882",
+      "student": "Magnolia Rocio Lara Gualteros",
+      "type": "Estudios",
+      "timestamp": "2026-09-18 21:07:51"
+    },
+    {
+      "ticket": "48617857446",
+      "student": "Brayan",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 23:13:57"
+    },
+    {
+      "ticket": "48617857446",
+      "student": "Brayan",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 11:13:50"
+    },
+    {
+      "ticket": "48617857446",
+      "student": "Brayan",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 13:14:05"
+    },
+    {
+      "ticket": "48618362981",
+      "student": "Karen Cristal P\u00e9rez Romero",
+      "type": "Estudios",
+      "timestamp": "2026-09-18 17:07:30"
+    },
+    {
+      "ticket": "48618365542",
+      "student": "Luisa Mar\u00eda Neme Pinz\u00f3n",
+      "type": "Estudios",
+      "timestamp": "2026-09-18 19:09:25"
+    },
+    {
+      "ticket": "48619346483",
+      "student": "Johan Minorta",
+      "type": "Estudios",
+      "timestamp": "2026-09-21 19:08:42"
+    },
+    {
+      "ticket": "48620121357",
+      "student": "Juan David Bayona Torres",
+      "type": "Estudios",
+      "timestamp": "2026-09-21 19:07:07"
+    },
+    {
+      "ticket": "48620268349",
+      "student": "Nathalia Estupi\u00f1an",
+      "type": "Estudios",
+      "timestamp": "2026-09-21 17:07:04"
+    },
+    {
+      "ticket": "48622499907",
+      "student": "Nykol Juliana Bola\u00f1os Arias",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 19:05:59"
+    },
+    {
+      "ticket": "48622499907",
+      "student": "Nykol Juliana Bola\u00f1os Arias",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 21:06:00"
+    },
+    {
+      "ticket": "48622499907",
+      "student": "Nykol Juliana Bola\u00f1os Arias",
+      "type": "Estudios",
+      "timestamp": "2026-09-16 23:06:06"
+    },
+    {
+      "ticket": "48622499907",
+      "student": "Nykol Juliana Bola\u00f1os Arias",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 11:06:04"
+    },
+    {
+      "ticket": "48622499907",
+      "student": "Nykol Juliana Bola\u00f1os Arias",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 13:06:11"
+    },
+    {
+      "ticket": "48622499907",
+      "student": "Nykol Juliana Bola\u00f1os Arias",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 14:24:00"
+    },
+    {
+      "ticket": "48622520400",
+      "student": "Daniel Chivara",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 17:11:15"
+    },
+    {
+      "ticket": "48622520400",
+      "student": "Daniel Chivara",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 18:38:04"
+    },
+    {
+      "ticket": "48622520400",
+      "student": "Daniel Chivara",
+      "type": "Estudios",
+      "timestamp": "2026-09-18 19:01:15"
+    },
+    {
+      "ticket": "48622632301",
+      "student": "Ahileen",
+      "type": "Horarios",
+      "timestamp": "2026-09-21 17:13:31"
+    },
+    {
+      "ticket": "48622717038",
+      "student": "Estiven",
+      "type": "Horarios",
+      "timestamp": "2026-09-17 17:17:01"
+    },
+    {
+      "ticket": "48623402756",
+      "student": "Diego Fernando Jaramillo Reina",
+      "type": "Estudios",
+      "timestamp": "2026-09-21 15:08:42"
+    },
+    {
+      "ticket": "48626591522",
+      "student": "Holmer Camilo Velez Gomez",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 21:08:46"
+    },
+    {
+      "ticket": "48628515612",
+      "student": "Edward Trujillo",
+      "type": "Estudios",
+      "timestamp": "2026-09-18 23:09:00"
+    },
+    {
+      "ticket": "48628665349",
+      "student": "Evelyn Mar\u00edn Ordu\u00f1a",
+      "type": "Estudios",
+      "timestamp": "2026-09-18 17:01:58"
+    },
+    {
+      "ticket": "48629110565",
+      "student": "Sofia Sandoval Guzm\u00e1n",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 18:43:31"
+    },
+    {
+      "ticket": "48631145627",
+      "student": "Andres Felipe Due\u00f1as Martinez",
+      "type": "Estudios",
+      "timestamp": "2026-09-18 19:10:00"
+    },
+    {
+      "ticket": "48632233871",
+      "student": "Luisa Mar\u00eda Neme Pinz\u00f3n",
+      "type": "Estudios",
+      "timestamp": "2026-09-18 21:10:38"
+    },
+    {
+      "ticket": "48632233871",
+      "student": "Luisa Mar\u00eda Neme Pinz\u00f3n",
+      "type": "Estudios",
+      "timestamp": "2026-09-18 23:08:29"
+    },
+    {
+      "ticket": "48632673678",
+      "student": "Marilyn Dayana Ram\u00edrez Cerquera",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 21:08:15"
+    },
+    {
+      "ticket": "48632673678",
+      "student": "Marilyn Dayana Ram\u00edrez Cerquera",
+      "type": "Estudios",
+      "timestamp": "2026-09-18 17:01:21"
+    },
+    {
+      "ticket": "48632673678",
+      "student": "Marilyn Dayana Ram\u00edrez Cerquera",
+      "type": "Estudios",
+      "timestamp": "2026-09-18 19:04:43"
+    },
+    {
+      "ticket": "48632732753",
+      "student": "Ahileen Daniela",
+      "type": "Horarios",
+      "timestamp": "2026-09-21 13:09:40"
+    },
+    {
+      "ticket": "48634694210",
+      "student": "Magnolia Rocio Lara Gualteros",
+      "type": "Estudios",
+      "timestamp": "2026-09-18 16:58:47"
+    },
+    {
+      "ticket": "48638270393",
+      "student": "Leidy Johana Paez Marquez",
+      "type": "Estudios",
+      "timestamp": "2026-09-18 17:04:22"
+    },
+    {
+      "ticket": "48638270393",
+      "student": "Leidy Johana Paez Marquez",
+      "type": "Estudios",
+      "timestamp": "2026-09-18 19:08:14"
+    },
+    {
+      "ticket": "48639485707",
+      "student": "Laura Sofia Rold\u00e1n Hoyos",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 14:32:12"
+    },
+    {
+      "ticket": "48639649369",
+      "student": "Saray Tovar Murcia",
+      "type": "Estudios",
+      "timestamp": "2026-09-17 18:46:03"
+    },
+    {
+      "ticket": "48641277270",
+      "student": "Ana Julieta Villa Durango",
+      "type": "Estudios",
+      "timestamp": "2026-09-21 17:10:07"
+    },
+    {
+      "ticket": "48650609968",
+      "student": "Danna Castillo Rodriguez",
+      "type": "Estudios",
+      "timestamp": "2026-09-21 17:08:44"
+    },
+    {
+      "ticket": "48657127030",
+      "student": "Lucia Del Carmen Tarapuez Taimal",
+      "type": "Estudios",
+      "timestamp": "2026-09-22 17:12:57"
+    },
+    {
+      "ticket": "48657279513",
+      "student": "Nicolas Esteban Bello Martinez",
+      "type": "Estudios",
+      "timestamp": "2026-09-22 15:53:57"
+    },
+    {
+      "ticket": "48662151997",
+      "student": "Nicoll Ruiz Quimbay",
+      "type": "Estudios",
+      "timestamp": "2026-09-22 15:48:11"
+    },
+    {
+      "ticket": "48663407142",
+      "student": "Andres Castellanos Rodriguez",
+      "type": "Estudios",
+      "timestamp": "2026-09-22 15:55:47"
+    },
+    {
+      "ticket": "48664343177",
+      "student": "Heidy Alejandra Sabogal Tamayo",
+      "type": "Estudios",
+      "timestamp": "2026-09-22 19:11:13"
+    },
+    {
+      "ticket": "48670387480",
+      "student": "Carlos Andr\u00e9s Robles Salas",
+      "type": "Estudios",
+      "timestamp": "2026-09-22 17:07:14"
+    },
+    {
+      "ticket": "48670391127",
+      "student": "Paula Yisset Macias Monsalve",
+      "type": "Estudios",
+      "timestamp": "2026-09-22 19:10:42"
+    },
+    {
+      "ticket": "48673498750",
+      "student": "Juan David Parra Tafur",
+      "type": "Estudios",
+      "timestamp": "2026-09-22 21:09:49"
+    },
+    {
+      "ticket": "48673809477",
+      "student": "Jeison Yamid Pedraza Pedraza",
+      "type": "Estudios",
+      "timestamp": "2026-09-22 21:11:27"
+    },
+    {
+      "ticket": "48675387828",
+      "student": "Sarita Saray Sierra",
+      "type": "Estudios",
+      "timestamp": "2026-09-22 19:08:56"
+    },
+    {
+      "ticket": "48681015643",
+      "student": "Luc\u00eda Del Carmen Tarapuez Taimal",
+      "type": "Estudios",
+      "timestamp": "2026-09-22 21:08:28"
+    },
+    {
+      "ticket": "48681169737",
+      "student": "Jhon Kener Sierra Daza",
+      "type": "Estudios",
+      "timestamp": "2026-09-22 19:08:29"
+    },
+    {
+      "ticket": "48681966347",
+      "student": "Luisa Mar\u00eda Neme Pinz\u00f3n",
+      "type": "Estudios",
+      "timestamp": "2026-09-23 15:08:30"
+    },
+    {
+      "ticket": "48682400165",
+      "student": "Angelyne Mariana Gal\u00e1n Ortiz",
+      "type": "Estudios",
+      "timestamp": "2026-09-22 15:51:07"
+    },
+    {
+      "ticket": "48684272932",
+      "student": "Jhon Kener Sierra Daza",
+      "type": "Estudios",
+      "timestamp": "2026-09-22 17:10:00"
+    },
+    {
+      "ticket": "48691871321",
+      "student": "Dayane Cuestas",
+      "type": "Estudios",
+      "timestamp": "2026-09-24 21:11:08"
+    },
+    {
+      "ticket": "48696830289",
+      "student": "Sara P\u00e1ramo Rojas",
+      "type": "Estudios",
+      "timestamp": "2026-09-25 17:07:36"
+    },
+    {
+      "ticket": "48696830289",
+      "student": "Sara P\u00e1ramo Rojas",
+      "type": "Estudios",
+      "timestamp": "2026-09-25 19:07:24"
+    },
+    {
+      "ticket": "48698878494",
+      "student": "Darcy Tatiana Olmedo Espitia",
+      "type": "Estudios",
+      "timestamp": "2026-09-25 21:08:22"
+    },
+    {
+      "ticket": "48699325522",
+      "student": "Angel Zu\u00f1iga",
+      "type": "Estudios",
+      "timestamp": "2026-09-24 21:08:09"
+    },
+    {
+      "ticket": "48699469979",
+      "student": "Anyi Catalina Daza Carvajal",
+      "type": "Estudios",
+      "timestamp": "2026-09-24 15:08:26"
+    },
+    {
+      "ticket": "48699472669",
+      "student": "Yeimy Tatiana Olaya Valbuena",
+      "type": "Estudios",
+      "timestamp": "2026-09-24 17:07:27"
+    },
+    {
+      "ticket": "48701153201",
+      "student": "Maria Fernanda Cuadros Salamanca",
+      "type": "Estudios",
+      "timestamp": "2026-09-23 15:30:45"
+    },
+    {
+      "ticket": "48701203048",
+      "student": "Pedro Pablo Martinez Aldana",
+      "type": "Estudios",
+      "timestamp": "2026-09-23 23:11:40"
+    },
+    {
+      "ticket": "48701350685",
+      "student": "Marta Lucia Aparicio Guzman",
+      "type": "Estudios",
+      "timestamp": "2026-09-23 17:06:12"
+    },
+    {
+      "ticket": "48701376805",
+      "student": "Joffre Enrique De La Hoz Camargo",
+      "type": "Estudios",
+      "timestamp": "2026-09-24 19:05:14"
+    },
+    {
+      "ticket": "48703890592",
+      "student": "Aris Nelson Palacios Mosquera",
+      "type": "Estudios",
+      "timestamp": "2026-09-24 15:14:21"
+    },
+    {
+      "ticket": "48704026726",
+      "student": "Sofia Monta\u00f1o Guarnizo",
+      "type": "Estudios",
+      "timestamp": "2026-09-23 17:09:17"
+    },
+    {
+      "ticket": "48704051777",
+      "student": "Deivid Santiago Torres Cano",
+      "type": "Estudios",
+      "timestamp": "2026-09-24 21:10:59"
+    },
+    {
+      "ticket": "48704341625",
+      "student": "Laura Sof\u00eda Reyes Arevalo",
+      "type": "Estudios",
+      "timestamp": "2026-09-23 23:08:54"
+    },
+    {
+      "ticket": "48705968932",
+      "student": "Alfredo Enrique Revollo Casta\u00f1eda",
+      "type": "Estudios",
+      "timestamp": "2026-09-25 17:13:17"
+    },
+    {
+      "ticket": "48706487836",
+      "student": "Sarita Saray Sierra",
+      "type": "Estudios",
+      "timestamp": "2026-09-25 21:11:36"
+    },
+    {
+      "ticket": "48714942825",
+      "student": "Sharon Catalina Pinto Segura",
+      "type": "Estudios",
+      "timestamp": "2026-09-24 15:11:31"
+    },
+    {
+      "ticket": "48718879008",
+      "student": "Danna Valentina Duarte Robayo",
+      "type": "Estudios",
+      "timestamp": "2026-09-23 23:07:18"
+    },
+    {
+      "ticket": "48720887322",
+      "student": "Carlos Eduardo Rojas Medina",
+      "type": "Estudios",
+      "timestamp": "2026-09-23 15:11:25"
+    },
+    {
+      "ticket": "48740357702",
+      "student": "Angel Zu\u00f1iga",
+      "type": "Estudios",
+      "timestamp": "2026-09-24 19:05:08"
+    },
+    {
+      "ticket": "48740686135",
+      "student": "Karen Sof\u00eda Coral Ortiz",
+      "type": "Estudios",
+      "timestamp": "2026-09-25 17:10:26"
+    },
+    {
+      "ticket": "48744499107",
+      "student": "Thalia Jazlin Monsalve Nieto",
+      "type": "Estudios",
+      "timestamp": "2026-09-25 21:11:08"
+    }
+  ]
+}
