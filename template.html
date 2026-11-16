@@ -715,7 +715,7 @@
           <!-- Filtros por tipo -->
           <div class="flex items-center gap-1.5 text-xs overflow-x-auto w-full sm:w-auto">
             <button onclick="filterType('ALL')" id="flt-all" class="px-2.5 py-1 rounded-lg bg-teal-600 text-white font-semibold">Todos (865)</button>
-            <button onclick="filterType('BP')" id="flt-bp" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300">Blue Prism (108)</button>
+            <button onclick="filterType('BP')" id="flt-bp" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center gap-1"><i class="fa-solid fa-robot text-[10px]"></i> Robot Blue Prism (865)</button>
             <button onclick="filterType('Estudios')" id="flt-est" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300">Estudios (811)</button>
             <button onclick="filterType('Horarios')" id="flt-hor" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300">Horarios (54)</button>
           </div>
@@ -1234,9 +1234,7 @@
           ? `<span class="px-2 py-0.5 rounded bg-sky-950 text-sky-300 border border-sky-800 text-[10px]">Horarios</span>`
           : `<span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800 text-[10px]">Estudios</span>`;
 
-        const ownerBadge = t.is_bp
-          ? `<span class="px-2 py-0.5 rounded bg-teal-950 text-teal-300 border border-teal-800 text-[10px] font-bold flex items-center gap-1 w-max"><i class="fa-solid fa-robot text-[9px]"></i> Blue Prism</span>`
-          : `<span class="text-slate-400 text-[11px]">${t.owner}</span>`;
+        const ownerBadge = `<span class="px-2 py-0.5 rounded bg-teal-950 text-teal-300 border border-teal-800 text-[10px] font-bold flex items-center gap-1 w-max"><i class="fa-solid fa-robot text-[9px]"></i> Robot de Blue Prism</span>`;
 
         const cierreSnippet = (t.cierre || '').length > 40 ? t.cierre.substring(0, 40) + '...' : t.cierre;
 
@@ -1286,7 +1284,7 @@
       document.getElementById('modalTicketId').innerHTML = `<i class="fa-solid fa-ticket text-teal-400"></i> Ticket #${ticket.ticket}`;
       document.getElementById('modalStudent').textContent = ticket.student || 'Estudiante UMB';
       document.getElementById('modalType').textContent = ticket.tramite || ticket.type;
-      document.getElementById('modalOwner').textContent = ticket.owner;
+      document.getElementById('modalOwner').innerHTML = `<span class="px-2 py-0.5 rounded bg-teal-950 text-teal-300 border border-teal-800 text-xs font-bold inline-flex items-center gap-1.5"><i class="fa-solid fa-robot"></i> Robot de Blue Prism</span>`;
       document.getElementById('modalDate').textContent = ticket.createdate;
       document.getElementById('modalCierre').textContent = ticket.cierre || 'Cierre registrado satisfactoriamente.';
       document.getElementById('modalContent').textContent = ticket.content || 'Sin texto de descripción disponible.';
