@@ -1,37 +1,44 @@
 <!DOCTYPE html>
-<html lang="es" class="h-full bg-slate-900 text-slate-100">
+<html lang="es" class="h-full bg-slate-50 text-slate-800">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Ejecutivo UMB - Automatización de Trámites CASE (Blue Prism)</title>
+  <title>Universidad Manuela Beltrán | Dashboard de Automatización CASE (Blue Prism)</title>
+  
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
+  
+  <!-- Google Fonts: Montserrat & Open Sans (Tipografías oficiales de UMB) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['"Open Sans"', 'sans-serif'],
+            display: ['"Montserrat"', 'sans-serif'],
           },
           colors: {
-            brand: {
-              primary: '#0284C7', // Sky 600
-              secondary: '#0D9488', // Teal 600
-              accent: '#10B981', // Emerald 500
-              dark: '#0F172A',
-              card: '#1E293B',
-              border: '#334155'
+            umb: {
+              red: '#A60311',       // Rojo Institucional UMB
+              redDark: '#88000A',   // Rojo Granate Oscuro
+              redLight: '#C1272D',  // Rojo Acento
+              navy: '#212934',      // Azul Carbón / Slate UMB
+              navyLight: '#333C4E', // Carbón Medio
+              grayBg: '#F8FAFC',    // Fondo General Institucional
+              grayCard: '#FFFFFF',  // Tarjetas Blancas
+              grayBorder: '#E2E8F0',// Borde Neutro
+              text: '#1E293B',      // Texto Principal
+              textMuted: '#64748B', // Texto Secundario
+              green: '#15803D',     // Verde Éxito
+              greenBg: '#F0FDF4',   // Fondo Verde Suave
             }
           }
         }
@@ -40,214 +47,246 @@
   </script>
   <style>
     ::-webkit-scrollbar { width: 8px; height: 8px; }
-    ::-webkit-scrollbar-track { background: #0f172a; }
-    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #475569; }
-    .card-hover:hover { transform: translateY(-2px); transition: all 0.2s ease; }
-    .active-tab { border-bottom: 2px solid #14b8a6; color: #5eead4; background-color: rgba(13, 148, 136, 0.1); }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    .active-tab { 
+      border-bottom: 3px solid #A60311; 
+      color: #A60311; 
+      font-weight: 700;
+      background-color: #FEF2F2;
+    }
+    .card-shadow {
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+    }
+    .card-hover:hover {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+      transform: translateY(-1px);
+      transition: all 0.2s ease;
+    }
   </style>
 </head>
-<body class="min-h-screen bg-slate-950 font-sans antialiased text-slate-200">
+<body class="min-h-screen bg-slate-50 font-sans antialiased text-slate-800 flex flex-col justify-between">
 
-  <!-- HEADER PRINCIPAL EJECUTIVO -->
-  <header class="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+  <!-- TOP ACCENT BAR INSTITUCIONAL UMB -->
+  <div class="h-1.5 bg-gradient-to-r from-umb-red via-umb-redLight to-umb-redDark w-full"></div>
+
+  <!-- HEADER PRINCIPAL INSTITUCIONAL -->
+  <header class="border-b border-slate-200 bg-white sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div class="flex items-center gap-3">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 via-teal-600 to-emerald-700 flex items-center justify-center shadow-lg shadow-teal-900/40 text-white font-bold text-xl">
-            <i class="fa-solid fa-robot"></i>
-          </div>
+        
+        <!-- Identidad Institucional UMB -->
+        <div class="flex items-center gap-4">
+          <a href="https://umb.edu.co" target="_blank" rel="noopener noreferrer" class="shrink-0 flex items-center">
+            <img src="assets/logo-umb.webp" onerror="this.onerror=null; this.src='https://umb.edu.co/wp-content/uploads/2026/01/Logo-Universidad-Manuela-Beltran.webp';" alt="Universidad Manuela Beltrán" class="h-10 sm:h-12 w-auto object-contain">
+          </a>
+          <div class="h-9 w-px bg-slate-200 hidden sm:block"></div>
           <div>
             <div class="flex items-center gap-2">
-              <h1 class="text-xl font-bold text-white tracking-tight">Centro de Atención y Servicio al Estudiante (CASE)</h1>
-              <span class="text-xs font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-teal-950 text-teal-300 border border-teal-800/80">Producción Activa</span>
+              <h1 class="text-base sm:text-lg font-bold text-slate-900 tracking-tight font-display">
+                Centro de Atención y Servicio al Estudiante (CASE)
+              </h1>
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
+                <i class="fa-solid fa-circle-check text-[9px] text-emerald-600 mr-1"></i> Producción Activa
+              </span>
             </div>
-            <p class="text-xs text-slate-400 mt-0.5">
-              Automatización Robótica de Procesos (RPA) • 
-              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-sky-950 text-sky-300 border border-sky-800/60 font-mono">Blue Prism Cloud + HubSpot CRM</span> • 
-              Universidad Manuela Beltrán (UMB)
+            <p class="text-xs text-slate-500 mt-0.5 font-sans">
+              Sistema de Automatización Robótica de Trámites • 
+              <span class="font-semibold text-slate-700">Blue Prism Cloud</span> + <span class="font-semibold text-slate-700">HubSpot CRM</span>
             </p>
           </div>
         </div>
 
-        <div class="flex items-center gap-3">
-          <div class="text-right hidden sm:block">
-            <span class="text-[11px] uppercase tracking-wider text-slate-400 block font-semibold">Ventana Operativa</span>
-            <span class="text-xs font-bold text-emerald-400 flex items-center justify-end gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <!-- Indicadores de Cabecera y Acciones -->
+        <div class="flex items-center gap-3 self-end md:self-center">
+          
+          <div class="text-right hidden lg:block border-r border-slate-200 pr-3 mr-1">
+            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Horario de Ejecución</span>
+            <span class="text-xs font-semibold text-slate-700 flex items-center justify-end gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
               Lun a Sáb (6:00 a.m. - 6:00 p.m. cada 2h)
             </span>
           </div>
 
-          <div class="flex items-center gap-2 bg-emerald-950/60 border border-emerald-800/60 px-3 py-1.5 rounded-lg text-emerald-300 text-xs font-semibold">
-            <i class="fa-solid fa-clock text-emerald-400"></i>
-            <span><strong>144.2 Horas</strong> Devueltas</span>
+          <div class="flex items-center gap-2 bg-red-50 border border-red-200/80 px-3 py-1.5 rounded-lg text-umb-red text-xs font-bold">
+            <i class="fa-solid fa-clock-rotate-left text-umb-red"></i>
+            <span><strong>144.2 Horas</strong> Ahorradas</span>
           </div>
 
-          <button onclick="window.print()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-medium border border-slate-700 transition flex items-center gap-1.5">
+          <button onclick="window.print()" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold border border-slate-300 transition flex items-center gap-1.5">
             <i class="fa-solid fa-print"></i>
             <span>Imprimir</span>
           </button>
         </div>
       </div>
 
-      <!-- TABS DE NAVEGACIÓN -->
-      <nav class="flex space-x-1 sm:space-x-2 border-t border-slate-800/80 mt-4 pt-3 overflow-x-auto text-xs font-medium text-slate-400">
-        <button onclick="switchTab('tab-resumen')" id="btn-tab-resumen" class="nav-tab active-tab px-3 py-1.5 rounded-lg hover:text-white transition flex items-center gap-1.5 whitespace-nowrap">
-          <i class="fa-solid fa-trophy text-amber-400"></i> Resumen & Impacto Estratégico
+      <!-- TABS DE NAVEGACIÓN INSTITUCIONAL -->
+      <nav class="flex space-x-1 border-t border-slate-100 mt-3 pt-2 overflow-x-auto text-xs font-semibold text-slate-600">
+        <button onclick="switchTab('tab-resumen')" id="btn-tab-resumen" class="nav-tab active-tab px-3 py-2 rounded-t-lg hover:text-umb-red transition flex items-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-chart-pie text-xs"></i> Resumen & Impacto Institucional
         </button>
-        <button onclick="switchTab('tab-flujo')" id="btn-tab-flujo" class="nav-tab px-3 py-1.5 rounded-lg hover:text-white transition flex items-center gap-1.5 whitespace-nowrap">
-          <i class="fa-solid fa-diagram-project text-teal-400"></i> Flujo del Proceso & Simulador
+        <button onclick="switchTab('tab-flujo')" id="btn-tab-flujo" class="nav-tab px-3 py-2 rounded-t-lg hover:text-umb-red transition flex items-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-diagram-project text-xs"></i> Flujo del Proceso & Simulador
         </button>
-        <button onclick="switchTab('tab-telemetria')" id="btn-tab-telemetria" class="nav-tab px-3 py-1.5 rounded-lg hover:text-white transition flex items-center gap-1.5 whitespace-nowrap">
-          <i class="fa-solid fa-chart-line text-sky-400"></i> Demanda & Métricas en Producción
+        <button onclick="switchTab('tab-telemetria')" id="btn-tab-telemetria" class="nav-tab px-3 py-2 rounded-t-lg hover:text-umb-red transition flex items-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-chart-line text-xs"></i> Demanda & Métricas en Producción
         </button>
-        <button onclick="switchTab('tab-tickets')" id="btn-tab-tickets" class="nav-tab px-3 py-1.5 rounded-lg hover:text-white transition flex items-center gap-1.5 whitespace-nowrap">
-          <i class="fa-solid fa-list-check text-indigo-400"></i> Casos en Producción (865)
+        <button onclick="switchTab('tab-tickets')" id="btn-tab-tickets" class="nav-tab px-3 py-2 rounded-t-lg hover:text-umb-red transition flex items-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-list-check text-xs"></i> Casos en Producción (865)
         </button>
-        <button onclick="switchTab('tab-evolucion')" id="btn-tab-evolucion" class="nav-tab px-3 py-1.5 rounded-lg hover:text-white transition flex items-center gap-1.5 whitespace-nowrap">
-          <i class="fa-solid fa-history text-slate-400"></i> Antecedentes & Hitos
+        <button onclick="switchTab('tab-evolucion')" id="btn-tab-evolucion" class="nav-tab px-3 py-2 rounded-t-lg hover:text-umb-red transition flex items-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-landmark text-xs"></i> Antecedentes & Hitos
         </button>
-        <button onclick="switchTab('tab-optimizacion')" id="btn-tab-optimizacion" class="nav-tab px-3 py-1.5 rounded-lg hover:text-white transition flex items-center gap-1.5 whitespace-nowrap">
-          <i class="fa-solid fa-wand-magic-sparkles text-emerald-400"></i> Oportunidades v2.0
+        <button onclick="switchTab('tab-optimizacion')" id="btn-tab-optimizacion" class="nav-tab px-3 py-2 rounded-t-lg hover:text-umb-red transition flex items-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-sliders text-xs"></i> Oportunidades v2.0
         </button>
-        <button onclick="switchTab('tab-roadmap')" id="btn-tab-roadmap" class="nav-tab px-3 py-1.5 rounded-lg hover:text-white transition flex items-center gap-1.5 whitespace-nowrap">
-          <i class="fa-solid fa-map-location-dot text-rose-400"></i> Hoja de Ruta & Expansión
+        <button onclick="switchTab('tab-roadmap')" id="btn-tab-roadmap" class="nav-tab px-3 py-2 rounded-t-lg hover:text-umb-red transition flex items-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-map-location-dot text-xs"></i> Hoja de Ruta & Expansión
         </button>
       </nav>
     </div>
   </header>
 
   <!-- CONTENIDO PRINCIPAL -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 flex-grow w-full space-y-7">
 
     <!-- ========================================== -->
     <!-- TAB 1: RESUMEN EJECUTIVO & IMPACTO ESTRATÉGICO -->
     <!-- ========================================== -->
-    <div id="tab-resumen" class="tab-content space-y-8">
+    <div id="tab-resumen" class="tab-content space-y-7">
 
-      <!-- BANNER HERO DE IMPACTO Y TRANSFORMACIÓN -->
-      <div class="rounded-2xl bg-gradient-to-r from-teal-950/60 via-slate-900 to-sky-950/50 border border-teal-800/40 p-6 sm:p-8 shadow-xl relative overflow-hidden">
-        <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <!-- BANNER HERO INSTITUCIONAL UMB -->
+      <div class="rounded-2xl bg-gradient-to-r from-umb-navy via-slate-900 to-umb-redDark text-white p-6 sm:p-8 shadow-md relative overflow-hidden">
         <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div class="space-y-3 max-w-3xl">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950 border border-emerald-800/80 text-emerald-300 text-xs font-bold">
-              <i class="fa-solid fa-bolt text-emerald-400"></i> Solución en Producción Continua desde Septiembre 2026
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-semibold backdrop-blur-sm">
+              <i class="fa-solid fa-award text-amber-300"></i> Proyecto de Eficiencia y Modernización CASE - UMB
             </div>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
-              Transformación Digital y Eficiencia para el Servicio al Estudiante en la UMB
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight font-display leading-tight">
+              Automatización de Trámites Académicos en Producción
             </h2>
-            <p class="text-sm text-slate-300 leading-relaxed">
-              La iniciativa de automatización robótica con Blue Prism ha resuelto con éxito <strong class="text-white">865 solicitudes en producción</strong> en el Centro de Atención y Servicio al Estudiante (CASE), eliminando cuellos de botella y devolviendo <strong class="text-emerald-300">144.2 horas de trabajo operativo</strong> al equipo institucional.
+            <p class="text-sm text-slate-200 leading-relaxed font-sans">
+              La implementación de Blue Prism en el Centro de Atención y Servicio al Estudiante (CASE) ha gestionado de forma automatizada <strong class="text-white">865 solicitudes en producción</strong>, eliminando tiempos muertos y devolviendo <strong class="text-amber-300 font-bold">144.2 horas de trabajo operativo</strong> al equipo de atención universitaria.
             </p>
           </div>
 
-          <div class="bg-slate-900/90 border border-teal-800/50 rounded-2xl p-5 shrink-0 flex flex-col justify-center min-w-[240px] text-center lg:text-left shadow-lg">
-            <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold block mb-1">Impacto Global</span>
-            <div class="text-3xl font-extrabold text-white font-mono flex items-baseline justify-center lg:justify-start gap-1">
+          <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-5 shrink-0 flex flex-col justify-center min-w-[240px] text-center lg:text-left shadow-lg">
+            <span class="text-xs uppercase tracking-wider text-slate-300 font-semibold block mb-1">Volumen Resuelto</span>
+            <div class="text-3xl font-extrabold text-white font-display flex items-baseline justify-center lg:justify-start gap-1.5">
               <span>865</span>
-              <span class="text-xs font-bold text-teal-400 font-sans">casos cerrados</span>
+              <span class="text-xs font-bold text-amber-300 font-sans">trámites cerrados</span>
             </div>
-            <div class="mt-2 text-xs text-slate-400 border-t border-slate-800 pt-2 flex items-center justify-between">
-              <span>Estado en Cola:</span>
-              <span class="text-emerald-400 font-bold">Solo 4 pendientes (Al día)</span>
+            <div class="mt-2.5 text-xs text-slate-300 border-t border-white/10 pt-2 flex items-center justify-between">
+              <span>Bandeja Activa:</span>
+              <span class="text-emerald-300 font-bold">Solo 4 en cola (Al día)</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- SECCIÓN HERO: 4 KPIS ESTRATÉGICOS DE IMPACTO INSTITUCIONAL -->
+      <!-- SECCIÓN HERO: 4 KPIS ESTRATÉGICOS DE IMPACTO EN EDUCACIÓN SUPERIOR -->
       <div>
         <div class="flex items-center justify-between mb-4">
-          <h3 class="text-lg font-bold text-white flex items-center gap-2">
-            <i class="fa-solid fa-gauge-high text-teal-400"></i> Indicadores de Impacto & Valor Devuelto a la UMB
-          </h3>
-          <span class="text-xs text-slate-400">Estimación estándar: 10 min de gestión humana por caso</span>
+          <div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 font-display flex items-center gap-2">
+              <i class="fa-solid fa-gauge-high text-umb-red"></i> Indicadores de Impacto & Valor Devuelto a la UMB
+            </h3>
+            <p class="text-xs text-slate-500 mt-0.5">Métricas de eficiencia calculadas con un estándar de 10 minutos de atención humana por caso</p>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           
           <!-- KPI 1: TIEMPO DEVUELTO A LA OPERACIÓN -->
-          <div class="bg-gradient-to-b from-slate-900 to-slate-900/90 rounded-2xl p-6 border border-emerald-800/50 shadow-lg hover:border-emerald-600 transition card-hover relative overflow-hidden">
-            <div class="flex items-center justify-between text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">
-              <span>Tiempo Devuelto</span>
-              <div class="w-8 h-8 rounded-lg bg-emerald-950 flex items-center justify-center text-emerald-400 border border-emerald-800">
-                <i class="fa-solid fa-business-time"></i>
+          <div class="bg-white rounded-xl p-5 border border-slate-200 card-shadow card-hover border-t-4 border-t-umb-red flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">
+                <span>Tiempo Devuelto</span>
+                <div class="w-8 h-8 rounded-lg bg-red-50 text-umb-red flex items-center justify-center border border-red-100">
+                  <i class="fa-solid fa-business-time"></i>
+                </div>
+              </div>
+              <div class="flex items-baseline gap-2">
+                <span class="text-3xl font-extrabold text-slate-900 font-display">144.2</span>
+                <span class="text-xs font-bold text-umb-red font-sans">Horas Liberadas</span>
+              </div>
+              <div class="mt-2.5 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
+                <span class="text-slate-500">Capacidad equivalente:</span>
+                <span class="font-bold text-slate-800">~18 Jornadas de 8h</span>
               </div>
             </div>
-            <div class="flex items-baseline gap-2">
-              <span class="text-3xl sm:text-4xl font-extrabold text-emerald-300 font-mono">144.2</span>
-              <span class="text-xs text-emerald-400 font-semibold font-sans">Horas Liberadas</span>
-            </div>
-            <div class="mt-3 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
-              <span class="text-slate-400">Equivalencia:</span>
-              <span class="font-bold text-white">~18 Jornadas Completas</span>
-            </div>
-            <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">
-              <strong>8.650 minutos de trabajo operativo</strong> ahorrados al personal del CASE, permitiendo reenfocar al equipo en asesoría presencial y retención estudiantil.
+            <p class="text-[11px] text-slate-500 mt-2 leading-relaxed">
+              <strong>8.650 minutos de trabajo humano</strong> liberados para orientar al estudiante en retención, bienestar y tutorías académicas.
             </p>
           </div>
 
-          <!-- KPI 2: AGILIDAD EN EL SLA (LEAD TIME REDUCTION) -->
-          <div class="bg-gradient-to-b from-slate-900 to-slate-900/90 rounded-2xl p-6 border border-sky-800/50 shadow-lg hover:border-sky-600 transition card-hover relative overflow-hidden">
-            <div class="flex items-center justify-between text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">
-              <span>Aceleración de SLA</span>
-              <div class="w-8 h-8 rounded-lg bg-sky-950 flex items-center justify-center text-sky-400 border border-sky-800">
-                <i class="fa-solid fa-truck-fast"></i>
+          <!-- KPI 2: ACELERACIÓN DE SLA (LEAD TIME REDUCTION) -->
+          <div class="bg-white rounded-xl p-5 border border-slate-200 card-shadow card-hover border-t-4 border-t-blue-700 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">
+                <span>Aceleración de SLA</span>
+                <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center border border-blue-100">
+                  <i class="fa-solid fa-truck-fast"></i>
+                </div>
+              </div>
+              <div class="flex items-baseline gap-2">
+                <span class="text-3xl font-extrabold text-slate-900 font-display">95.8%</span>
+                <span class="text-xs font-bold text-blue-700 font-sans">Menos Espera</span>
+              </div>
+              <div class="mt-2.5 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
+                <span class="text-slate-500">De 48-72h manual a:</span>
+                <span class="font-bold text-blue-800">&lt; 2 Horas Promedio</span>
               </div>
             </div>
-            <div class="flex items-baseline gap-2">
-              <span class="text-3xl sm:text-4xl font-extrabold text-sky-300 font-mono">95.8%</span>
-              <span class="text-xs text-sky-400 font-semibold font-sans">Menos Espera</span>
-            </div>
-            <div class="mt-3 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
-              <span class="text-slate-400">De 48-72h a:</span>
-              <span class="font-bold text-sky-300">&lt; 2 Horas Promedio</span>
-            </div>
-            <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">
-              El estudiante recibe su documento certificado en la ventana inmediata, facilitando trámites urgentes para cajas de compensación, becas y entidades financieras.
+            <p class="text-[11px] text-slate-500 mt-2 leading-relaxed">
+              Entrega ágil en el mismo día para solicitudes requeridas en subsidios de cajas de compensación, becas y créditos educativos ICETEX.
             </p>
           </div>
 
           <!-- KPI 3: ABSORCIÓN AUTÓNOMA & DESPEJE DE COLA -->
-          <div class="bg-gradient-to-b from-slate-900 to-slate-900/90 rounded-2xl p-6 border border-teal-800/50 shadow-lg hover:border-teal-600 transition card-hover relative overflow-hidden">
-            <div class="flex items-center justify-between text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">
-              <span>Absorción de Demanda</span>
-              <div class="w-8 h-8 rounded-lg bg-teal-950 flex items-center justify-center text-teal-400 border border-teal-800">
-                <i class="fa-solid fa-filter-circle-dollar"></i>
+          <div class="bg-white rounded-xl p-5 border border-slate-200 card-shadow card-hover border-t-4 border-t-emerald-600 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">
+                <span>Absorción de Demanda</span>
+                <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center border border-emerald-100">
+                  <i class="fa-solid fa-filter-circle-dollar"></i>
+                </div>
+              </div>
+              <div class="flex items-baseline gap-2">
+                <span class="text-3xl font-extrabold text-slate-900 font-display">99.5%</span>
+                <span class="text-xs font-bold text-emerald-700 font-sans">Cola Despejada</span>
+              </div>
+              <div class="mt-2.5 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
+                <span class="text-slate-500">Casos activos hoy:</span>
+                <span class="font-bold text-emerald-700">Solo 4 en Etapa 2</span>
               </div>
             </div>
-            <div class="flex items-baseline gap-2">
-              <span class="text-3xl sm:text-4xl font-extrabold text-teal-300 font-mono">99.5%</span>
-              <span class="text-xs text-teal-400 font-semibold font-sans">Cola Despejada</span>
-            </div>
-            <div class="mt-3 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
-              <span class="text-slate-400">Cola Activa Hoy:</span>
-              <span class="font-bold text-emerald-400">Solo 4 en Etapa 2</span>
-            </div>
-            <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">
-              Absorción continua de picos masivos de matrícula (517 casos solo en septiembre) sin represamiento ni colapso de la bandeja de entrada del CASE.
+            <p class="text-[11px] text-slate-500 mt-2 leading-relaxed">
+              Capacidad probada para absorber picos masivos de matrícula (517 trámites en septiembre) manteniendo la bandeja en cero acumulación.
             </p>
           </div>
 
           <!-- KPI 4: EXTENSIÓN DE COBERTURA DE SERVICIO -->
-          <div class="bg-gradient-to-b from-slate-900 to-slate-900/90 rounded-2xl p-6 border border-indigo-800/50 shadow-lg hover:border-indigo-600 transition card-hover relative overflow-hidden">
-            <div class="flex items-center justify-between text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">
-              <span>Ventana de Cobertura</span>
-              <div class="w-8 h-8 rounded-lg bg-indigo-950 flex items-center justify-center text-indigo-400 border border-indigo-800">
-                <i class="fa-solid fa-clock-rotate-left"></i>
+          <div class="bg-white rounded-xl p-5 border border-slate-200 card-shadow card-hover border-t-4 border-t-indigo-600 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">
+                <span>Ventana de Cobertura</span>
+                <div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-700 flex items-center justify-center border border-indigo-100">
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+              </div>
+              <div class="flex items-baseline gap-2">
+                <span class="text-3xl font-extrabold text-slate-900 font-display">+60%</span>
+                <span class="text-xs font-bold text-indigo-700 font-sans">Disponibilidad</span>
+              </div>
+              <div class="mt-2.5 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
+                <span class="text-slate-500">Horas Semanales:</span>
+                <span class="font-bold text-indigo-900">72 Horas Activas</span>
               </div>
             </div>
-            <div class="flex items-baseline gap-2">
-              <span class="text-3xl sm:text-4xl font-extrabold text-indigo-300 font-mono">+60%</span>
-              <span class="text-xs text-indigo-400 font-semibold font-sans">Disponibilidad</span>
-            </div>
-            <div class="mt-3 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
-              <span class="text-slate-400">Horas Semanales:</span>
-              <span class="font-bold text-indigo-300">72 Horas Activas</span>
-            </div>
-            <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">
-              Operación continua de 6:00 a.m. a 6:00 p.m. de lunes a sábado, beneficiando a estudiantes de jornadas nocturnas y virtuales sin costos de turnos extras.
+            <p class="text-[11px] text-slate-500 mt-2 leading-relaxed">
+              Atención ininterrumpida de lunes a sábado cubriendo a estudiantes nocturnos, virtuales y de fines de semana sin sobrecosto laboral.
             </p>
           </div>
 
@@ -258,101 +297,101 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         <!-- Tarjeta de Desglose de Trámites -->
-        <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-xl p-6 border border-slate-200 card-shadow flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-base font-bold text-white flex items-center gap-2">
-                <i class="fa-solid fa-chart-pie text-teal-400"></i> Distribución de Demanda
-              </h3>
-              <span class="text-xs px-2 py-0.5 rounded bg-teal-950 text-teal-300 font-mono">865 en Total</span>
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-sm font-bold text-slate-900 font-display flex items-center gap-2">
+                <i class="fa-solid fa-chart-pie text-umb-red"></i> Demanda por Trámite
+              </h4>
+              <span class="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-bold font-mono">865 Total</span>
             </div>
-            <p class="text-xs text-slate-400 mb-4">
-              Concentración de solicitudes entre Certificados de Estudio (93.8%) y Certificados de Horarios (6.2%).
+            <p class="text-xs text-slate-500 mb-4">
+              Distribución entre Certificados de Estudio (93.8%) y Certificados de Horarios (6.2%).
             </p>
-            <div class="relative h-56 flex items-center justify-center">
+            <div class="relative h-52 flex items-center justify-center">
               <canvas id="chartTramites"></canvas>
             </div>
           </div>
 
-          <div class="mt-4 pt-4 border-t border-slate-800 grid grid-cols-2 gap-3 text-xs">
-            <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/50">
-              <span class="text-slate-400 block">Certificado Estudio</span>
-              <strong class="text-base text-emerald-400 font-mono">811 Casos</strong>
-              <span class="text-[10px] text-slate-500 block mt-0.5">135.2 horas ahorradas</span>
+          <div class="mt-4 pt-4 border-t border-slate-100 grid grid-cols-2 gap-3 text-xs">
+            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
+              <span class="text-slate-500 block">Certificado Estudio</span>
+              <strong class="text-base text-slate-900 font-display">811 Casos</strong>
+              <span class="text-[10px] text-slate-400 block mt-0.5">135.2 horas ahorradas</span>
             </div>
-            <div class="p-3 rounded-xl bg-sky-950/40 border border-sky-800/50">
-              <span class="text-sky-300 block">Certificado Horarios</span>
-              <strong class="text-base text-sky-400 font-mono">54 Casos</strong>
-              <span class="text-[10px] text-slate-500 block mt-0.5">9.0 horas ahorradas</span>
+            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
+              <span class="text-slate-500 block">Certificado Horarios</span>
+              <strong class="text-base text-slate-900 font-display">54 Casos</strong>
+              <span class="text-[10px] text-slate-400 block mt-0.5">9.0 horas ahorradas</span>
             </div>
           </div>
         </div>
 
         <!-- Tarjeta de Horas Ahorradas por Mes -->
-        <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-xl p-6 border border-slate-200 card-shadow flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-base font-bold text-white flex items-center gap-2">
-                <i class="fa-solid fa-hourglass-half text-sky-400"></i> Horas Devueltas por Mes
-              </h3>
-              <span class="text-xs px-2 py-0.5 rounded bg-sky-950 text-sky-300 font-mono">144.2 Horas</span>
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-sm font-bold text-slate-900 font-display flex items-center gap-2">
+                <i class="fa-solid fa-hourglass-half text-blue-700"></i> Horas Devueltas por Mes
+              </h4>
+              <span class="text-xs px-2 py-0.5 rounded bg-blue-50 text-blue-800 font-bold font-mono">144.2 Horas</span>
             </div>
-            <p class="text-xs text-slate-400 mb-4">
-              Evolución del tiempo liberado por mes durante el periodo de producción activa.
+            <p class="text-xs text-slate-500 mb-4">
+              Tiempo operativo mensual recuperado por el CASE durante el periodo de producción.
             </p>
-            <div class="relative h-56 flex items-center justify-center">
+            <div class="relative h-52 flex items-center justify-center">
               <canvas id="chartMeses"></canvas>
             </div>
           </div>
 
-          <div class="mt-4 pt-4 border-t border-slate-800 space-y-2 text-xs">
-            <div class="flex justify-between items-center text-slate-400">
+          <div class="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs">
+            <div class="flex justify-between items-center text-slate-600">
               <span>Septiembre (Pico Matrículas):</span>
-              <strong class="text-white font-mono">86.2 hrs (517 casos)</strong>
+              <strong class="text-slate-900 font-bold font-mono">86.2 hrs (517 casos)</strong>
             </div>
-            <div class="flex justify-between items-center text-slate-400">
+            <div class="flex justify-between items-center text-slate-600">
               <span>Octubre (Régimen Regular):</span>
-              <strong class="text-white font-mono">42.7 hrs (256 casos)</strong>
+              <strong class="text-slate-900 font-bold font-mono">42.7 hrs (256 casos)</strong>
             </div>
-            <div class="flex justify-between items-center text-slate-400">
+            <div class="flex justify-between items-center text-slate-600">
               <span>Noviembre (Primer quincena):</span>
-              <strong class="text-white font-mono">15.3 hrs (92 casos)</strong>
+              <strong class="text-slate-900 font-bold font-mono">15.3 hrs (92 casos)</strong>
             </div>
           </div>
         </div>
 
-        <!-- Tarjeta de Fortalezas de la Solución -->
-        <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+        <!-- Tarjeta de Fortalezas Institucionales -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200 card-shadow flex flex-col justify-between">
           <div>
-            <h3 class="text-base font-bold text-white mb-3 flex items-center gap-2">
-              <i class="fa-solid fa-award text-amber-400"></i> Pilares de Valor de la Automatización
-            </h3>
-            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
-              Beneficios directos que han fortalecido la experiencia del estudiante y la gestión del CASE:
+            <h4 class="text-sm font-bold text-slate-900 mb-3 font-display flex items-center gap-2">
+              <i class="fa-solid fa-shield-halved text-umb-red"></i> Fortalezas del Servicio CASE
+            </h4>
+            <p class="text-xs text-slate-500 mb-4 leading-relaxed">
+              Principios rectores de la automatización que garantizan valor al estudiante y a la universidad:
             </p>
 
             <ul class="space-y-3 text-xs">
               <li class="flex items-start gap-2.5">
-                <i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0"></i>
-                <span class="text-slate-300"><strong>Cero Fricción en el Trámite:</strong> El estudiante recibe su documento oficial directamente en su correo y ticket de HubSpot.</span>
+                <i class="fa-solid fa-check text-emerald-600 mt-0.5 shrink-0"></i>
+                <span class="text-slate-700"><strong>Atención 100% Digital:</strong> Entrega directa de los certificados oficiales en formato PDF firmado y seguro.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0"></i>
-                <span class="text-slate-300"><strong>Continuidad Garantizada por NBI:</strong> Servidor GCP desplegado e invertido sin costo para asegurar la operación de la universidad.</span>
+                <i class="fa-solid fa-check text-emerald-600 mt-0.5 shrink-0"></i>
+                <span class="text-slate-700"><strong>Continuidad Asegurada por NBI:</strong> Infraestructura en la nube provista sin costo para asegurar el servicio continuo.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0"></i>
-                <span class="text-slate-300"><strong>Alta Disponibilidad:</strong> 72 horas a la semana de lunes a sábado garantizando atención constante.</span>
+                <i class="fa-solid fa-check text-emerald-600 mt-0.5 shrink-0"></i>
+                <span class="text-slate-700"><strong>Alta Disponibilidad:</strong> Operación desasistida cada 2 horas garantizando tiempos mínimos de respuesta.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0"></i>
-                <span class="text-slate-300"><strong>Trazabilidad 100%:</strong> Registro automático en HubSpot del número de radicado, respuesta y estado de cierre.</span>
+                <i class="fa-solid fa-check text-emerald-600 mt-0.5 shrink-0"></i>
+                <span class="text-slate-700"><strong>Trazabilidad y Auditoría:</strong> Registro íntegro de radicados, fechas de envío y respuestas en HubSpot CRM.</span>
               </li>
             </ul>
           </div>
 
-          <div class="mt-4 pt-4 border-t border-slate-800">
-            <button onclick="switchTab('tab-tickets')" class="w-full py-2 px-3 rounded-xl bg-teal-900/40 hover:bg-teal-900/70 border border-teal-700/50 text-teal-300 text-xs font-semibold transition flex items-center justify-center gap-2">
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <button onclick="switchTab('tab-tickets')" class="w-full py-2 px-3 rounded-lg bg-red-50 hover:bg-red-100 border border-red-200 text-umb-red text-xs font-bold transition flex items-center justify-center gap-2">
               <span>Consultar los 865 Casos en Producción</span>
               <i class="fa-solid fa-arrow-right"></i>
             </button>
@@ -366,232 +405,219 @@
     <!-- ========================================== -->
     <!-- TAB 2: FLUJO DEL PROCESO & SIMULADOR -->
     <!-- ========================================== -->
-    <div id="tab-flujo" class="tab-content hidden space-y-8">
+    <div id="tab-flujo" class="tab-content hidden space-y-6">
       
-      <!-- CONTENEDOR DEL DIAGRAMA -->
-      <div class="bg-slate-900/90 rounded-2xl border border-slate-800 p-6 shadow-xl">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-800">
+      <div class="bg-white rounded-xl border border-slate-200 p-6 card-shadow">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-200">
           <div>
-            <h2 class="text-xl font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-diagram-project text-teal-400"></i> Arquitectura y Flujo de Procesos en Producción
-            </h2>
-            <p class="text-xs text-slate-400 mt-1">
-              Representación visual e interactiva del pipeline ejecutado por el robot cada 2 horas de lunes a sábado.
+            <h3 class="text-lg font-bold text-slate-900 font-display flex items-center gap-2">
+              <i class="fa-solid fa-diagram-project text-umb-red"></i> Arquitectura de Flujos de Proceso en Producción
+            </h3>
+            <p class="text-xs text-slate-500 mt-0.5">
+              Visualización paso a paso del pipeline desasistido implementado en Blue Prism y conectado con AulaNet y HubSpot.
             </p>
           </div>
 
           <!-- Selector de Proceso -->
-          <div class="flex items-center gap-2 bg-slate-800/80 p-1.5 rounded-xl border border-slate-700">
-            <button id="btn-flujo-p1" onclick="selectProcess('p1')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-teal-600 text-white transition flex items-center gap-1.5 shadow">
+          <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-lg border border-slate-200">
+            <button id="btn-flujo-p1" onclick="selectProcess('p1')" class="px-3 py-1.5 rounded-md text-xs font-bold bg-umb-red text-white transition flex items-center gap-1.5 shadow-sm">
               <i class="fa-solid fa-file-lines"></i> 01 - Certificados de Estudios
             </button>
-            <button id="btn-flujo-p2" onclick="selectProcess('p2')" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition flex items-center gap-1.5">
+            <button id="btn-flujo-p2" onclick="selectProcess('p2')" class="px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 transition flex items-center gap-1.5">
               <i class="fa-solid fa-calendar-days"></i> 02 - Certificado de Horarios
             </button>
           </div>
         </div>
 
         <!-- SIMULADOR INTERACTIVO STEP-BY-STEP -->
-        <div class="mb-8 p-4 rounded-xl bg-slate-950/80 border border-teal-900/50">
+        <div class="mb-6 p-4 rounded-xl bg-slate-50 border border-slate-200">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
             <div>
-              <span class="text-[11px] font-bold uppercase tracking-wider text-teal-400 block mb-1">
-                <i class="fa-solid fa-play text-xs"></i> Simulador de Ejecución en Vivo
+              <span class="text-[11px] font-bold uppercase tracking-wider text-umb-red block mb-1">
+                <i class="fa-solid fa-play text-xs mr-1"></i> Simulador de Ejecución Operativa
               </span>
-              <p class="text-xs text-slate-300">
-                Selecciona un escenario operativo para ver la ruta exacta que recorre el robot a través de las etapas:
+              <p class="text-xs text-slate-600">
+                Selecciona un escenario para visualizar la ruta y validaciones que ejecuta el robot en cada etapa:
               </p>
             </div>
 
             <div class="flex flex-wrap items-center gap-2">
-              <button onclick="runScenario('ideal')" id="btn-scen-ideal" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-emerald-950 hover:bg-emerald-900 text-emerald-300 border border-emerald-800 transition flex items-center gap-1.5">
-                <i class="fa-solid fa-circle-check text-emerald-400"></i> Escenario Exitoso (Certificado)
+              <button onclick="runScenario('ideal')" id="btn-scen-ideal" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 transition flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-check text-emerald-600"></i> Escenario Exitoso (Certificado)
               </button>
-              <button onclick="runScenario('admision')" id="btn-scen-admision" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-sky-950 hover:bg-sky-900 text-sky-300 border border-sky-800 transition flex items-center gap-1.5">
-                <i class="fa-solid fa-file-circle-check text-sky-400"></i> Caso Admisión (Word)
+              <button onclick="runScenario('admision')" id="btn-scen-admision" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200 transition flex items-center gap-1.5">
+                <i class="fa-solid fa-file-circle-check text-blue-600"></i> Caso Admisión (Word)
               </button>
-              <button onclick="runScenario('exception')" id="btn-scen-exception" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-amber-950 hover:bg-amber-900 text-amber-300 border border-amber-800 transition flex items-center gap-1.5">
-                <i class="fa-solid fa-circle-exclamation text-amber-400"></i> Flujo con Notificación de Guía
+              <button onclick="runScenario('exception')" id="btn-scen-exception" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 transition flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-exclamation text-amber-600"></i> Flujo con Guía al Estudiante
               </button>
-              <button onclick="resetSimulation()" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
+              <button onclick="resetSimulation()" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-200 hover:bg-slate-300 text-slate-700 transition">
                 <i class="fa-solid fa-rotate-left"></i> Reiniciar
               </button>
             </div>
           </div>
 
           <!-- Barra de Estado del Simulador -->
-          <div id="sim-status-bar" class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
-            <span class="text-slate-400" id="sim-step-text">Simulador listo. Haz clic en un escenario para iniciar.</span>
+          <div id="sim-status-bar" class="mt-3.5 pt-3 border-t border-slate-200 flex items-center justify-between text-xs">
+            <span class="text-slate-600" id="sim-step-text">Simulador listo. Haz clic en un escenario para iniciar.</span>
             <div class="flex items-center gap-2">
-              <button onclick="prevStep()" id="btn-prev-step" disabled class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-xs disabled:opacity-40">Anterior</button>
-              <button onclick="nextStep()" id="btn-next-step" disabled class="px-2.5 py-1 rounded bg-teal-600 text-white text-xs disabled:opacity-40 font-semibold">Siguiente Etapa</button>
+              <button onclick="prevStep()" id="btn-prev-step" disabled class="px-2.5 py-1 rounded bg-slate-200 text-slate-400 text-xs disabled:opacity-40">Anterior</button>
+              <button onclick="nextStep()" id="btn-next-step" disabled class="px-2.5 py-1 rounded bg-umb-red text-white text-xs disabled:opacity-40 font-bold">Siguiente Etapa</button>
             </div>
           </div>
         </div>
 
-        <!-- DIAGRAMA VISUAL EN GRID DE ETAPAS -->
+        <!-- GRID VISUAL DE ETAPAS -->
         <div class="relative overflow-x-auto pb-4">
-          <div class="min-w-[850px] space-y-6">
+          <div class="min-w-[850px] space-y-5">
 
             <!-- FASE 1: INGESTA HUBSPOT -->
-            <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-700/60">
-              <span class="text-[11px] font-bold text-sky-400 uppercase tracking-wider block mb-3">
-                <i class="fa-solid fa-cloud-arrow-down"></i> Fase 1: Ingesta de Solicitudes desde HubSpot
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+              <span class="text-[11px] font-bold text-slate-700 uppercase tracking-wider block mb-3 font-display">
+                <i class="fa-solid fa-cloud-arrow-down text-blue-700 mr-1.5"></i> Fase 1: Ingesta de Solicitudes desde HubSpot
               </span>
-              <div class="grid grid-cols-4 gap-4">
+              <div class="grid grid-cols-4 gap-3">
                 
-                <!-- Etapa 1 -->
-                <div id="node-1" class="flow-node p-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-sky-500 transition cursor-pointer" onclick="inspectNode(1)">
+                <div id="node-1" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(1)">
                   <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
                     <span>Etapa 01</span>
-                    <i class="fa-solid fa-magnifying-glass text-sky-400"></i>
+                    <i class="fa-solid fa-magnifying-glass text-blue-700"></i>
                   </div>
-                  <strong class="text-xs text-white block">Tickets Search</strong>
-                  <span class="text-[10px] text-slate-400 font-mono">POST /crm/v3/tickets/search</span>
-                  <div class="mt-2 text-[10px] text-teal-400 flex items-center gap-1">
-                    <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span> Trámite & Etapa 2
+                  <strong class="text-xs text-slate-900 block font-display">Tickets Search</strong>
+                  <span class="text-[10px] text-slate-500 font-mono">POST /crm/v3/tickets/search</span>
+                  <div class="mt-2 text-[10px] text-emerald-700 font-semibold flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Trámite & Etapa 2
                   </div>
                 </div>
 
-                <!-- Etapa 2 -->
-                <div id="node-2" class="flow-node p-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-sky-500 transition cursor-pointer" onclick="inspectNode(2)">
+                <div id="node-2" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(2)">
                   <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
                     <span>Etapa 02</span>
-                    <i class="fa-solid fa-list-ol text-sky-400"></i>
+                    <i class="fa-solid fa-list-ol text-blue-700"></i>
                   </div>
-                  <strong class="text-xs text-white block">Json2Collection</strong>
-                  <span class="text-[10px] text-slate-400">toarnold - Utility</span>
-                  <div class="mt-2 text-[10px] text-slate-300">Carga lista de IDs</div>
+                  <strong class="text-xs text-slate-900 block font-display">Json2Collection</strong>
+                  <span class="text-[10px] text-slate-500">toarnold - Utility</span>
+                  <div class="mt-2 text-[10px] text-slate-600">Carga lista de IDs</div>
                 </div>
 
-                <!-- Etapa 3 -->
-                <div id="node-3" class="flow-node p-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-sky-500 transition cursor-pointer" onclick="inspectNode(3)">
+                <div id="node-3" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(3)">
                   <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
                     <span>Etapa 03</span>
-                    <i class="fa-solid fa-id-card text-sky-400"></i>
+                    <i class="fa-solid fa-id-card text-blue-700"></i>
                   </div>
-                  <strong class="text-xs text-white block">Get Ticket Details</strong>
-                  <span class="text-[10px] text-slate-400 font-mono">GET /crm/v3/tickets/{id}</span>
-                  <div class="mt-2 text-[10px] text-emerald-400">Obtiene Cédula y Datos</div>
+                  <strong class="text-xs text-slate-900 block font-display">Get Ticket Details</strong>
+                  <span class="text-[10px] text-slate-500 font-mono">GET /crm/v3/tickets/{id}</span>
+                  <div class="mt-2 text-[10px] text-emerald-700 font-semibold">Obtiene Cédula y Datos</div>
                 </div>
 
-                <!-- Etapa 4 -->
-                <div id="node-4" class="flow-node p-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-sky-500 transition cursor-pointer" onclick="inspectNode(4)">
+                <div id="node-4" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(4)">
                   <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
                     <span>Etapa 04</span>
-                    <i class="fa-solid fa-arrows-split-up-and-left text-amber-400"></i>
+                    <i class="fa-solid fa-arrows-split-up-and-left text-amber-600"></i>
                   </div>
-                  <strong class="text-xs text-white block">Validar Trámite</strong>
-                  <span class="text-[10px] text-slate-400">Bifurcación de Negocio</span>
-                  <div class="mt-2 text-[10px] text-sky-300">Estudios / Horarios / Admisión</div>
+                  <strong class="text-xs text-slate-900 block font-display">Validar Trámite</strong>
+                  <span class="text-[10px] text-slate-500">Bifurcación de Negocio</span>
+                  <div class="mt-2 text-[10px] text-slate-700 font-semibold">Estudios / Horarios / Admisión</div>
                 </div>
 
               </div>
             </div>
 
             <!-- FASE 2: GESTIÓN EN SISTEMAS UMB (AULANET / WORD) -->
-            <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-700/60">
-              <span class="text-[11px] font-bold text-teal-400 uppercase tracking-wider block mb-3">
-                <i class="fa-brands fa-chrome"></i> Fase 2: Automatización en Sistemas Académicos UMB
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+              <span class="text-[11px] font-bold text-slate-700 uppercase tracking-wider block mb-3 font-display">
+                <i class="fa-brands fa-chrome text-amber-600 mr-1.5"></i> Fase 2: Automatización en Sistemas Académicos UMB
               </span>
-              <div class="grid grid-cols-4 gap-4">
+              <div class="grid grid-cols-4 gap-3">
                 
-                <!-- Etapa 5 -->
-                <div id="node-5" class="flow-node p-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-teal-500 transition cursor-pointer" onclick="inspectNode(5)">
+                <div id="node-5" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(5)">
                   <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
                     <span>Etapa 05</span>
-                    <i class="fa-solid fa-arrow-right-to-bracket text-teal-400"></i>
+                    <i class="fa-solid fa-arrow-right-to-bracket text-amber-600"></i>
                   </div>
-                  <strong class="text-xs text-white block">Login AulaNet</strong>
-                  <span class="text-[10px] text-slate-400">Chrome UI Browser</span>
-                  <div class="mt-2 text-[10px] text-teal-300">Acceso a plataforma</div>
+                  <strong class="text-xs text-slate-900 block font-display">Login AulaNet</strong>
+                  <span class="text-[10px] text-slate-500">Chrome UI Browser</span>
+                  <div class="mt-2 text-[10px] text-slate-700">Acceso institucional</div>
                 </div>
 
-                <!-- Etapa 6 -->
-                <div id="node-6" class="flow-node p-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-teal-500 transition cursor-pointer" onclick="inspectNode(6)">
+                <div id="node-6" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(6)">
                   <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
                     <span>Etapa 06</span>
-                    <i class="fa-solid fa-address-book text-teal-400"></i>
+                    <i class="fa-solid fa-address-book text-amber-600"></i>
                   </div>
-                  <strong class="text-xs text-white block">Consulta Estudiante</strong>
-                  <span class="text-[10px] text-slate-400">Crome - AulaNET</span>
-                  <div class="mt-2 text-[10px] text-emerald-400">Valida Cédula & Tabla</div>
+                  <strong class="text-xs text-slate-900 block font-display">Consulta Estudiante</strong>
+                  <span class="text-[10px] text-slate-500">Crome - AulaNET</span>
+                  <div class="mt-2 text-[10px] text-emerald-700 font-semibold">Valida Cédula & Tabla</div>
                 </div>
 
-                <!-- Etapa 7 -->
-                <div id="node-7" class="flow-node p-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-teal-500 transition cursor-pointer" onclick="inspectNode(7)">
+                <div id="node-7" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(7)">
                   <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
                     <span>Etapa 07</span>
-                    <i class="fa-solid fa-gears text-teal-400"></i>
+                    <i class="fa-solid fa-gears text-amber-600"></i>
                   </div>
-                  <strong class="text-xs text-white block">Generar Certificado</strong>
-                  <span class="text-[10px] text-slate-400">Descarga PDF AulaNet</span>
-                  <div class="mt-2 text-[10px] text-teal-300">Ruta C:/UMB/Certificados</div>
+                  <strong class="text-xs text-slate-900 block font-display">Generar Certificado</strong>
+                  <span class="text-[10px] text-slate-500">Descarga PDF AulaNet</span>
+                  <div class="mt-2 text-[10px] text-slate-700">Ruta C:/UMB/Certificados</div>
                 </div>
 
-                <!-- Etapa 8 -->
-                <div id="node-8" class="flow-node p-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-teal-500 transition cursor-pointer" onclick="inspectNode(8)">
+                <div id="node-8" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(8)">
                   <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
                     <span>Etapa 08</span>
-                    <i class="fa-solid fa-file-word text-blue-400"></i>
+                    <i class="fa-solid fa-file-word text-blue-600"></i>
                   </div>
-                  <strong class="text-xs text-white block">Motor Word VBO</strong>
-                  <span class="text-[10px] text-slate-400">Plantilla Admisión</span>
-                  <div class="mt-2 text-[10px] text-sky-400">Populate & Save docx/pdf</div>
+                  <strong class="text-xs text-slate-900 block font-display">Motor Word VBO</strong>
+                  <span class="text-[10px] text-slate-500">Plantilla Admisión</span>
+                  <div class="mt-2 text-[10px] text-blue-700 font-semibold">Populate & Save PDF</div>
                 </div>
 
               </div>
             </div>
 
             <!-- FASE 3: ENTREGA Y ACTUALIZACIÓN -->
-            <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-700/60">
-              <span class="text-[11px] font-bold text-emerald-400 uppercase tracking-wider block mb-3">
-                <i class="fa-solid fa-paper-plane"></i> Fase 3: Entrega al Estudiante y Cierre en HubSpot
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+              <span class="text-[11px] font-bold text-slate-700 uppercase tracking-wider block mb-3 font-display">
+                <i class="fa-solid fa-paper-plane text-emerald-700 mr-1.5"></i> Fase 3: Entrega al Estudiante y Cierre en HubSpot
               </span>
-              <div class="grid grid-cols-4 gap-4">
+              <div class="grid grid-cols-4 gap-3">
                 
-                <!-- Etapa 9 -->
-                <div id="node-9" class="flow-node p-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-emerald-500 transition cursor-pointer" onclick="inspectNode(9)">
+                <div id="node-9" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(9)">
                   <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
                     <span>Etapa 09</span>
-                    <i class="fa-solid fa-cloud-arrow-up text-emerald-400"></i>
+                    <i class="fa-solid fa-cloud-arrow-up text-emerald-700"></i>
                   </div>
-                  <strong class="text-xs text-white block">Upload File HubSpot</strong>
-                  <span class="text-[10px] text-slate-400 font-mono">POST /files/v3/files</span>
-                  <div class="mt-2 text-[10px] text-emerald-300">Adjunta PDF al CRM</div>
+                  <strong class="text-xs text-slate-900 block font-display">Upload File HubSpot</strong>
+                  <span class="text-[10px] text-slate-500 font-mono">POST /files/v3/files</span>
+                  <div class="mt-2 text-[10px] text-emerald-700 font-semibold">Adjunta PDF al CRM</div>
                 </div>
 
-                <!-- Etapa 10 -->
-                <div id="node-10" class="flow-node p-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-emerald-500 transition cursor-pointer" onclick="inspectNode(10)">
+                <div id="node-10" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(10)">
                   <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
                     <span>Etapa 10</span>
-                    <i class="fa-solid fa-envelope-circle-check text-emerald-400"></i>
+                    <i class="fa-solid fa-envelope-circle-check text-emerald-700"></i>
                   </div>
-                  <strong class="text-xs text-white block">Envío de Mensaje</strong>
-                  <span class="text-[10px] text-slate-400">Conversations API / SMTP</span>
-                  <div class="mt-2 text-[10px] text-teal-300">Entrega directa al estudiante</div>
+                  <strong class="text-xs text-slate-900 block font-display">Envío de Mensaje</strong>
+                  <span class="text-[10px] text-slate-500">Conversations / SMTP</span>
+                  <div class="mt-2 text-[10px] text-slate-700">Entrega al correo oficial</div>
                 </div>
 
-                <!-- Etapa 11 -->
-                <div id="node-11" class="flow-node p-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-emerald-500 transition cursor-pointer" onclick="inspectNode(11)">
+                <div id="node-11" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(11)">
                   <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
                     <span>Etapa 11</span>
-                    <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                    <i class="fa-solid fa-circle-check text-emerald-700"></i>
                   </div>
-                  <strong class="text-xs text-white block">Cierre de Ticket</strong>
-                  <span class="text-[10px] text-slate-400 font-mono">PATCH /tickets/{id}</span>
-                  <div class="mt-2 text-[10px] text-emerald-400">Stage: 4 (Cerrado)</div>
+                  <strong class="text-xs text-slate-900 block font-display">Cierre de Ticket</strong>
+                  <span class="text-[10px] text-slate-500 font-mono">PATCH /tickets/{id}</span>
+                  <div class="mt-2 text-[10px] text-emerald-700 font-bold">Stage: 4 (Resuelto)</div>
                 </div>
 
-                <!-- Etapa 12 -->
-                <div id="node-12" class="flow-node p-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-emerald-500 transition cursor-pointer" onclick="inspectNode(12)">
+                <div id="node-12" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(12)">
                   <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
                     <span>Etapa 12</span>
-                    <i class="fa-solid fa-flag-checkered text-emerald-400"></i>
+                    <i class="fa-solid fa-flag-checkered text-slate-600"></i>
                   </div>
-                  <strong class="text-xs text-white block">Fin de Ciclo</strong>
-                  <span class="text-[10px] text-slate-400">End Process / Next</span>
-                  <div class="mt-2 text-[10px] text-slate-400">Pasa al siguiente ticket</div>
+                  <strong class="text-xs text-slate-900 block font-display">Fin de Ciclo</strong>
+                  <span class="text-[10px] text-slate-500">End Process / Next</span>
+                  <div class="mt-2 text-[10px] text-slate-500">Siguiente ticket en cola</div>
                 </div>
 
               </div>
@@ -601,14 +627,14 @@
         </div>
 
         <!-- PANEL DE DETALLE DEL NODO SELECCIONADO -->
-        <div id="node-detail-panel" class="mt-6 p-4 rounded-xl bg-slate-950/70 border border-slate-800">
-          <div class="flex items-center justify-between mb-2">
-            <h4 id="detail-title" class="text-sm font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-circle-info text-teal-400"></i> Inspector de Etapa
+        <div id="node-detail-panel" class="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="flex items-center justify-between mb-1.5">
+            <h4 id="detail-title" class="text-sm font-bold text-slate-900 font-display flex items-center gap-2">
+              <i class="fa-solid fa-circle-info text-umb-red"></i> Inspector de Etapa
             </h4>
-            <span id="detail-tag" class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Haz clic en una etapa</span>
+            <span id="detail-tag" class="text-[11px] px-2 py-0.5 rounded bg-white border border-slate-200 text-slate-600 font-mono">Haz clic en una etapa</span>
           </div>
-          <p id="detail-desc" class="text-xs text-slate-300">
+          <p id="detail-desc" class="text-xs text-slate-600">
             Haz clic en cualquiera de las 12 etapas del flujo superior o activa uno de los escenarios para ver el comportamiento técnico, inputs, outputs y reglas asociadas.
           </p>
         </div>
@@ -620,22 +646,22 @@
     <!-- ========================================== -->
     <!-- TAB 3: DEMANDA & MÉTRICAS EN PRODUCCIÓN -->
     <!-- ========================================== -->
-    <div id="tab-telemetria" class="tab-content hidden space-y-8">
+    <div id="tab-telemetria" class="tab-content hidden space-y-6">
       
       <!-- Curva Diaria de Producción -->
-      <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 shadow-lg">
+      <div class="bg-white rounded-xl p-6 border border-slate-200 card-shadow">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
           <div>
-            <h3 class="text-base font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-chart-line text-teal-400"></i> Curva de Demanda Atendida en Producción (52 Días Activos)
+            <h3 class="text-base font-bold text-slate-900 font-display flex items-center gap-2">
+              <i class="fa-solid fa-chart-line text-umb-red"></i> Curva de Demanda Atendida en Producción (52 Días Activos)
             </h3>
-            <p class="text-xs text-slate-400">
-              Comportamiento real de los 865 casos atendidos desde el 1 de septiembre de 2026 hasta la fecha en HubSpot.
+            <p class="text-xs text-slate-500 mt-0.5">
+              Comportamiento real de los 865 casos atendidos entre el 1 de septiembre y el 13 de noviembre de 2026.
             </p>
           </div>
           <div class="flex items-center gap-2 text-xs">
-            <span class="px-2.5 py-1 rounded bg-teal-950 text-teal-300 border border-teal-800 font-mono font-bold">Pico: 35 casos/día</span>
-            <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 font-mono">Promedio: 16.6 casos/día</span>
+            <span class="px-2.5 py-1 rounded-md bg-red-50 text-umb-red border border-red-200 font-bold font-mono">Pico: 35 casos/día</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 font-mono">Promedio: 16.6 casos/día</span>
           </div>
         </div>
 
@@ -648,27 +674,27 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
         <!-- Distribución por Horas -->
-        <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800">
-          <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
-            <i class="fa-solid fa-clock text-sky-400"></i> Franjas Horarias de Demanda del Estudiante
-          </h3>
-          <p class="text-xs text-slate-400 mb-4">
-            Horas de radicación de solicitudes en la plataforma (mayor volumen entre 11:00 a.m. y 7:00 p.m.).
+        <div class="bg-white rounded-xl p-6 border border-slate-200 card-shadow">
+          <h4 class="text-sm font-bold text-slate-900 mb-1 font-display flex items-center gap-2">
+            <i class="fa-solid fa-clock text-blue-700"></i> Franjas Horarias de Demanda del Estudiante
+          </h4>
+          <p class="text-xs text-slate-500 mb-4">
+            Horas de radicación de solicitudes en el CASE (mayor afluencia entre 11:00 a.m. y 7:00 p.m.).
           </p>
-          <div class="relative h-60">
+          <div class="relative h-56">
             <canvas id="chartHoras"></canvas>
           </div>
         </div>
 
         <!-- Eficiencia de Resolución Directa -->
-        <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800">
-          <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
-            <i class="fa-solid fa-circle-check text-emerald-400"></i> Tasa de Resolución de Primera Pasada
-          </h3>
-          <p class="text-xs text-slate-400 mb-4">
+        <div class="bg-white rounded-xl p-6 border border-slate-200 card-shadow">
+          <h4 class="text-sm font-bold text-slate-900 mb-1 font-display flex items-center gap-2">
+            <i class="fa-solid fa-circle-check text-emerald-700"></i> Tasa de Resolución de Primera Pasada
+          </h4>
+          <p class="text-xs text-slate-500 mb-4">
             Proporción de tickets resueltos en el primer intento frente a casos con asistencia o validación adicional.
           </p>
-          <div class="relative h-60">
+          <div class="relative h-56">
             <canvas id="chartEficiencia"></canvas>
           </div>
         </div>
@@ -682,23 +708,22 @@
     <!-- ========================================== -->
     <div id="tab-tickets" class="tab-content hidden space-y-6">
       
-      <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 shadow-lg">
+      <div class="bg-white rounded-xl p-6 border border-slate-200 card-shadow">
         
         <!-- Header de la Tabla -->
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-5">
           <div>
-            <h3 class="text-lg font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-list-check text-indigo-400"></i> Casos Resueltos en Producción (HubSpot CRM)
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 font-display flex items-center gap-2">
+              <i class="fa-solid fa-list-check text-umb-red"></i> Casos Resueltos en Producción (HubSpot CRM)
             </h3>
-            <p class="text-xs text-slate-400 mt-0.5">
-              Explora los 865 tickets gestionados desde septiembre de 2026, con sus notas de cierre, estado y tiempos.
+            <p class="text-xs text-slate-500 mt-0.5">
+              Registro auditable de los 865 tickets atendidos, sus notas de cierre y tiempos de gestión.
             </p>
           </div>
 
           <div class="flex flex-wrap items-center gap-2">
-            <!-- Botón Exportar CSV -->
-            <button onclick="exportDataCSV()" class="px-3 py-1.5 rounded-lg bg-teal-900/50 hover:bg-teal-900 text-teal-300 border border-teal-700/60 text-xs font-semibold transition flex items-center gap-1.5">
-              <i class="fa-solid fa-file-csv"></i> Exportar CSV (Excel)
+            <button onclick="exportDataCSV()" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 text-xs font-bold transition flex items-center gap-1.5 shadow-sm">
+              <i class="fa-solid fa-file-csv text-emerald-600"></i> Exportar CSV para Excel
             </button>
           </div>
         </div>
@@ -708,49 +733,49 @@
           
           <!-- Input Buscador -->
           <div class="relative w-full sm:w-80">
-            <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-500 text-xs"></i>
-            <input type="text" id="ticketSearch" onkeyup="searchTickets()" placeholder="Buscar por ID, estudiante o cierre..." class="w-full bg-slate-950 border border-slate-800 rounded-lg pl-8 pr-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-teal-500">
+            <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+            <input type="text" id="ticketSearch" onkeyup="searchTickets()" placeholder="Buscar por ID, estudiante o cierre..." class="w-full bg-slate-50 border border-slate-300 rounded-lg pl-8 pr-3 py-1.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-umb-red focus:bg-white transition">
           </div>
 
           <!-- Filtros por tipo -->
           <div class="flex items-center gap-1.5 text-xs overflow-x-auto w-full sm:w-auto">
-            <button onclick="filterType('ALL')" id="flt-all" class="px-2.5 py-1 rounded-lg bg-teal-600 text-white font-semibold">Todos (865)</button>
-            <button onclick="filterType('BP')" id="flt-bp" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center gap-1"><i class="fa-solid fa-robot text-[10px]"></i> Robot Blue Prism (865)</button>
-            <button onclick="filterType('Estudios')" id="flt-est" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300">Estudios (811)</button>
-            <button onclick="filterType('Horarios')" id="flt-hor" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300">Horarios (54)</button>
+            <button onclick="filterType('ALL')" id="flt-all" class="px-2.5 py-1 rounded-md bg-umb-red text-white font-bold shadow-sm">Todos (865)</button>
+            <button onclick="filterType('BP')" id="flt-bp" class="px-2.5 py-1 rounded-md bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold border border-slate-200 flex items-center gap-1"><i class="fa-solid fa-robot text-umb-red text-[10px]"></i> Robot Blue Prism (865)</button>
+            <button onclick="filterType('Estudios')" id="flt-est" class="px-2.5 py-1 rounded-md bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold border border-slate-200">Estudios (811)</button>
+            <button onclick="filterType('Horarios')" id="flt-hor" class="px-2.5 py-1 rounded-md bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold border border-slate-200">Horarios (54)</button>
           </div>
         </div>
 
         <!-- Tabla -->
-        <div class="overflow-x-auto border border-slate-800 rounded-xl">
-          <table class="w-full text-left text-xs text-slate-300">
-            <thead class="bg-slate-950 text-slate-400 font-semibold border-b border-slate-800 uppercase tracking-wider text-[11px]">
+        <div class="overflow-x-auto border border-slate-200 rounded-lg">
+          <table class="w-full text-left text-xs text-slate-700">
+            <thead class="bg-slate-100 text-slate-600 font-bold border-b border-slate-200 uppercase tracking-wider text-[11px] font-display">
               <tr>
-                <th class="py-3 px-4">Ticket ID</th>
-                <th class="py-3 px-4">Estudiante / Solicitante</th>
-                <th class="py-3 px-4">Trámite</th>
-                <th class="py-3 px-4">Estado</th>
-                <th class="py-3 px-4">Responsable</th>
-                <th class="py-3 px-4">Fecha Radicación</th>
-                <th class="py-3 px-4">Respuesta / Cierre</th>
-                <th class="py-3 px-4 text-center">Acción</th>
+                <th class="py-3 px-3.5">Ticket ID</th>
+                <th class="py-3 px-3.5">Estudiante / Solicitante</th>
+                <th class="py-3 px-3.5">Trámite</th>
+                <th class="py-3 px-3.5">Estado</th>
+                <th class="py-3 px-3.5">Responsable</th>
+                <th class="py-3 px-3.5">Fecha Radicación</th>
+                <th class="py-3 px-3.5">Respuesta / Cierre</th>
+                <th class="py-3 px-3.5 text-center">Acción</th>
               </tr>
             </thead>
-            <tbody id="ticketsTableBody" class="divide-y divide-slate-800/60 font-mono text-xs">
+            <tbody id="ticketsTableBody" class="divide-y divide-slate-200 text-xs font-sans">
               <!-- Rendered via JS -->
             </tbody>
           </table>
         </div>
 
         <!-- Controles de Paginación -->
-        <div class="flex items-center justify-between mt-4 text-xs text-slate-400">
+        <div class="flex items-center justify-between mt-4 text-xs text-slate-500">
           <div id="tablePaginationInfo">
             Mostrando 1 a 25 de 865 casos
           </div>
           <div class="flex items-center gap-2">
-            <button onclick="prevTablePage()" id="btnPrevPage" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white disabled:opacity-40">Anterior</button>
-            <span id="currentPageBadge" class="px-2.5 py-1 rounded bg-slate-950 font-bold text-teal-400">Pág. 1</span>
-            <button onclick="nextTablePage()" id="btnNextPage" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white disabled:opacity-40">Siguiente</button>
+            <button onclick="prevTablePage()" id="btnPrevPage" class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200 font-semibold disabled:opacity-40">Anterior</button>
+            <span id="currentPageBadge" class="px-2.5 py-1 rounded bg-slate-100 font-bold text-umb-red border border-slate-200">Pág. 1</span>
+            <button onclick="nextTablePage()" id="btnNextPage" class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200 font-semibold disabled:opacity-40">Siguiente</button>
           </div>
         </div>
 
@@ -763,44 +788,44 @@
     <!-- ========================================== -->
     <div id="tab-evolucion" class="tab-content hidden space-y-6">
       
-      <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 shadow-lg">
-        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-          <i class="fa-solid fa-timeline text-teal-400"></i> Antecedentes y Evolución del Proyecto CASE
+      <div class="bg-white rounded-xl p-6 border border-slate-200 card-shadow">
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-4 font-display flex items-center gap-2">
+          <i class="fa-solid fa-landmark text-umb-red"></i> Antecedentes y Evolución del Proyecto CASE
         </h3>
 
-        <div class="space-y-6 text-sm text-slate-300">
+        <div class="space-y-4 text-sm text-slate-700">
           
-          <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 flex gap-4">
-            <div class="w-10 h-10 rounded-xl bg-teal-950 text-teal-400 flex items-center justify-center shrink-0 border border-teal-800 font-bold">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex gap-4">
+            <div class="w-9 h-9 rounded-lg bg-red-100 text-umb-red flex items-center justify-center shrink-0 font-bold font-display">
               1
             </div>
             <div>
-              <h4 class="font-bold text-white text-base">Despliegue Proactivo de Servidor Cloud en GCP</h4>
-              <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+              <h4 class="font-bold text-slate-900 text-sm font-display">Despliegue Proactivo de Servidor Cloud en GCP</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">
                 Desde julio de 2026, Narnaja Business Intelligence (NBI) desplegó un servidor propio en Google Cloud Platform (GCP) para viabilizar el proyecto ante demoras en accesos locales. Este entorno permitió conectar de inmediato con HubSpot y AulaNet, asumiendo NBI el 100% de la infraestructura sin costo para la UMB.
               </p>
             </div>
           </div>
 
-          <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 flex gap-4">
-            <div class="w-10 h-10 rounded-xl bg-sky-950 text-sky-400 flex items-center justify-center shrink-0 border border-sky-800 font-bold">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex gap-4">
+            <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center shrink-0 font-bold font-display">
               2
             </div>
             <div>
-              <h4 class="font-bold text-white text-base">Reemplazo Estratégico y Adaptabilidad del Alcance</h4>
-              <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+              <h4 class="font-bold text-slate-900 text-sm font-display">Reemplazo Estratégico y Adaptabilidad del Alcance</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">
                 Ante la imposibilidad técnica de establecer una VPN site-to-site con Campus desde GCP, en coordinación ágil con el CASE se reemplazó Verificación Académica por <strong>Certificado de Admisión</strong> y <strong>Certificado de Horarios</strong>, asegurando el cumplimiento total del alcance del proyecto.
               </p>
             </div>
           </div>
 
-          <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 flex gap-4">
-            <div class="w-10 h-10 rounded-xl bg-emerald-950 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-800 font-bold">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex gap-4">
+            <div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 font-bold font-display">
               3
             </div>
             <div>
-              <h4 class="font-bold text-white text-base">Alineación con la Nueva Dirección de Tecnología</h4>
-              <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+              <h4 class="font-bold text-slate-900 text-sm font-display">Alineación con la Dirección de Tecnología</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">
                 En reunión con la nueva directora de TI se acordó la migración hacia infraestructura propia de la universidad para habilitar la conexión a Campus y formalizar el gobierno de TI. NBI ya compartió los requerimientos técnicos y se encuentra a disposición para apoyar la transición.
               </p>
             </div>
@@ -816,48 +841,48 @@
     <!-- ========================================== -->
     <div id="tab-optimizacion" class="tab-content hidden space-y-6">
       
-      <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 shadow-lg">
-        <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
-          <i class="fa-solid fa-wand-magic-sparkles text-emerald-400"></i> Oportunidades de Optimización e Innovación v2.0
+      <div class="bg-white rounded-xl p-6 border border-slate-200 card-shadow">
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-1 font-display flex items-center gap-2">
+          <i class="fa-solid fa-sliders text-umb-red"></i> Oportunidades de Optimización e Innovación v2.0
         </h3>
-        <p class="text-xs text-slate-400 mb-6">
+        <p class="text-xs text-slate-500 mb-5">
           Propuestas constructivas para llevar la solución al siguiente nivel de madurez técnica y experiencia estudiantil.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           
-          <div class="p-5 rounded-xl bg-slate-950/60 border border-slate-800">
-            <div class="flex items-center gap-2 text-teal-400 font-bold text-sm mb-2">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="flex items-center gap-2 text-umb-red font-bold text-xs uppercase tracking-wider mb-1.5 font-display">
               <i class="fa-solid fa-envelope-open-text"></i> Cierre One-Touch en Excepciones
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed">
+            <p class="text-xs text-slate-600 leading-relaxed">
               Configurar el robot para que, al detectar inconsistencias de datos en AulaNet, emita el correo de guía al estudiante y actualice el ticket en HubSpot a etapa de cierre (Stage 4), evitando reprocesamientos innecesarios en ciclos posteriores.
             </p>
           </div>
 
-          <div class="p-5 rounded-xl bg-slate-950/60 border border-slate-800">
-            <div class="flex items-center gap-2 text-sky-400 font-bold text-sm mb-2">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="flex items-center gap-2 text-blue-800 font-bold text-xs uppercase tracking-wider mb-1.5 font-display">
               <i class="fa-solid fa-shield-halved"></i> Blue Prism Credential Manager
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed">
+            <p class="text-xs text-slate-600 leading-relaxed">
               Migrar los tokens de HubSpot y credenciales de acceso al almacén encriptado nativo de Blue Prism (AES-256) en el servidor de la universidad, alineándose con las políticas de ciberseguridad institucional.
             </p>
           </div>
 
-          <div class="p-5 rounded-xl bg-slate-950/60 border border-slate-800">
-            <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm mb-2">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="flex items-center gap-2 text-emerald-800 font-bold text-xs uppercase tracking-wider mb-1.5 font-display">
               <i class="fa-solid fa-network-wired"></i> Reactivación de Verificación Académica
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed">
+            <p class="text-xs text-slate-600 leading-relaxed">
               Una vez desplegado Blue Prism en la infraestructura propia de la UMB con acceso LAN/VPN a Campus, reactivar el trámite de Verificación Académica para completar el 100% de los certificados planeados.
             </p>
           </div>
 
-          <div class="p-5 rounded-xl bg-slate-950/60 border border-slate-800">
-            <div class="flex items-center gap-2 text-indigo-400 font-bold text-sm mb-2">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="flex items-center gap-2 text-indigo-800 font-bold text-xs uppercase tracking-wider mb-1.5 font-display">
               <i class="fa-solid fa-comments"></i> Centralización Omnicanal en HubSpot
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed">
+            <p class="text-xs text-slate-600 leading-relaxed">
               Unificar todas las notificaciones a través de la API oficial de Conversaciones de HubSpot, garantizando que el historial del estudiante quede totalmente consolidado en un único hilo de servicio.
             </p>
           </div>
@@ -872,47 +897,47 @@
     <!-- ========================================== -->
     <div id="tab-roadmap" class="tab-content hidden space-y-6">
       
-      <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 shadow-lg">
-        <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
-          <i class="fa-solid fa-map-location-dot text-rose-400"></i> Próximos Pasos & Visión de Futuro
+      <div class="bg-white rounded-xl p-6 border border-slate-200 card-shadow">
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-1 font-display flex items-center gap-2">
+          <i class="fa-solid fa-map-location-dot text-umb-red"></i> Próximos Pasos & Visión de Futuro
         </h3>
-        <p class="text-xs text-slate-400 mb-6">
+        <p class="text-xs text-slate-500 mb-5">
           Evolución del ecosistema de automatización en coordinación con la Dirección de TI y la Coordinación del CASE.
         </p>
 
-        <div class="space-y-4 text-xs text-slate-300">
+        <div class="space-y-3 text-xs text-slate-700">
           
-          <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
             <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-lg bg-teal-950 text-teal-400 flex items-center justify-center font-bold">1</div>
+              <div class="w-8 h-8 rounded-lg bg-red-100 text-umb-red flex items-center justify-center font-bold font-display">1</div>
               <div>
-                <strong class="text-white text-sm block">Migración a Infraestructura Propia UMB</strong>
-                <span class="text-slate-400">Acompañar al equipo de tecnología en la configuración del entorno servidor.</span>
+                <strong class="text-slate-900 text-xs font-display block">Migración a Infraestructura Propia UMB</strong>
+                <span class="text-slate-500">Acompañar al equipo de tecnología en la configuración del entorno servidor institucional.</span>
               </div>
             </div>
-            <span class="px-2.5 py-1 rounded bg-teal-950 text-teal-300 font-semibold">En Coordinación</span>
+            <span class="px-2.5 py-1 rounded-full bg-red-50 text-umb-red border border-red-200 font-bold">En Coordinación</span>
           </div>
 
-          <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
             <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-lg bg-sky-950 text-sky-400 flex items-center justify-center font-bold">2</div>
+              <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center font-bold font-display">2</div>
               <div>
-                <strong class="text-white text-sm block">Levantamiento de Nuevos Trámites CASE</strong>
-                <span class="text-slate-400">Sesión de trabajo con la coordinación del CASE para identificar trámites candidatos.</span>
+                <strong class="text-slate-900 text-xs font-display block">Levantamiento de Nuevos Trámites CASE</strong>
+                <span class="text-slate-500">Sesión de trabajo con la coordinación del CASE para identificar trámites candidatos.</span>
               </div>
             </div>
-            <span class="px-2.5 py-1 rounded bg-sky-950 text-sky-300 font-semibold">Programada</span>
+            <span class="px-2.5 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-200 font-bold">Programada</span>
           </div>
 
-          <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
             <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-lg bg-indigo-950 text-indigo-400 flex items-center justify-center font-bold">3</div>
+              <div class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-800 flex items-center justify-center font-bold font-display">3</div>
               <div>
-                <strong class="text-white text-sm block">Gestión de Links de Pago & Blue Prism WorkHQ</strong>
-                <span class="text-slate-400">Evaluar la integración de la nueva pasarela de pagos con WorkHQ para cobro automatizado.</span>
+                <strong class="text-slate-900 text-xs font-display block">Gestión de Links de Pago & Blue Prism WorkHQ</strong>
+                <span class="text-slate-500">Evaluar la integración de la nueva pasarela de pagos con WorkHQ para cobro automatizado.</span>
               </div>
             </div>
-            <span class="px-2.5 py-1 rounded bg-indigo-950 text-indigo-300 font-semibold">Evaluación</span>
+            <span class="px-2.5 py-1 rounded-full bg-indigo-50 text-indigo-800 border border-indigo-200 font-bold">Evaluación</span>
           </div>
 
         </div>
@@ -922,54 +947,67 @@
 
   </main>
 
+  <!-- FOOTER INSTITUCIONAL UMB -->
+  <footer class="border-t border-slate-200 bg-white py-5 text-slate-500 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+      <div class="flex items-center gap-3 justify-center sm:justify-start">
+        <img src="assets/logo-umb.webp" onerror="this.onerror=null; this.src='https://umb.edu.co/wp-content/uploads/2026/01/Logo-Universidad-Manuela-Beltran.webp';" alt="UMB" class="h-6 w-auto opacity-70">
+        <span>© Universidad Manuela Beltrán — CASE | Vigilada Mineducación</span>
+      </div>
+      <div>
+        <span>Plataforma de Operación RPA Blue Prism • HubSpot CRM</span>
+      </div>
+    </div>
+  </footer>
+
   <!-- MODAL DE DETALLES DEL TICKET -->
-  <div id="ticketModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-2xl w-full p-6 shadow-2xl relative">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-        <h4 id="modalTicketId" class="text-base font-bold text-white flex items-center gap-2">
-          <i class="fa-solid fa-ticket text-teal-400"></i> Ticket #00000000
+  <div id="ticketModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white border border-slate-200 rounded-2xl max-w-2xl w-full p-6 shadow-2xl relative">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+        <h4 id="modalTicketId" class="text-base font-bold text-slate-900 font-display flex items-center gap-2">
+          <i class="fa-solid fa-ticket text-umb-red"></i> Ticket #00000000
         </h4>
-        <button onclick="closeModal()" class="text-slate-400 hover:text-white text-lg">
+        <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 text-lg">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
 
-      <div class="py-4 space-y-4 text-xs">
-        <div class="grid grid-cols-2 gap-4">
-          <div class="p-3 rounded-lg bg-slate-950 border border-slate-800">
-            <span class="text-slate-500 block mb-1">Estudiante:</span>
-            <strong id="modalStudent" class="text-white text-sm block">Nombre</strong>
+      <div class="py-4 space-y-3.5 text-xs">
+        <div class="grid grid-cols-2 gap-3">
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <span class="text-slate-500 block mb-1">Estudiante / Solicitante:</span>
+            <strong id="modalStudent" class="text-slate-900 text-sm block font-display">Nombre</strong>
           </div>
-          <div class="p-3 rounded-lg bg-slate-950 border border-slate-800">
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
             <span class="text-slate-500 block mb-1">Trámite:</span>
-            <strong id="modalType" class="text-teal-400 text-sm block">Certificado</strong>
+            <strong id="modalType" class="text-umb-red text-sm block font-display">Certificado</strong>
           </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-4">
-          <div class="p-3 rounded-lg bg-slate-950 border border-slate-800">
-            <span class="text-slate-500 block mb-1">Responsable / Owner:</span>
-            <span id="modalOwner" class="text-slate-300 font-semibold">Blue Prism</span>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <span class="text-slate-500 block mb-1">Responsable:</span>
+            <span id="modalOwner" class="text-slate-800 font-semibold">Robot de Blue Prism</span>
           </div>
-          <div class="p-3 rounded-lg bg-slate-950 border border-slate-800">
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
             <span class="text-slate-500 block mb-1">Fecha de Radicación:</span>
-            <span id="modalDate" class="text-slate-300 font-mono">2026-09-01</span>
+            <span id="modalDate" class="text-slate-800 font-mono">2026-09-01</span>
           </div>
         </div>
 
-        <div class="p-3 rounded-lg bg-slate-950 border border-slate-800">
+        <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
           <span class="text-slate-500 block mb-1">Respuesta o Cierre de Ticket:</span>
-          <p id="modalCierre" class="text-slate-200 leading-relaxed font-sans"></p>
+          <p id="modalCierre" class="text-slate-800 leading-relaxed font-sans"></p>
         </div>
 
-        <div class="p-3 rounded-lg bg-slate-950 border border-slate-800">
+        <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
           <span class="text-slate-500 block mb-1">Descripción de la Solicitud del Estudiante:</span>
-          <p id="modalContent" class="text-slate-400 leading-relaxed font-sans max-h-32 overflow-y-auto"></p>
+          <p id="modalContent" class="text-slate-600 leading-relaxed font-sans max-h-32 overflow-y-auto"></p>
         </div>
       </div>
 
-      <div class="pt-3 border-t border-slate-800 text-right">
-        <button onclick="closeModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold">
+      <div class="pt-3 border-t border-slate-200 text-right">
+        <button onclick="closeModal()" class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition">
           Cerrar
         </button>
       </div>
@@ -985,8 +1023,6 @@
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
       document.querySelectorAll('.nav-tab').forEach(el => {
         el.classList.remove('active-tab');
-        el.classList.remove('bg-teal-900/20');
-        el.classList.remove('text-teal-300');
       });
 
       const selected = document.getElementById(tabId);
@@ -1001,7 +1037,7 @@
       }
     }
 
-    // Inicialización de Gráficas Chart.js
+    // Inicialización de Gráficas Chart.js con Paleta Institucional UMB
     let chartTramitesInstance = null;
     let chartMesesInstance = null;
     let chartCurvaInstance = null;
@@ -1011,7 +1047,7 @@
     function initCharts() {
       const summary = rawData.summary || {};
       
-      // 1. Chart Trámites (Donut)
+      // 1. Chart Trámites (Donut) - Colores UMB (Rojo Institucional y Azul Marino)
       const ctxTramites = document.getElementById('chartTramites');
       if (ctxTramites) {
         chartTramitesInstance = new Chart(ctxTramites, {
@@ -1020,22 +1056,23 @@
             labels: ['Certificados de Estudio (811)', 'Certificados de Horarios (54)'],
             datasets: [{
               data: [summary.estudios_tickets || 811, summary.horarios_tickets || 54],
-              backgroundColor: ['#10B981', '#0284C7'],
-              borderWidth: 0
+              backgroundColor: ['#A60311', '#212934'],
+              borderWidth: 2,
+              borderColor: '#ffffff'
             }]
           },
           options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-              legend: { position: 'bottom', labels: { color: '#94a3b8', font: { size: 10 } } }
+              legend: { position: 'bottom', labels: { color: '#475569', font: { size: 10, family: 'Montserrat' } } }
             },
-            cutout: '70%'
+            cutout: '68%'
           }
         });
       }
 
-      // 2. Chart Meses (Barra de Horas Ahorradas)
+      // 2. Chart Meses (Barra de Horas Ahorradas) - Paleta UMB
       const ctxMeses = document.getElementById('chartMeses');
       if (ctxMeses) {
         chartMesesInstance = new Chart(ctxMeses, {
@@ -1045,7 +1082,7 @@
             datasets: [{
               label: 'Horas Devueltas',
               data: [86.2, 42.7, 15.3],
-              backgroundColor: ['#0D9488', '#0284C7', '#6366F1'],
+              backgroundColor: ['#A60311', '#212934', '#475569'],
               borderRadius: 6
             }]
           },
@@ -1056,14 +1093,14 @@
               legend: { display: false }
             },
             scales: {
-              y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8', font: { size: 10 } } },
-              x: { grid: { display: false }, ticks: { color: '#94a3b8', font: { size: 10 } } }
+              y: { grid: { color: '#f1f5f9' }, ticks: { color: '#64748b', font: { size: 10 } } },
+              x: { grid: { display: false }, ticks: { color: '#475569', font: { size: 10, family: 'Montserrat', weight: '600' } } }
             }
           }
         });
       }
 
-      // 3. Chart Curva de Demanda en Producción (52 días)
+      // 3. Chart Curva de Demanda en Producción (52 días) - Línea Roja UMB
       const ctxCurva = document.getElementById('chartCurva');
       if (ctxCurva && rawData.date_distribution) {
         const labels = rawData.date_distribution.map(d => d[0].substring(5));
@@ -1076,11 +1113,12 @@
             datasets: [{
               label: 'Casos Gestionados',
               data: values,
-              borderColor: '#14B8A6',
-              backgroundColor: 'rgba(20, 184, 166, 0.1)',
+              borderColor: '#A60311',
+              backgroundColor: 'rgba(166, 3, 17, 0.06)',
               fill: true,
               tension: 0.3,
-              pointRadius: 2,
+              pointRadius: 2.5,
+              pointBackgroundColor: '#A60311',
               pointHoverRadius: 5
             }]
           },
@@ -1090,23 +1128,24 @@
             plugins: {
               legend: { display: false },
               tooltip: {
-                backgroundColor: '#0f172a',
-                borderColor: '#334155',
-                borderWidth: 1,
+                backgroundColor: '#212934',
+                padding: 10,
+                titleFont: { family: 'Montserrat' },
+                bodyFont: { family: 'Open Sans' },
                 callbacks: {
-                  label: (ctx) => ` ${ctx.raw} casos gestionados`
+                  label: (ctx) => ` ${ctx.raw} trámites procesados`
                 }
               }
             },
             scales: {
-              y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8', font: { size: 10 } } },
-              x: { grid: { display: false }, ticks: { color: '#94a3b8', font: { size: 9 }, maxTicksLimit: 15 } }
+              y: { grid: { color: '#f1f5f9' }, ticks: { color: '#64748b', font: { size: 10 } } },
+              x: { grid: { display: false }, ticks: { color: '#64748b', font: { size: 9 }, maxTicksLimit: 15 } }
             }
           }
         });
       }
 
-      // 4. Chart Horas (Barra)
+      // 4. Chart Horas (Barra) - Azul Marino UMB
       const ctxHoras = document.getElementById('chartHoras');
       if (ctxHoras && rawData.hour_distribution) {
         const hLabels = rawData.hour_distribution.map(h => `${h[0]}:00`);
@@ -1118,7 +1157,7 @@
             labels: hLabels,
             datasets: [{
               data: hVals,
-              backgroundColor: '#0284C7',
+              backgroundColor: '#212934',
               borderRadius: 4
             }]
           },
@@ -1127,30 +1166,31 @@
             maintainAspectRatio: false,
             plugins: { legend: { display: false } },
             scales: {
-              y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8', font: { size: 9 } } },
-              x: { grid: { display: false }, ticks: { color: '#94a3b8', font: { size: 9 } } }
+              y: { grid: { color: '#f1f5f9' }, ticks: { color: '#64748b', font: { size: 9 } } },
+              x: { grid: { display: false }, ticks: { color: '#64748b', font: { size: 9 } } }
             }
           }
         });
       }
 
-      // 5. Chart Eficiencia
+      // 5. Chart Eficiencia (Donut)
       const ctxEficiencia = document.getElementById('chartEficiencia');
       if (ctxEficiencia) {
         chartEficienciaInstance = new Chart(ctxEficiencia, {
           type: 'doughnut',
           data: {
-            labels: ['Resolución Inmediata en 1 Ciclo (68.1%)', 'Seguimiento / Asistencia Activa (31.9%)'],
+            labels: ['Resolución Inmediata en 1 Ciclo (68.1%)', 'Seguimiento Asistido (31.9%)'],
             datasets: [{
               data: [154, 72],
-              backgroundColor: ['#10B981', '#38BDF8'],
-              borderWidth: 0
+              backgroundColor: ['#15803D', '#3B82F6'],
+              borderWidth: 2,
+              borderColor: '#ffffff'
             }]
           },
           options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', font: { size: 10 } } } },
+            plugins: { legend: { position: 'bottom', labels: { color: '#475569', font: { size: 10, family: 'Montserrat' } } } },
             cutout: '65%'
           }
         });
@@ -1169,14 +1209,15 @@
       currentPage = 1;
       
       document.querySelectorAll('#tab-tickets button[id^="flt-"]').forEach(btn => {
-        btn.classList.remove('bg-teal-600', 'text-white', 'font-semibold');
-        btn.classList.add('bg-slate-800', 'text-slate-300');
+        btn.classList.remove('bg-umb-red', 'text-white', 'font-bold', 'shadow-sm');
+        btn.classList.add('bg-slate-100', 'text-slate-700', 'font-semibold', 'border', 'border-slate-200');
       });
 
-      if (type === 'ALL') document.getElementById('flt-all').classList.add('bg-teal-600', 'text-white', 'font-semibold');
-      if (type === 'BP') document.getElementById('flt-bp').classList.add('bg-teal-600', 'text-white', 'font-semibold');
-      if (type === 'Estudios') document.getElementById('flt-est').classList.add('bg-teal-600', 'text-white', 'font-semibold');
-      if (type === 'Horarios') document.getElementById('flt-hor').classList.add('bg-teal-600', 'text-white', 'font-semibold');
+      const activeBtn = document.getElementById('flt-' + (type === 'ALL' ? 'all' : (type === 'BP' ? 'bp' : (type === 'Estudios' ? 'est' : 'hor'))));
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-slate-100', 'text-slate-700', 'border-slate-200');
+        activeBtn.classList.add('bg-umb-red', 'text-white', 'font-bold', 'shadow-sm');
+      }
 
       applyTableFilters();
     }
@@ -1190,12 +1231,10 @@
     function applyTableFilters() {
       const allTickets = rawData.tickets || [];
       filteredTicketsList = allTickets.filter(t => {
-        // Type filter
         if (currentFilterType === 'BP' && !t.is_bp) return false;
         if (currentFilterType === 'Estudios' && t.type !== 'Estudios') return false;
         if (currentFilterType === 'Horarios' && t.type !== 'Horarios') return false;
 
-        // Search filter
         if (currentSearchTerm) {
           const matchTicket = t.ticket.toLowerCase().includes(currentSearchTerm);
           const matchStudent = (t.student || '').toLowerCase().includes(currentSearchTerm);
@@ -1218,7 +1257,7 @@
       const pageData = filteredTicketsList.slice(start, end);
 
       if (pageData.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="8" class="py-8 text-center text-slate-500">No se encontraron tickets con los filtros aplicados.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="8" class="py-8 text-center text-slate-400 font-sans">No se encontraron tickets con los filtros aplicados.</td></tr>`;
         document.getElementById('tablePaginationInfo').textContent = 'Mostrando 0 de 0 casos';
         document.getElementById('btnPrevPage').disabled = true;
         document.getElementById('btnNextPage').disabled = true;
@@ -1227,27 +1266,27 @@
 
       pageData.forEach(t => {
         const tr = document.createElement('tr');
-        tr.className = 'hover:bg-slate-800/50 transition cursor-pointer';
+        tr.className = 'hover:bg-slate-50 transition cursor-pointer';
         tr.onclick = () => openTicketModal(t.ticket);
 
         const typeBadge = t.type === 'Horarios' 
-          ? `<span class="px-2 py-0.5 rounded bg-sky-950 text-sky-300 border border-sky-800 text-[10px]">Horarios</span>`
-          : `<span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800 text-[10px]">Estudios</span>`;
+          ? `<span class="px-2 py-0.5 rounded bg-blue-50 text-blue-800 border border-blue-200 text-[10px] font-semibold">Horarios</span>`
+          : `<span class="px-2 py-0.5 rounded bg-red-50 text-umb-red border border-red-200 text-[10px] font-semibold">Estudios</span>`;
 
-        const ownerBadge = `<span class="px-2 py-0.5 rounded bg-teal-950 text-teal-300 border border-teal-800 text-[10px] font-bold flex items-center gap-1 w-max"><i class="fa-solid fa-robot text-[9px]"></i> Robot de Blue Prism</span>`;
+        const ownerBadge = `<span class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-800 border border-slate-300 text-[10px] font-bold flex items-center gap-1 w-max"><i class="fa-solid fa-robot text-umb-red text-[9px]"></i> Robot de Blue Prism</span>`;
 
         const cierreSnippet = (t.cierre || '').length > 40 ? t.cierre.substring(0, 40) + '...' : t.cierre;
 
         tr.innerHTML = `
-          <td class="py-2.5 px-4 font-bold text-white">#${t.ticket}</td>
-          <td class="py-2.5 px-4 font-sans text-slate-200 font-medium">${t.student}</td>
-          <td class="py-2.5 px-4">${typeBadge}</td>
-          <td class="py-2.5 px-4"><span class="text-emerald-400 font-semibold">4 (Resuelto)</span></td>
-          <td class="py-2.5 px-4">${ownerBadge}</td>
-          <td class="py-2.5 px-4 text-slate-400 font-sans">${t.createdate.substring(0, 10)}</td>
-          <td class="py-2.5 px-4 text-slate-400 font-sans text-[11px]" title="${t.cierre}">${cierreSnippet}</td>
-          <td class="py-2.5 px-4 text-center">
-            <button class="p-1 text-teal-400 hover:text-white rounded bg-slate-800 hover:bg-teal-600 transition text-[10px] px-2">
+          <td class="py-2.5 px-3.5 font-bold text-slate-900 font-mono">#${t.ticket}</td>
+          <td class="py-2.5 px-3.5 font-sans text-slate-800 font-semibold">${t.student}</td>
+          <td class="py-2.5 px-3.5">${typeBadge}</td>
+          <td class="py-2.5 px-3.5"><span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold text-[10px]">4 (Resuelto)</span></td>
+          <td class="py-2.5 px-3.5">${ownerBadge}</td>
+          <td class="py-2.5 px-3.5 text-slate-500 font-sans text-[11px]">${t.createdate.substring(0, 10)}</td>
+          <td class="py-2.5 px-3.5 text-slate-600 font-sans text-[11px]" title="${t.cierre}">${cierreSnippet}</td>
+          <td class="py-2.5 px-3.5 text-center">
+            <button class="px-2 py-1 text-umb-red hover:bg-red-50 rounded border border-red-200 font-bold text-[10px] transition">
               Ver
             </button>
           </td>
@@ -1281,10 +1320,10 @@
       const ticket = allTickets.find(t => t.ticket === ticketId);
       if (!ticket) return;
 
-      document.getElementById('modalTicketId').innerHTML = `<i class="fa-solid fa-ticket text-teal-400"></i> Ticket #${ticket.ticket}`;
+      document.getElementById('modalTicketId').innerHTML = `<i class="fa-solid fa-ticket text-umb-red"></i> Ticket #${ticket.ticket}`;
       document.getElementById('modalStudent').textContent = ticket.student || 'Estudiante UMB';
       document.getElementById('modalType').textContent = ticket.tramite || ticket.type;
-      document.getElementById('modalOwner').innerHTML = `<span class="px-2 py-0.5 rounded bg-teal-950 text-teal-300 border border-teal-800 text-xs font-bold inline-flex items-center gap-1.5"><i class="fa-solid fa-robot"></i> Robot de Blue Prism</span>`;
+      document.getElementById('modalOwner').innerHTML = `<span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-800 border border-slate-300 text-xs font-bold inline-flex items-center gap-1.5"><i class="fa-solid fa-robot text-umb-red"></i> Robot de Blue Prism</span>`;
       document.getElementById('modalDate').textContent = ticket.createdate;
       document.getElementById('modalCierre').textContent = ticket.cierre || 'Cierre registrado satisfactoriamente.';
       document.getElementById('modalContent').textContent = ticket.content || 'Sin texto de descripción disponible.';
@@ -1302,7 +1341,7 @@
       filteredTicketsList.forEach(t => {
         const desc = (t.content || '').replace(/"/g, '""').replace(/\n/g, ' ');
         const cierre = (t.cierre || '').replace(/"/g, '""').replace(/\n/g, ' ');
-        csv += `"${t.ticket}","${t.tramite}","${t.student}","${t.stage}","${t.owner}","${t.is_bp ? 'SI' : 'NO'}","${t.createdate}","${cierre}","${desc}"\n`;
+        csv += `"${t.ticket}","${t.tramite}","${t.student}","${t.stage}","Robot de Blue Prism","SI","${t.createdate}","${cierre}","${desc}"\n`;
       });
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
       const url = URL.createObjectURL(blob);
@@ -1339,13 +1378,15 @@
     function inspectNode(nodeId) {
       const info = nodeDetails[nodeId];
       if (!info) return;
-      document.getElementById('detail-title').innerHTML = `<i class="fa-solid fa-circle-info text-teal-400"></i> ${info.title}`;
+      document.getElementById('detail-title').innerHTML = `<i class="fa-solid fa-circle-info text-umb-red"></i> ${info.title}`;
       document.getElementById('detail-tag').textContent = info.tag;
       document.getElementById('detail-desc').textContent = info.desc;
 
-      document.querySelectorAll('.flow-node').forEach(n => n.classList.remove('ring-2', 'ring-teal-400'));
+      document.querySelectorAll('.flow-node').forEach(n => n.classList.remove('ring-2', 'ring-umb-red', 'border-umb-red'));
       const activeEl = document.getElementById('node-' + nodeId);
-      if (activeEl) activeEl.classList.add('ring-2', 'ring-teal-400');
+      if (activeEl) {
+        activeEl.classList.add('ring-2', 'ring-umb-red', 'border-umb-red');
+      }
     }
 
     function runScenario(scenKey) {
@@ -1362,14 +1403,12 @@
       inspectNode(nodeId);
 
       document.querySelectorAll('.flow-node').forEach(n => {
-        n.classList.remove('bg-teal-900/60', 'border-teal-400', 'bg-slate-900');
-        n.classList.add('bg-slate-900');
+        n.classList.remove('bg-red-50', 'border-umb-red');
       });
 
       const currentEl = document.getElementById('node-' + nodeId);
       if (currentEl) {
-        currentEl.classList.remove('bg-slate-900');
-        currentEl.classList.add('bg-teal-900/60', 'border-teal-400');
+        currentEl.classList.add('bg-red-50', 'border-umb-red');
       }
 
       const totalSteps = steps.length;
@@ -1385,7 +1424,7 @@
         document.getElementById('btn-prev-step').disabled = false;
         if (simCurrentStep === steps.length - 1) {
           document.getElementById('btn-next-step').disabled = true;
-          document.getElementById('sim-step-text').innerHTML += ` <span class="text-emerald-400 font-bold">(Completado)</span>`;
+          document.getElementById('sim-step-text').innerHTML += ` <span class="text-emerald-700 font-bold">(Completado con Éxito)</span>`;
         }
       }
     }
@@ -1409,21 +1448,20 @@
       document.getElementById('btn-next-step').disabled = true;
       document.getElementById('sim-step-text').textContent = 'Simulador listo. Haz clic en un escenario para iniciar.';
       document.querySelectorAll('.flow-node').forEach(n => {
-        n.classList.remove('bg-teal-900/60', 'border-teal-400', 'ring-2', 'ring-teal-400');
-        n.classList.add('bg-slate-900');
+        n.classList.remove('bg-red-50', 'border-umb-red', 'ring-2', 'ring-umb-red');
       });
-      document.getElementById('detail-title').innerHTML = `<i class="fa-solid fa-circle-info text-teal-400"></i> Inspector de Etapa`;
+      document.getElementById('detail-title').innerHTML = `<i class="fa-solid fa-circle-info text-umb-red"></i> Inspector de Etapa`;
       document.getElementById('detail-tag').textContent = 'Haz clic en una etapa';
       document.getElementById('detail-desc').textContent = 'Haz clic en cualquiera de las 12 etapas del flujo superior o activa uno de los escenarios para ver el comportamiento técnico, inputs, outputs y reglas asociadas.';
     }
 
     function selectProcess(pKey) {
       if (pKey === 'p1') {
-        document.getElementById('btn-flujo-p1').className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-teal-600 text-white transition flex items-center gap-1.5 shadow';
-        document.getElementById('btn-flujo-p2').className = 'px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition flex items-center gap-1.5';
+        document.getElementById('btn-flujo-p1').className = 'px-3 py-1.5 rounded-md text-xs font-bold bg-umb-red text-white transition flex items-center gap-1.5 shadow-sm';
+        document.getElementById('btn-flujo-p2').className = 'px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 transition flex items-center gap-1.5';
       } else {
-        document.getElementById('btn-flujo-p2').className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-teal-600 text-white transition flex items-center gap-1.5 shadow';
-        document.getElementById('btn-flujo-p1').className = 'px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition flex items-center gap-1.5';
+        document.getElementById('btn-flujo-p2').className = 'px-3 py-1.5 rounded-md text-xs font-bold bg-umb-red text-white transition flex items-center gap-1.5 shadow-sm';
+        document.getElementById('btn-flujo-p1').className = 'px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 transition flex items-center gap-1.5';
       }
     }
 
