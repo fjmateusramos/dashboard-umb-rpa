@@ -429,242 +429,54 @@
     <!-- ========================================== -->
     <!-- TAB 2: FLUJO DEL PROCESO & SIMULADOR -->
     <!-- ========================================== -->
-    <div id="tab-flujo" class="tab-content hidden space-y-6">
-      
-      <div class="bg-white rounded-xl border border-slate-200 p-6 card-shadow">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-200">
-          <div>
-            <h3 class="text-lg font-bold text-slate-900 font-display flex items-center gap-2">
-              <i class="fa-solid fa-diagram-project text-umb-red"></i> Arquitectura de Flujos de Proceso en Producción
-            </h3>
-            <p class="text-xs text-slate-500 mt-0.5">
-              Visualización paso a paso del pipeline desasistido implementado en Blue Prism y conectado con AulaNet y HubSpot.
-            </p>
-          </div>
-
-          <!-- Selector de Proceso -->
-          <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-lg border border-slate-200">
-            <button id="btn-flujo-p1" onclick="selectProcess('p1')" class="px-3 py-1.5 rounded-md text-xs font-bold bg-umb-red text-white transition flex items-center gap-1.5 shadow-sm">
-              <i class="fa-solid fa-file-lines"></i> 01 - Certificados de Estudios
-            </button>
-            <button id="btn-flujo-p2" onclick="selectProcess('p2')" class="px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 transition flex items-center gap-1.5">
-              <i class="fa-solid fa-calendar-days"></i> 02 - Certificado de Horarios
-            </button>
-          </div>
+    <div id="tab-flujo" class="tab-content hidden">
+      <section class="bg-white rounded-2xl border border-slate-200 card-shadow overflow-hidden">
+        <div class="p-6 sm:p-8 bg-umb-navy text-white">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-300">Del estudiante a su certificado</span>
+          <h3 class="text-xl sm:text-2xl font-bold font-display mt-2 mb-3">Así funciona la atención automática</h3>
+          <p class="text-sm text-slate-200 leading-relaxed max-w-3xl">El robot recibe la solicitud, revisa la información y prepara una respuesta. Cuando se genera un certificado, incorpora un código QR que permite validar que fue emitido por la universidad.</p>
         </div>
-
-        <!-- SIMULADOR INTERACTIVO STEP-BY-STEP -->
-        <div class="mb-6 p-4 rounded-xl bg-slate-50 border border-slate-200">
-          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-            <div>
-              <span class="text-[11px] font-bold uppercase tracking-wider text-umb-red block mb-1">
-                <i class="fa-solid fa-play text-xs mr-1"></i> Simulador de Ejecución Operativa
-              </span>
-              <p class="text-xs text-slate-600">
-                Selecciona un escenario para visualizar la ruta y validaciones que ejecuta el robot en cada etapa:
-              </p>
-            </div>
-
-            <div class="flex flex-wrap items-center gap-2">
-              <button onclick="runScenario('ideal')" id="btn-scen-ideal" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 transition flex items-center gap-1.5">
-                <i class="fa-solid fa-circle-check text-emerald-600"></i> Escenario Exitoso (Certificado)
-              </button>
-              <button onclick="runScenario('admision')" id="btn-scen-admision" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200 transition flex items-center gap-1.5">
-                <i class="fa-solid fa-file-circle-check text-blue-600"></i> Caso Admisión (Word)
-              </button>
-              <button onclick="runScenario('exception')" id="btn-scen-exception" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 transition flex items-center gap-1.5">
-                <i class="fa-solid fa-circle-exclamation text-amber-600"></i> Flujo con Guía al Estudiante
-              </button>
-              <button onclick="resetSimulation()" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-200 hover:bg-slate-300 text-slate-700 transition">
-                <i class="fa-solid fa-rotate-left"></i> Reiniciar
-              </button>
+        <div class="p-5 sm:p-8">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div><h4 class="text-sm font-bold text-slate-900 font-display">1. Elige el certificado</h4><p class="text-xs text-slate-500 mt-1">Explora cómo se atiende cada tipo de solicitud.</p></div>
+            <div class="flex flex-wrap gap-2" role="group" aria-label="Tipo de certificado">
+              <button id="btn-flujo-p1" onclick="selectProcess('p1')" aria-pressed="true" class="px-4 py-2 rounded-lg text-sm font-semibold bg-umb-red text-white">Estudios</button>
+              <button id="btn-flujo-p2" onclick="selectProcess('p2')" aria-pressed="false" class="px-4 py-2 rounded-lg text-sm font-semibold bg-slate-100 text-slate-700">Horarios</button>
             </div>
           </div>
-
-          <!-- Barra de Estado del Simulador -->
-          <div id="sim-status-bar" class="mt-3.5 pt-3 border-t border-slate-200 flex items-center justify-between text-xs">
-            <span class="text-slate-600" id="sim-step-text">Simulador listo. Haz clic en un escenario para iniciar.</span>
-            <div class="flex items-center gap-2">
-              <button onclick="prevStep()" id="btn-prev-step" disabled class="px-2.5 py-1 rounded bg-slate-200 text-slate-400 text-xs disabled:opacity-40">Anterior</button>
-              <button onclick="nextStep()" id="btn-next-step" disabled class="px-2.5 py-1 rounded bg-umb-red text-white text-xs disabled:opacity-40 font-bold">Siguiente Etapa</button>
+          <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-8" aria-label="Pasos de atención">
+            <li><button type="button" id="node-1" onclick="inspectNode(1)" class="flow-node w-full h-full text-left rounded-xl border border-slate-200 bg-white p-4 transition hover:border-umb-red focus-visible:ring-2 focus-visible:ring-umb-red"><span class="flex items-center justify-between mb-4"><span class="w-9 h-9 rounded-lg bg-red-50 text-umb-red flex items-center justify-center"><i class="fa-solid fa-inbox" aria-hidden="true"></i></span><span class="text-xs font-bold text-slate-400">01</span></span><strong class="block text-sm text-slate-900 mb-2">Recibir la solicitud</strong><span class="block text-xs leading-relaxed text-slate-500">El estudiante solicita su certificado a través del CASE.</span></button></li>
+            <li><button type="button" id="node-2" onclick="inspectNode(2)" class="flow-node w-full h-full text-left rounded-xl border border-slate-200 bg-white p-4 transition hover:border-umb-red focus-visible:ring-2 focus-visible:ring-umb-red"><span class="flex items-center justify-between mb-4"><span class="w-9 h-9 rounded-lg bg-red-50 text-umb-red flex items-center justify-center"><i class="fa-solid fa-user-check" aria-hidden="true"></i></span><span class="text-xs font-bold text-slate-400">02</span></span><strong class="block text-sm text-slate-900 mb-2">Revisar la información</strong><span class="block text-xs leading-relaxed text-slate-500">El robot verifica los datos y la información académica disponible.</span></button></li>
+            <li><button type="button" id="node-3" onclick="inspectNode(3)" class="flow-node w-full h-full text-left rounded-xl border border-slate-200 bg-white p-4 transition hover:border-umb-red focus-visible:ring-2 focus-visible:ring-umb-red"><span class="flex items-center justify-between mb-4"><span class="w-9 h-9 rounded-lg bg-red-50 text-umb-red flex items-center justify-center"><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i></span><span class="text-xs font-bold text-slate-400">03</span></span><strong class="block text-sm text-slate-900 mb-2">Preparar la respuesta</strong><span class="block text-xs leading-relaxed text-slate-500">Se genera el certificado o se prepara una orientación al estudiante.</span></button></li>
+            <li><button type="button" id="node-4" onclick="inspectNode(4)" class="flow-node w-full h-full text-left rounded-xl border border-slate-200 bg-white p-4 transition hover:border-umb-red focus-visible:ring-2 focus-visible:ring-umb-red"><span class="flex items-center justify-between mb-4"><span class="w-9 h-9 rounded-lg bg-red-50 text-umb-red flex items-center justify-center"><i class="fa-solid fa-qrcode" aria-hidden="true"></i></span><span class="text-xs font-bold text-slate-400">04</span></span><strong class="block text-sm text-slate-900 mb-2">Agregar la validación QR</strong><span class="block text-xs leading-relaxed text-slate-500">Cada certificado generado incorpora un QR para verificar su emisión.</span></button></li>
+            <li><button type="button" id="node-5" onclick="inspectNode(5)" class="flow-node w-full h-full text-left rounded-xl border border-slate-200 bg-white p-4 transition hover:border-umb-red focus-visible:ring-2 focus-visible:ring-umb-red"><span class="flex items-center justify-between mb-4"><span class="w-9 h-9 rounded-lg bg-red-50 text-umb-red flex items-center justify-center"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span><span class="text-xs font-bold text-slate-400">05</span></span><strong class="block text-sm text-slate-900 mb-2">Entregar la respuesta</strong><span class="block text-xs leading-relaxed text-slate-500">El estudiante recibe el certificado o las indicaciones para continuar.</span></button></li>
+          </ol>
+          <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 sm:p-6">
+            <h4 class="text-sm font-bold text-slate-900 font-display">2. Prueba un ejemplo</h4>
+            <p class="text-xs text-slate-500 mt-1 mb-4">Esta es una demostración ilustrativa: no consulta datos reales ni envía documentos.</p>
+            <div class="flex flex-wrap gap-2 mb-5" role="group" aria-label="Ejemplos de atención">
+              <button id="btn-scen-ideal" onclick="runScenario('ideal')" aria-pressed="false" class="px-3 py-2 rounded-lg bg-white border border-slate-300 text-sm text-slate-700 font-semibold">Datos completos</button>
+              <button id="btn-scen-admision" onclick="runScenario('admision')" aria-pressed="false" class="px-3 py-2 rounded-lg bg-white border border-slate-300 text-sm text-slate-700 font-semibold">Estudiante admitido</button>
+              <button id="btn-scen-exception" onclick="runScenario('exception')" aria-pressed="false" class="px-3 py-2 rounded-lg bg-white border border-slate-300 text-sm text-slate-700 font-semibold">Información por revisar</button>
             </div>
-          </div>
-        </div>
-
-        <!-- GRID VISUAL DE ETAPAS -->
-        <div class="relative overflow-x-auto pb-4">
-          <div class="min-w-[850px] space-y-5">
-
-            <!-- FASE 1: INGESTA HUBSPOT -->
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-              <span class="text-[11px] font-bold text-slate-700 uppercase tracking-wider block mb-3 font-display">
-                <i class="fa-solid fa-cloud-arrow-down text-blue-700 mr-1.5"></i> Fase 1: Ingesta de Solicitudes desde HubSpot
-              </span>
-              <div class="grid grid-cols-4 gap-3">
-                
-                <div id="node-1" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(1)">
-                  <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
-                    <span>Etapa 01</span>
-                    <i class="fa-solid fa-magnifying-glass text-blue-700"></i>
-                  </div>
-                  <strong class="text-xs text-slate-900 block font-display">Tickets Search</strong>
-                  <span class="text-[10px] text-slate-500 font-mono">POST /crm/v3/tickets/search</span>
-                  <div class="mt-2 text-[10px] text-emerald-700 font-semibold flex items-center gap-1">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Trámite & Etapa 2
-                  </div>
-                </div>
-
-                <div id="node-2" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(2)">
-                  <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
-                    <span>Etapa 02</span>
-                    <i class="fa-solid fa-list-ol text-blue-700"></i>
-                  </div>
-                  <strong class="text-xs text-slate-900 block font-display">Json2Collection</strong>
-                  <span class="text-[10px] text-slate-500">toarnold - Utility</span>
-                  <div class="mt-2 text-[10px] text-slate-600">Carga lista de IDs</div>
-                </div>
-
-                <div id="node-3" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(3)">
-                  <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
-                    <span>Etapa 03</span>
-                    <i class="fa-solid fa-id-card text-blue-700"></i>
-                  </div>
-                  <strong class="text-xs text-slate-900 block font-display">Get Ticket Details</strong>
-                  <span class="text-[10px] text-slate-500 font-mono">GET /crm/v3/tickets/{id}</span>
-                  <div class="mt-2 text-[10px] text-emerald-700 font-semibold">Obtiene Cédula y Datos</div>
-                </div>
-
-                <div id="node-4" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(4)">
-                  <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
-                    <span>Etapa 04</span>
-                    <i class="fa-solid fa-arrows-split-up-and-left text-amber-600"></i>
-                  </div>
-                  <strong class="text-xs text-slate-900 block font-display">Validar Trámite</strong>
-                  <span class="text-[10px] text-slate-500">Bifurcación de Negocio</span>
-                  <div class="mt-2 text-[10px] text-slate-700 font-semibold">Estudios / Horarios / Admisión</div>
-                </div>
-
+            <div id="node-detail-panel" class="bg-white border border-slate-200 rounded-xl p-5" aria-live="polite" aria-atomic="true">
+              <span id="detail-tag" class="text-xs font-semibold text-umb-red">Certificado de estudio</span>
+              <h5 id="detail-title" class="text-lg font-bold text-slate-900 mt-2 mb-2">Conoce el recorrido de una solicitud</h5>
+              <p id="detail-desc" class="text-sm text-slate-600 leading-relaxed">Selecciona un ejemplo y avanza paso a paso para conocer qué hace el robot y qué recibe el estudiante.</p>
+              <p id="sim-outcome" class="hidden mt-4 p-3 rounded-lg bg-slate-50 text-sm font-semibold text-slate-800"></p>
+            </div>
+            <div class="mt-4 h-1.5 bg-slate-200 rounded-full overflow-hidden"><div id="sim-progress" class="h-full bg-umb-red transition-all" style="width:0%"></div></div>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mt-4">
+              <p id="sim-step-text" class="text-xs text-slate-500" role="status">Elige un ejemplo para comenzar.</p>
+              <div class="flex flex-wrap gap-2">
+                <button onclick="resetSimulation()" class="px-3 py-2 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-200">Reiniciar</button>
+                <button id="btn-prev-step" onclick="prevStep()" disabled class="px-3 py-2 rounded-lg border border-slate-300 text-xs font-semibold disabled:opacity-40">Anterior</button>
+                <button id="btn-next-step" onclick="nextStep()" disabled class="px-3 py-2 rounded-lg bg-umb-red text-white text-xs font-semibold disabled:opacity-40">Siguiente paso</button>
               </div>
             </div>
-
-            <!-- FASE 2: GESTIÓN EN SISTEMAS UMB (AULANET / WORD) -->
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-              <span class="text-[11px] font-bold text-slate-700 uppercase tracking-wider block mb-3 font-display">
-                <i class="fa-brands fa-chrome text-amber-600 mr-1.5"></i> Fase 2: Automatización en Sistemas Académicos UMB
-              </span>
-              <div class="grid grid-cols-4 gap-3">
-                
-                <div id="node-5" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(5)">
-                  <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
-                    <span>Etapa 05</span>
-                    <i class="fa-solid fa-arrow-right-to-bracket text-amber-600"></i>
-                  </div>
-                  <strong class="text-xs text-slate-900 block font-display">Login AulaNet</strong>
-                  <span class="text-[10px] text-slate-500">Chrome UI Browser</span>
-                  <div class="mt-2 text-[10px] text-slate-700">Acceso institucional</div>
-                </div>
-
-                <div id="node-6" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(6)">
-                  <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
-                    <span>Etapa 06</span>
-                    <i class="fa-solid fa-address-book text-amber-600"></i>
-                  </div>
-                  <strong class="text-xs text-slate-900 block font-display">Consulta Estudiante</strong>
-                  <span class="text-[10px] text-slate-500">Crome - AulaNET</span>
-                  <div class="mt-2 text-[10px] text-emerald-700 font-semibold">Valida Cédula & Tabla</div>
-                </div>
-
-                <div id="node-7" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(7)">
-                  <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
-                    <span>Etapa 07</span>
-                    <i class="fa-solid fa-gears text-amber-600"></i>
-                  </div>
-                  <strong class="text-xs text-slate-900 block font-display">Generar Certificado</strong>
-                  <span class="text-[10px] text-slate-500">Descarga PDF AulaNet</span>
-                  <div class="mt-2 text-[10px] text-slate-700">Ruta C:/UMB/Certificados</div>
-                </div>
-
-                <div id="node-8" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(8)">
-                  <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
-                    <span>Etapa 08</span>
-                    <i class="fa-solid fa-file-word text-blue-600"></i>
-                  </div>
-                  <strong class="text-xs text-slate-900 block font-display">Motor Word VBO</strong>
-                  <span class="text-[10px] text-slate-500">Plantilla Admisión</span>
-                  <div class="mt-2 text-[10px] text-blue-700 font-semibold">Populate & Save PDF</div>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- FASE 3: ENTREGA Y ACTUALIZACIÓN -->
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-              <span class="text-[11px] font-bold text-slate-700 uppercase tracking-wider block mb-3 font-display">
-                <i class="fa-solid fa-paper-plane text-emerald-700 mr-1.5"></i> Fase 3: Entrega al Estudiante y Cierre en HubSpot
-              </span>
-              <div class="grid grid-cols-4 gap-3">
-                
-                <div id="node-9" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(9)">
-                  <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
-                    <span>Etapa 09</span>
-                    <i class="fa-solid fa-cloud-arrow-up text-emerald-700"></i>
-                  </div>
-                  <strong class="text-xs text-slate-900 block font-display">Upload File HubSpot</strong>
-                  <span class="text-[10px] text-slate-500 font-mono">POST /files/v3/files</span>
-                  <div class="mt-2 text-[10px] text-emerald-700 font-semibold">Adjunta PDF al CRM</div>
-                </div>
-
-                <div id="node-10" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(10)">
-                  <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
-                    <span>Etapa 10</span>
-                    <i class="fa-solid fa-envelope-circle-check text-emerald-700"></i>
-                  </div>
-                  <strong class="text-xs text-slate-900 block font-display">Envío de Mensaje</strong>
-                  <span class="text-[10px] text-slate-500">Conversations / SMTP</span>
-                  <div class="mt-2 text-[10px] text-slate-700">Entrega al correo oficial</div>
-                </div>
-
-                <div id="node-11" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(11)">
-                  <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
-                    <span>Etapa 11</span>
-                    <i class="fa-solid fa-circle-check text-emerald-700"></i>
-                  </div>
-                  <strong class="text-xs text-slate-900 block font-display">Cierre de Ticket</strong>
-                  <span class="text-[10px] text-slate-500 font-mono">PATCH /tickets/{id}</span>
-                  <div class="mt-2 text-[10px] text-emerald-700 font-bold">Stage: 4 (Resuelto)</div>
-                </div>
-
-                <div id="node-12" class="flow-node p-3 rounded-lg bg-white border border-slate-200 hover:border-umb-red transition cursor-pointer card-shadow" onclick="inspectNode(12)">
-                  <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
-                    <span>Etapa 12</span>
-                    <i class="fa-solid fa-flag-checkered text-slate-600"></i>
-                  </div>
-                  <strong class="text-xs text-slate-900 block font-display">Fin de Ciclo</strong>
-                  <span class="text-[10px] text-slate-500">End Process / Next</span>
-                  <div class="mt-2 text-[10px] text-slate-500">Siguiente ticket en cola</div>
-                </div>
-
-              </div>
-            </div>
-
           </div>
         </div>
-
-        <!-- PANEL DE DETALLE DEL NODO SELECCIONADO -->
-        <div id="node-detail-panel" class="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
-          <div class="flex items-center justify-between mb-1.5">
-            <h4 id="detail-title" class="text-sm font-bold text-slate-900 font-display flex items-center gap-2">
-              <i class="fa-solid fa-circle-info text-umb-red"></i> Inspector de Etapa
-            </h4>
-            <span id="detail-tag" class="text-[11px] px-2 py-0.5 rounded bg-white border border-slate-200 text-slate-600 font-mono">Haz clic en una etapa</span>
-          </div>
-          <p id="detail-desc" class="text-xs text-slate-600">
-            Haz clic en cualquiera de las 12 etapas del flujo superior o activa uno de los escenarios para ver el comportamiento técnico, inputs, outputs y reglas asociadas.
-          </p>
-        </div>
-
-      </div>
-
+      </section>
     </div>
 
     <!-- ========================================== -->
@@ -1323,118 +1135,102 @@
       a.click();
     }
 
-    // LÓGICA DEL DIAGRAMA DE FLUJO Y SIMULADOR
-    const nodeDetails = {
-      1: { title: '01 - Búsqueda en API de HubSpot', tag: 'REST POST', desc: 'Consulta en /crm/v3/objects/tickets/search con filtro por trámite y estado 2 (en proceso). Extrae lotes para alimentar la cola de trabajo.' },
-      2: { title: '02 - Conversión a Colección Blue Prism', tag: 'VBO Utility', desc: 'El VBO de Arnold deserializa el JSON de HubSpot transformándolo en una colección interna para iterar caso por caso de manera secuencial.' },
-      3: { title: '03 - Detalle del Ticket y Cédula', tag: 'REST GET', desc: 'Invoca /crm/v3/objects/tickets/{id} para recuperar la cédula del estudiante, correo institucional, facultad y parámetros requeridos.' },
-      4: { title: '04 - Bifurcación y Validación de Trámite', tag: 'Decisión', desc: 'Evalúa el tipo de trámite: Certificados de Estudio avanzan a AulaNet; casos de Admisión van al motor de Word VBO; Horarios ejecutan consulta curricular.' },
-      5: { title: '05 - Acceso y Autenticación en AulaNet', tag: 'Chrome UI', desc: 'Apertura de navegador en modo desatendido y autenticación institucional en el sistema AulaNet de la UMB.' },
-      6: { title: '06 - Consulta Académica del Estudiante', tag: 'Scraping / UI', desc: 'Ingreso de la cédula en el módulo de registros académicos y extracción de la tabla de periodos cursados y estado de matrícula.' },
-      7: { title: '07 - Generación y Descarga de Certificado', tag: 'Chrome Download', desc: 'Disparo de la generación oficial del PDF y almacenamiento temporal en disco local (C:/UMB/Certificados). Valida integridad del archivo.' },
-      8: { title: '08 - Motor de Documentos MS Word VBO', tag: 'MS Word VBO', desc: 'Apertura de plantilla oficial institucional, reemplazo dinámico de campos ([NOMBRE], [CEDULA], [FECHA]) y exportación a PDF.' },
-      9: { title: '09 - Carga de Archivo en HubSpot Files', tag: 'REST POST Files', desc: 'Envío del archivo PDF firmado al endpoint /files/v3/files de HubSpot para generar la URL segura de acceso al estudiante.' },
-      10: { title: '10 - Envío de Notificación al Estudiante', tag: 'Conversations / SMTP', desc: 'Publicación de la respuesta en el hilo del ticket y envío simultáneo por correo electrónico institucional con el certificado adjunto.' },
-      11: { title: '11 - Actualización y Cierre de Ticket', tag: 'REST PATCH', desc: 'Actualiza el ticket en HubSpot: owner_id = 25085377, respuesta = "Procesado por Blue Prism", y pipeline_stage = 4 (Resuelto).' },
-      12: { title: '12 - Fin de Ciclo y Siguiente Registro', tag: 'Loop End', desc: 'Cierra las sesiones de navegador y Word, libera recursos de memoria y toma el siguiente ticket de la cola hasta agotar la tanda.' }
-    };
-
+    // Recorrido ilustrativo de atención, explicado para usuarios de negocio.
+    let selectedProcess = 'p1';
     let simActiveScenario = null;
     let simCurrentStep = 0;
-    const simScenarios = {
-      ideal: [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12],
-      admision: [1, 2, 3, 4, 8, 9, 10, 11, 12],
-      exception: [1, 2, 3, 4, 5, 6, 10, 11, 12]
+    const businessSteps = {
+      1: ['Solicitud recibida', 'El estudiante presenta su solicitud de certificado al CASE. El robot identifica la solicitud para atenderla.'],
+      2: ['Información revisada', 'El robot revisa los datos del estudiante y consulta la información académica disponible para preparar la respuesta.'],
+      3: ['Certificado preparado', 'Con la información disponible, el robot prepara el certificado solicitado.'],
+      4: ['Certificado con código QR', 'El robot agrega un código QR al certificado. Quien recibe el documento puede escanearlo para acceder al mecanismo de validación de su emisión por la universidad.'],
+      5: ['Respuesta entregada', 'El estudiante recibe su certificado por correo y la atención queda registrada.']
     };
+    const simScenarios = { ideal: [1, 2, 3, 4, 5], admision: [1, 2, 3, 4, 5], exception: [1, 2, 3, 5] };
 
     function inspectNode(nodeId) {
-      const info = nodeDetails[nodeId];
+      const info = businessSteps[nodeId];
       if (!info) return;
-      document.getElementById('detail-title').innerHTML = `<i class="fa-solid fa-circle-info text-umb-red"></i> ${info.title}`;
-      document.getElementById('detail-tag').textContent = info.tag;
-      document.getElementById('detail-desc').textContent = info.desc;
-
-      document.querySelectorAll('.flow-node').forEach(n => n.classList.remove('ring-2', 'ring-umb-red', 'border-umb-red'));
-      const activeEl = document.getElementById('node-' + nodeId);
-      if (activeEl) {
-        activeEl.classList.add('ring-2', 'ring-umb-red', 'border-umb-red');
+      let title = info[0], desc = info[1];
+      if (simActiveScenario === 'admision') {
+        if (nodeId === 2) desc = 'En este ejemplo, la revisión identifica que el estudiante se encuentra admitido.';
+        if (nodeId === 3) { title = 'Certificado de admisión preparado'; desc = 'El robot prepara el certificado de admisión con los datos del estudiante y el formato institucional.'; }
       }
+      if (simActiveScenario === 'exception') {
+        if (nodeId === 2) desc = 'En este ejemplo, falta información o es necesario revisar los datos antes de emitir un certificado.';
+        if (nodeId === 3) { title = 'Orientación preparada'; desc = 'El robot prepara una respuesta indicando qué información requiere revisión. En este recorrido no se genera un certificado ni se agrega un QR.'; }
+        if (nodeId === 5) { title = 'Estudiante informado'; desc = 'El estudiante recibe indicaciones para continuar con su solicitud. Este resultado corresponde a una orientación, no a la entrega de un certificado.'; }
+      } else if (simActiveScenario !== 'admision' && nodeId === 3) {
+        desc = selectedProcess === 'p1' ? 'El robot prepara el certificado de estudio con la información académica del estudiante.' : 'El robot prepara el certificado de horarios con la información académica del estudiante.';
+      }
+      document.getElementById('detail-title').textContent = title;
+      document.getElementById('detail-desc').textContent = desc;
+      document.getElementById('detail-tag').textContent = selectedProcess === 'p1' ? 'Certificado de estudio' : 'Certificado de horarios';
+      document.querySelectorAll('.flow-node').forEach(n => {
+        const active = n.id === 'node-' + nodeId;
+        n.classList.toggle('ring-2', active);
+        n.classList.toggle('ring-umb-red', active);
+        n.classList.toggle('bg-red-50', active);
+      });
     }
-
-    function runScenario(scenKey) {
-      simActiveScenario = scenKey;
+    function runScenario(key) {
+      if (!simScenarios[key] || (key === 'admision' && selectedProcess !== 'p1')) return;
+      simActiveScenario = key;
       simCurrentStep = 0;
-      document.getElementById('btn-prev-step').disabled = true;
-      document.getElementById('btn-next-step').disabled = false;
+      document.querySelectorAll('[id^="btn-scen-"]').forEach(b => {
+        const active = b.id === 'btn-scen-' + key;
+        b.setAttribute('aria-pressed', String(active));
+        b.classList.toggle('ring-2', active);
+        b.classList.toggle('ring-umb-red', active);
+      });
       highlightStep();
     }
-
     function highlightStep() {
       const steps = simScenarios[simActiveScenario];
-      const nodeId = steps[simCurrentStep];
-      inspectNode(nodeId);
-
-      document.querySelectorAll('.flow-node').forEach(n => {
-        n.classList.remove('bg-red-50', 'border-umb-red');
-      });
-
-      const currentEl = document.getElementById('node-' + nodeId);
-      if (currentEl) {
-        currentEl.classList.add('bg-red-50', 'border-umb-red');
-      }
-
-      const totalSteps = steps.length;
-      document.getElementById('sim-step-text').innerHTML = `<strong>Paso ${simCurrentStep + 1} de ${totalSteps}:</strong> Ejecutando etapa #${nodeId} (${nodeDetails[nodeId].title})`;
+      if (!steps) return;
+      inspectNode(steps[simCurrentStep]);
+      const done = simCurrentStep === steps.length - 1;
+      document.getElementById('btn-prev-step').disabled = simCurrentStep === 0;
+      document.getElementById('btn-next-step').disabled = done;
+      document.getElementById('sim-progress').style.width = ((simCurrentStep + 1) / steps.length * 100) + '%';
+      document.getElementById('sim-step-text').textContent = `Paso ${simCurrentStep + 1} de ${steps.length}` + (done ? ' · Ejemplo finalizado' : '');
+      const outcome = document.getElementById('sim-outcome');
+      outcome.classList.toggle('hidden', !done);
+      outcome.textContent = done ? (simActiveScenario === 'exception' ? 'Resultado: el estudiante recibe orientación para continuar su solicitud.' : 'Resultado: el estudiante recibe un certificado con código QR para validar su emisión.') : '';
     }
-
     function nextStep() {
-      if (!simActiveScenario) return;
-      const steps = simScenarios[simActiveScenario];
-      if (simCurrentStep < steps.length - 1) {
-        simCurrentStep++;
-        highlightStep();
-        document.getElementById('btn-prev-step').disabled = false;
-        if (simCurrentStep === steps.length - 1) {
-          document.getElementById('btn-next-step').disabled = true;
-          document.getElementById('sim-step-text').innerHTML += ` <span class="text-emerald-700 font-bold">(Completado con Éxito)</span>`;
-        }
-      }
+      if (simActiveScenario && simCurrentStep < simScenarios[simActiveScenario].length - 1) { simCurrentStep++; highlightStep(); }
     }
-
     function prevStep() {
-      if (!simActiveScenario) return;
-      if (simCurrentStep > 0) {
-        simCurrentStep--;
-        highlightStep();
-        document.getElementById('btn-next-step').disabled = false;
-        if (simCurrentStep === 0) {
-          document.getElementById('btn-prev-step').disabled = true;
-        }
-      }
+      if (simActiveScenario && simCurrentStep > 0) { simCurrentStep--; highlightStep(); }
     }
-
     function resetSimulation() {
       simActiveScenario = null;
       simCurrentStep = 0;
       document.getElementById('btn-prev-step').disabled = true;
       document.getElementById('btn-next-step').disabled = true;
-      document.getElementById('sim-step-text').textContent = 'Simulador listo. Haz clic en un escenario para iniciar.';
-      document.querySelectorAll('.flow-node').forEach(n => {
-        n.classList.remove('bg-red-50', 'border-umb-red', 'ring-2', 'ring-umb-red');
+      document.getElementById('sim-progress').style.width = '0%';
+      document.getElementById('sim-step-text').textContent = 'Elige un ejemplo para comenzar.';
+      document.getElementById('detail-title').textContent = 'Conoce el recorrido de una solicitud';
+      document.getElementById('detail-tag').textContent = selectedProcess === 'p1' ? 'Certificado de estudio' : 'Certificado de horarios';
+      document.getElementById('detail-desc').textContent = 'Selecciona un ejemplo y avanza paso a paso para conocer qué hace el robot y qué recibe el estudiante.';
+      document.getElementById('sim-outcome').classList.add('hidden');
+      document.getElementById('sim-outcome').textContent = '';
+      document.querySelectorAll('.flow-node, [id^="btn-scen-"]').forEach(n => {
+        n.classList.remove('ring-2', 'ring-umb-red', 'bg-red-50');
+        if (n.id.startsWith('btn-scen-')) n.setAttribute('aria-pressed', 'false');
       });
-      document.getElementById('detail-title').innerHTML = `<i class="fa-solid fa-circle-info text-umb-red"></i> Inspector de Etapa`;
-      document.getElementById('detail-tag').textContent = 'Haz clic en una etapa';
-      document.getElementById('detail-desc').textContent = 'Haz clic en cualquiera de las 12 etapas del flujo superior o activa uno de los escenarios para ver el comportamiento técnico, inputs, outputs y reglas asociadas.';
     }
-
-    function selectProcess(pKey) {
-      if (pKey === 'p1') {
-        document.getElementById('btn-flujo-p1').className = 'px-3 py-1.5 rounded-md text-xs font-bold bg-umb-red text-white transition flex items-center gap-1.5 shadow-sm';
-        document.getElementById('btn-flujo-p2').className = 'px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 transition flex items-center gap-1.5';
-      } else {
-        document.getElementById('btn-flujo-p2').className = 'px-3 py-1.5 rounded-md text-xs font-bold bg-umb-red text-white transition flex items-center gap-1.5 shadow-sm';
-        document.getElementById('btn-flujo-p1').className = 'px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 transition flex items-center gap-1.5';
-      }
+    function selectProcess(key) {
+      if (!['p1', 'p2'].includes(key)) return;
+      selectedProcess = key;
+      ['p1', 'p2'].forEach(k => {
+        const button = document.getElementById('btn-flujo-' + k);
+        button.setAttribute('aria-pressed', String(k === key));
+        button.className = 'px-4 py-2 rounded-lg text-sm font-semibold ' + (k === key ? 'bg-umb-red text-white' : 'bg-slate-100 text-slate-700');
+      });
+      document.getElementById('btn-scen-admision').hidden = key !== 'p1';
+      resetSimulation();
     }
 
     // Inicialización al cargar la página
