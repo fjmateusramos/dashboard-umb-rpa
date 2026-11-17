@@ -444,13 +444,35 @@
               <button id="btn-flujo-p2" onclick="selectProcess('p2')" aria-pressed="false" class="px-4 py-2 rounded-lg text-sm font-semibold bg-slate-100 text-slate-700">Horarios</button>
             </div>
           </div>
-          <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-8" aria-label="Pasos de atención">
-            <li><button type="button" id="node-1" onclick="inspectNode(1)" class="flow-node w-full h-full text-left rounded-xl border border-slate-200 bg-white p-4 transition hover:border-umb-red focus-visible:ring-2 focus-visible:ring-umb-red"><span class="flex items-center justify-between mb-4"><span class="w-9 h-9 rounded-lg bg-red-50 text-umb-red flex items-center justify-center"><i class="fa-solid fa-inbox" aria-hidden="true"></i></span><span class="text-xs font-bold text-slate-400">01</span></span><strong class="block text-sm text-slate-900 mb-2">Recibir la solicitud</strong><span class="block text-xs leading-relaxed text-slate-500">El estudiante solicita su certificado a través del CASE.</span></button></li>
-            <li><button type="button" id="node-2" onclick="inspectNode(2)" class="flow-node w-full h-full text-left rounded-xl border border-slate-200 bg-white p-4 transition hover:border-umb-red focus-visible:ring-2 focus-visible:ring-umb-red"><span class="flex items-center justify-between mb-4"><span class="w-9 h-9 rounded-lg bg-red-50 text-umb-red flex items-center justify-center"><i class="fa-solid fa-user-check" aria-hidden="true"></i></span><span class="text-xs font-bold text-slate-400">02</span></span><strong class="block text-sm text-slate-900 mb-2">Revisar la información</strong><span class="block text-xs leading-relaxed text-slate-500">El robot verifica los datos y la información académica disponible.</span></button></li>
-            <li><button type="button" id="node-3" onclick="inspectNode(3)" class="flow-node w-full h-full text-left rounded-xl border border-slate-200 bg-white p-4 transition hover:border-umb-red focus-visible:ring-2 focus-visible:ring-umb-red"><span class="flex items-center justify-between mb-4"><span class="w-9 h-9 rounded-lg bg-red-50 text-umb-red flex items-center justify-center"><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i></span><span class="text-xs font-bold text-slate-400">03</span></span><strong class="block text-sm text-slate-900 mb-2">Preparar la respuesta</strong><span class="block text-xs leading-relaxed text-slate-500">Se genera el certificado o se prepara una orientación al estudiante.</span></button></li>
-            <li><button type="button" id="node-4" onclick="inspectNode(4)" class="flow-node w-full h-full text-left rounded-xl border border-slate-200 bg-white p-4 transition hover:border-umb-red focus-visible:ring-2 focus-visible:ring-umb-red"><span class="flex items-center justify-between mb-4"><span class="w-9 h-9 rounded-lg bg-red-50 text-umb-red flex items-center justify-center"><i class="fa-solid fa-qrcode" aria-hidden="true"></i></span><span class="text-xs font-bold text-slate-400">04</span></span><strong class="block text-sm text-slate-900 mb-2">Agregar la validación QR</strong><span class="block text-xs leading-relaxed text-slate-500">Cada certificado generado incorpora un QR para verificar su emisión.</span></button></li>
-            <li><button type="button" id="node-5" onclick="inspectNode(5)" class="flow-node w-full h-full text-left rounded-xl border border-slate-200 bg-white p-4 transition hover:border-umb-red focus-visible:ring-2 focus-visible:ring-umb-red"><span class="flex items-center justify-between mb-4"><span class="w-9 h-9 rounded-lg bg-red-50 text-umb-red flex items-center justify-center"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span><span class="text-xs font-bold text-slate-400">05</span></span><strong class="block text-sm text-slate-900 mb-2">Entregar la respuesta</strong><span class="block text-xs leading-relaxed text-slate-500">El estudiante recibe el certificado o las indicaciones para continuar.</span></button></li>
-          </ol>
+          <style>
+            #tab-flujo .business-diagram { background: radial-gradient(circle, #dbe2ea 1px, transparent 1px); background-size: 20px 20px; padding: 28px 16px; border: 1px solid #e2e8f0; border-radius: 16px; margin-bottom: 24px; }
+            #tab-flujo .business-trunk { max-width: 390px; margin: auto; }
+            #tab-flujo .business-node { display:flex; align-items:center; gap:12px; padding:16px; width:100%; text-align:left; border:1px solid #cbd5e1; border-radius:14px; background:white; box-shadow:0 3px 10px #0f172a08; transition:background .2s,border-color .2s,box-shadow .2s; }
+            #tab-flujo .business-node:hover, #tab-flujo .business-node:focus-visible { border-color:#b40018; outline:2px solid #fecdd3; outline-offset:3px; }
+            #tab-flujo .business-node strong { display:block; font-size:14px; color:#172033; }
+            #tab-flujo .business-node small { display:block; font-size:12px; color:#64748b; margin-top:4px; line-height:1.5; }
+            #tab-flujo .business-icon { display:flex; align-items:center; justify-content:center; width:40px; height:40px; flex-shrink:0; border-radius:12px; background:#fff1f2; color:#b40018; }
+            #tab-flujo .business-check { margin-left:auto; color:#059669; visibility:hidden; }
+            #tab-flujo .business-node.is-complete { border-color:#6ee7b7; background:#f0fdf4; }
+            #tab-flujo .business-node.is-complete .business-check { visibility:visible; }
+            #tab-flujo .business-node.is-current { border-color:#b40018; background:#fff1f2; box-shadow:0 0 0 3px #fecdd3; }
+            #tab-flujo .business-arrow { text-align:center; color:#94a3b8; font-size:24px; line-height:32px; }
+            #tab-flujo .business-decision { padding:14px; text-align:center; border:2px solid #fbbf24; border-radius:16px; background:#fffbeb; color:#92400e; font-size:14px; font-weight:700; }
+            #tab-flujo .business-path { padding:16px; border:1px solid #d1fae5; border-radius:14px; background:#ecfdf580; }
+            #tab-flujo .business-path.review { border-color:#fde68a; background:#fffbeb80; }
+            #tab-flujo .business-path.is-selected { outline:2px solid #94a3b8; outline-offset:3px; }
+            #tab-flujo .business-path-label { display:block; text-align:center; font-size:12px; font-weight:700; color:#047857; margin-bottom:14px; }
+            #tab-flujo .review .business-path-label { color:#92400e; }
+          </style>
+          <div class="flex flex-wrap justify-between gap-2 mb-3"><p class="text-xs text-slate-500">Haz clic en cualquier paso o reproduce un ejemplo para ver el recorrido.</p><span class="text-xs text-slate-500">✓ Completado · Borde rojo: paso actual</span></div>
+          <div class="business-diagram" role="group" aria-label="Diagrama interactivo de atención al estudiante">
+            <div class="business-trunk"><button type="button" id="node-1" onclick="exploreFlowNode(1)" class="flow-node business-node" aria-pressed="false"><span class="business-icon"><i class="fa-solid fa-inbox" aria-hidden="true"></i></span><span><strong>El estudiante hace su solicitud</strong><small>El CASE recibe el trámite.</small></span><span class="business-check" aria-hidden="true">✓</span></button><div class="business-arrow" aria-hidden="true">↓</div><button type="button" id="node-2" onclick="exploreFlowNode(2)" class="flow-node business-node" aria-pressed="false"><span class="business-icon"><i class="fa-solid fa-user-check" aria-hidden="true"></i></span><span><strong>El robot revisa la información</strong><small>Consulta los datos académicos del estudiante.</small></span><span class="business-check" aria-hidden="true">✓</span></button><div class="business-arrow" aria-hidden="true">↓</div><div class="business-decision">¿La información permite emitir el certificado?</div></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5 max-w-4xl mx-auto">
+              <div id="path-certificate" class="business-path"><span class="business-path-label">↓ Sí · Preparar el certificado</span><button type="button" id="node-3" onclick="exploreFlowNode(3)" class="flow-node business-node" aria-pressed="false"><span class="business-icon"><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i></span><span><strong>Se prepara el certificado</strong><small>Con los datos y el formato de la universidad.</small></span><span class="business-check" aria-hidden="true">✓</span></button><div class="business-arrow" aria-hidden="true">↓</div><button type="button" id="node-4" onclick="exploreFlowNode(4)" class="flow-node business-node" aria-pressed="false"><span class="business-icon"><i class="fa-solid fa-qrcode" aria-hidden="true"></i></span><span><strong>Se agrega el código QR</strong><small>Permite validar la emisión del certificado.</small></span><span class="business-check" aria-hidden="true">✓</span></button></div>
+              <div id="path-review" class="business-path review"><span class="business-path-label">↓ Se necesita revisar información</span><button type="button" id="node-6" onclick="exploreFlowNode(6)" class="flow-node business-node" aria-pressed="false"><span class="business-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></span><span><strong>Se prepara una orientación</strong><small>Se explica al estudiante qué debe revisar.</small></span><span class="business-check" aria-hidden="true">✓</span></button><p class="text-xs text-amber-800 leading-relaxed p-4 mt-3">En este camino no se emite un certificado ni se agrega un QR. El estudiante recibe indicaciones para continuar.</p></div>
+            </div>
+            <div class="business-trunk"><div class="business-arrow" aria-hidden="true">↓</div><button type="button" id="node-5" onclick="exploreFlowNode(5)" class="flow-node business-node" aria-pressed="false"><span class="business-icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span><span><strong>El estudiante recibe la respuesta</strong><small>Certificado con QR u orientación, según su caso.</small></span><span class="business-check" aria-hidden="true">✓</span></button></div>
+          </div>
           <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 sm:p-6">
             <h4 class="text-sm font-bold text-slate-900 font-display">2. Prueba un ejemplo</h4>
             <p class="text-xs text-slate-500 mt-1 mb-4">Esta es una demostración ilustrativa: no consulta datos reales ni envía documentos.</p>
@@ -469,6 +491,7 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mt-4">
               <p id="sim-step-text" class="text-xs text-slate-500" role="status">Elige un ejemplo para comenzar.</p>
               <div class="flex flex-wrap gap-2">
+                <button id="btn-play-flow" onclick="toggleFlowPlayback()" class="px-3 py-2 rounded-lg bg-slate-800 text-white text-xs font-semibold">Reproducir ejemplo</button>
                 <button onclick="resetSimulation()" class="px-3 py-2 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-200">Reiniciar</button>
                 <button id="btn-prev-step" onclick="prevStep()" disabled class="px-3 py-2 rounded-lg border border-slate-300 text-xs font-semibold disabled:opacity-40">Anterior</button>
                 <button id="btn-next-step" onclick="nextStep()" disabled class="px-3 py-2 rounded-lg bg-umb-red text-white text-xs font-semibold disabled:opacity-40">Siguiente paso</button>
@@ -1139,14 +1162,16 @@
     let selectedProcess = 'p1';
     let simActiveScenario = null;
     let simCurrentStep = 0;
+    let flowPlaybackTimer = null;
     const businessSteps = {
       1: ['Solicitud recibida', 'El estudiante presenta su solicitud de certificado al CASE. El robot identifica la solicitud para atenderla.'],
       2: ['Información revisada', 'El robot revisa los datos del estudiante y consulta la información académica disponible para preparar la respuesta.'],
       3: ['Certificado preparado', 'Con la información disponible, el robot prepara el certificado solicitado.'],
       4: ['Certificado con código QR', 'El robot agrega un código QR al certificado. Quien recibe el documento puede escanearlo para acceder al mecanismo de validación de su emisión por la universidad.'],
+      6: ['Orientación preparada', 'El robot prepara una respuesta que explica qué información necesita revisión. No se genera un certificado en este camino.'],
       5: ['Respuesta entregada', 'El estudiante recibe su certificado por correo y la atención queda registrada.']
     };
-    const simScenarios = { ideal: [1, 2, 3, 4, 5], admision: [1, 2, 3, 4, 5], exception: [1, 2, 3, 5] };
+    const simScenarios = { ideal: [1, 2, 3, 4, 5], admision: [1, 2, 3, 4, 5], exception: [1, 2, 6, 5] };
 
     function inspectNode(nodeId) {
       const info = businessSteps[nodeId];
@@ -1171,9 +1196,12 @@
         n.classList.toggle('ring-2', active);
         n.classList.toggle('ring-umb-red', active);
         n.classList.toggle('bg-red-50', active);
+        n.classList.toggle('is-current', active);
+        n.setAttribute('aria-pressed', String(active));
       });
     }
     function runScenario(key) {
+      stopFlowPlayback();
       if (!simScenarios[key] || (key === 'admision' && selectedProcess !== 'p1')) return;
       simActiveScenario = key;
       simCurrentStep = 0;
@@ -1190,6 +1218,10 @@
       if (!steps) return;
       inspectNode(steps[simCurrentStep]);
       const done = simCurrentStep === steps.length - 1;
+      document.querySelectorAll('.flow-node').forEach(n => n.classList.toggle('is-complete', steps.slice(0, simCurrentStep).includes(Number(n.id.split('-')[1]))));
+      document.getElementById('path-certificate').classList.toggle('is-selected', simActiveScenario !== 'exception');
+      document.getElementById('path-review').classList.toggle('is-selected', simActiveScenario === 'exception');
+      if (done) stopFlowPlayback();
       document.getElementById('btn-prev-step').disabled = simCurrentStep === 0;
       document.getElementById('btn-next-step').disabled = done;
       document.getElementById('sim-progress').style.width = ((simCurrentStep + 1) / steps.length * 100) + '%';
@@ -1205,6 +1237,7 @@
       if (simActiveScenario && simCurrentStep > 0) { simCurrentStep--; highlightStep(); }
     }
     function resetSimulation() {
+      stopFlowPlayback();
       simActiveScenario = null;
       simCurrentStep = 0;
       document.getElementById('btn-prev-step').disabled = true;
@@ -1216,11 +1249,36 @@
       document.getElementById('detail-desc').textContent = 'Selecciona un ejemplo y avanza paso a paso para conocer qué hace el robot y qué recibe el estudiante.';
       document.getElementById('sim-outcome').classList.add('hidden');
       document.getElementById('sim-outcome').textContent = '';
+      ['path-certificate', 'path-review'].forEach(id => document.getElementById(id).classList.remove('is-selected'));
       document.querySelectorAll('.flow-node, [id^="btn-scen-"]').forEach(n => {
-        n.classList.remove('ring-2', 'ring-umb-red', 'bg-red-50');
+        n.classList.remove('ring-2', 'ring-umb-red', 'bg-red-50', 'is-complete', 'is-current');
+        n.setAttribute('aria-pressed', 'false');
         if (n.id.startsWith('btn-scen-')) n.setAttribute('aria-pressed', 'false');
       });
     }
+    function stopFlowPlayback() {
+      if (flowPlaybackTimer !== null) clearInterval(flowPlaybackTimer);
+      flowPlaybackTimer = null;
+      document.getElementById('btn-play-flow').textContent = 'Reproducir ejemplo';
+    }
+    function toggleFlowPlayback() {
+      if (flowPlaybackTimer !== null) { stopFlowPlayback(); return; }
+      if (!simActiveScenario) runScenario('ideal');
+      else if (simCurrentStep === simScenarios[simActiveScenario].length - 1) runScenario(simActiveScenario);
+      document.getElementById('btn-play-flow').textContent = 'Pausar';
+      flowPlaybackTimer = setInterval(nextStep, 2400);
+    }
+    function exploreFlowNode(id) {
+      stopFlowPlayback();
+      if (id === 6 && simActiveScenario !== 'exception') runScenario('exception');
+      if ((id === 3 || id === 4) && simActiveScenario === 'exception') runScenario('ideal');
+      if (simActiveScenario) {
+        const index = simScenarios[simActiveScenario].indexOf(id);
+        if (index !== -1) { simCurrentStep = index; highlightStep(); }
+      } else inspectNode(id);
+    }
+    document.addEventListener('visibilitychange', () => { if (document.hidden) stopFlowPlayback(); });
+
     function selectProcess(key) {
       if (!['p1', 'p2'].includes(key)) return;
       selectedProcess = key;
