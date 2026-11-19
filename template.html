@@ -129,6 +129,9 @@
         <button onclick="switchTab('tab-flujo')" id="btn-tab-flujo" class="nav-tab px-3 py-2 rounded-t-lg hover:text-umb-red transition flex items-center gap-1.5 whitespace-nowrap">
           <i class="fa-solid fa-diagram-project text-xs"></i> Flujo del Proceso & Simulador
         </button>
+        <button type="button" onclick="switchTab('tab-certificados')" id="btn-tab-certificados" class="nav-tab px-3 py-2 rounded-t-lg hover:text-umb-red transition flex items-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-file-arrow-down text-xs" aria-hidden="true"></i> Portal de Certificados
+        </button>
         <button onclick="switchTab('tab-telemetria')" id="btn-tab-telemetria" class="nav-tab px-3 py-2 rounded-t-lg hover:text-umb-red transition flex items-center gap-1.5 whitespace-nowrap">
           <i class="fa-solid fa-chart-line text-xs"></i> Demanda & Métricas en Producción
         </button>
@@ -504,6 +507,85 @@
 
     <!-- ========================================== -->
     <!-- TAB 3: DEMANDA & MÉTRICAS EN PRODUCCIÓN -->
+    <section id="tab-certificados" class="tab-content hidden space-y-5" aria-labelledby="umb-demo-title">
+      <div>
+        <h2 id="umb-demo-title" class="text-2xl font-bold text-slate-900">Portal de certificados UMB</h2>
+        <p class="mt-1 text-sm text-slate-600">Prueba el recorrido desde la página de solicitudes hasta la descarga del certificado.</p>
+      </div>
+
+      <div id="umb-demo" class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-5 py-4 sm:px-8">
+          <img src="assets/logo-umb.webp" alt="Universidad Manuela Beltrán" class="h-12 w-auto max-w-full object-contain">
+          <span class="rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-900">Demostración con datos ficticios</span>
+        </div>
+
+        <div data-umb-screen="solicitudes">
+          <div class="bg-umb-red px-5 py-8 text-white sm:px-8">
+            <p class="mb-2 text-sm font-medium">Registro y Control</p>
+            <h3 class="text-2xl font-bold sm:text-3xl" tabindex="-1">Solicitud de certificados académicos</h3>
+          </div>
+          <div class="p-5 sm:p-8">
+            <div class="flex flex-wrap items-center justify-between gap-5 rounded-xl border border-red-200 bg-red-50 p-5">
+              <div class="max-w-xl">
+                <h4 class="font-bold text-slate-900">Descarga en línea</h4>
+                <p class="mt-1 text-sm text-slate-700">Accede con tu cuenta institucional para consultar y descargar tus certificados de estudios, horarios y admisión.</p>
+              </div>
+              <button type="button" data-umb-go="acceso" class="rounded-lg bg-umb-red px-5 py-3 text-sm font-bold text-white hover:bg-red-800">
+                <i class="fa-solid fa-arrow-right-to-bracket mr-2" aria-hidden="true"></i> Descargar mis certificados
+              </button>
+            </div>
+            <p class="mt-4 text-sm text-slate-600">Ubicación propuesta del nuevo botón en la página de solicitudes de la UMB.</p>
+          </div>
+        </div>
+
+        <div data-umb-screen="acceso" hidden>
+          <div class="p-5 sm:p-8">
+            <button type="button" data-umb-go="solicitudes" class="text-sm font-semibold text-umb-red hover:underline">← Volver a solicitudes</button>
+            <div class="mx-auto my-5 max-w-lg rounded-xl border border-slate-200 p-5 sm:p-8">
+              <h3 class="text-2xl font-bold text-slate-900" tabindex="-1">Acceso institucional</h3>
+              <p class="mt-2 text-sm text-slate-700">En la versión institucional iniciarás sesión con tu cuenta UMB. Para esta demostración, usa el perfil de ejemplo.</p>
+              <button type="button" data-umb-go="certificados" class="mt-5 w-full rounded-lg bg-umb-red px-5 py-3 text-sm font-bold text-white hover:bg-red-800">
+                Continuar con cuenta UMB de demostración
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div data-umb-screen="certificados" hidden>
+          <div class="p-5 sm:p-8">
+            <div class="mb-6 flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h3 class="text-2xl font-bold text-slate-900" tabindex="-1">Mis certificados</h3>
+                <p class="mt-1 text-sm text-slate-600">Sesión de demostración · Estudiante de ejemplo</p>
+              </div>
+              <button type="button" data-umb-go="acceso" class="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">Cerrar sesión</button>
+            </div>
+            <div class="grid gap-4 md:grid-cols-3">
+              <article class="flex flex-col rounded-xl border border-slate-200 p-5">
+                <i class="fa-solid fa-graduation-cap mb-4 text-xl text-umb-red" aria-hidden="true"></i>
+                <h4 class="font-bold text-slate-900">Certificado de Estudios</h4>
+                <p class="mb-5 mt-2 grow text-sm text-slate-600">Acredita el programa y el periodo académico cursado.</p>
+                <a href="assets/demo-certificado-estudios.pdf" download aria-label="Descargar PDF de ejemplo del Certificado de Estudios" class="rounded-lg border border-red-200 px-4 py-2.5 text-center text-sm font-bold text-umb-red hover:bg-red-50">Descargar PDF</a>
+              </article>
+              <article class="flex flex-col rounded-xl border border-slate-200 p-5">
+                <i class="fa-solid fa-calendar-days mb-4 text-xl text-umb-red" aria-hidden="true"></i>
+                <h4 class="font-bold text-slate-900">Certificado de Horarios</h4>
+                <p class="mb-5 mt-2 grow text-sm text-slate-600">Presenta las asignaturas y sus horarios de clase.</p>
+                <a href="assets/demo-certificado-horarios.pdf" download aria-label="Descargar PDF de ejemplo del Certificado de Horarios" class="rounded-lg border border-red-200 px-4 py-2.5 text-center text-sm font-bold text-umb-red hover:bg-red-50">Descargar PDF</a>
+              </article>
+              <article class="flex flex-col rounded-xl border border-slate-200 p-5">
+                <i class="fa-solid fa-file-circle-check mb-4 text-xl text-umb-red" aria-hidden="true"></i>
+                <h4 class="font-bold text-slate-900">Certificado de Admisión</h4>
+                <p class="mb-5 mt-2 grow text-sm text-slate-600">Confirma la admisión a un programa académico.</p>
+                <a href="assets/demo-certificado-admision.pdf" download aria-label="Descargar PDF de ejemplo del Certificado de Admisión" class="rounded-lg border border-red-200 px-4 py-2.5 text-center text-sm font-bold text-umb-red hover:bg-red-50">Descargar PDF</a>
+              </article>
+            </div>
+            <p class="mt-5 text-sm text-slate-600">Puedes descargar los tres ejemplos para evaluar el portal. En producción, la disponibilidad de cada certificado dependerá de tu estado académico.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ========================================== -->
     <div id="tab-telemetria" class="tab-content hidden space-y-6">
       
@@ -843,6 +925,18 @@
         window.dispatchEvent(new Event('resize'));
       }
     }
+
+    const certificateDemo = document.getElementById('umb-demo');
+    certificateDemo.addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-umb-go]');
+      if (!button) return;
+
+      const nextScreen = certificateDemo.querySelector(`[data-umb-screen="${button.dataset.umbGo}"]`);
+      certificateDemo.querySelectorAll('[data-umb-screen]').forEach((screen) => {
+        screen.hidden = screen !== nextScreen;
+      });
+      nextScreen.querySelector('h3').focus();
+    });
 
     // Inicialización de Gráficas Chart.js con Paleta Institucional UMB
     let chartTramitesInstance = null;
