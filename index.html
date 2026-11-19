@@ -528,13 +528,62 @@
             <div class="flex flex-wrap items-center justify-between gap-5 rounded-xl border border-red-200 bg-red-50 p-5">
               <div class="max-w-xl">
                 <h4 class="font-bold text-slate-900">Descarga en línea</h4>
-                <p class="mt-1 text-sm text-slate-700">Accede con tu cuenta institucional para consultar y descargar tus certificados de estudios, horarios y admisión.</p>
+                <p class="mt-1 text-sm text-slate-700">Accede con tu cuenta institucional para consultar y descargar tus certificados de estudios y horarios.</p>
               </div>
               <button type="button" data-umb-go="acceso" class="rounded-lg bg-umb-red px-5 py-3 text-sm font-bold text-white hover:bg-red-800">
                 <i class="fa-solid fa-arrow-right-to-bracket mr-2" aria-hidden="true"></i> Descargar mis certificados
               </button>
             </div>
-            <p class="mt-4 text-sm text-slate-600">Ubicación propuesta del nuevo botón en la página de solicitudes de la UMB.</p>
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-5 rounded-xl border border-slate-200 p-5">
+              <div>
+                <h4 class="font-bold text-slate-900">Certificado de Admisión</h4>
+                <p class="mt-1 text-sm text-slate-700">Solicítalo con tus datos de admisión, sin iniciar sesión.</p>
+              </div>
+              <button type="button" data-umb-go="admision" class="rounded-lg border border-red-200 px-5 py-3 text-sm font-bold text-umb-red hover:bg-red-50">Solicitar certificado de admisión</button>
+            </div>
+          </div>
+        </div>
+
+        <div data-umb-screen="admision" hidden>
+          <div class="p-5 sm:p-8">
+            <button type="button" data-umb-go="solicitudes" class="text-sm font-semibold text-umb-red hover:underline">← Volver a solicitudes</button>
+            <form id="umb-admission-form" class="mx-auto my-5 max-w-2xl rounded-xl border border-slate-200 p-5 sm:p-8" autocomplete="off">
+              <h3 class="text-2xl font-bold text-slate-900" tabindex="-1">Solicitar certificado de admisión</h3>
+              <p class="mt-2 text-sm text-slate-700">Completa los cuatro campos. Para probar este formulario, usa datos ficticios.</p>
+              <div class="mt-5 grid gap-4 sm:grid-cols-2">
+                <label class="block text-sm font-semibold text-slate-900">
+                  Número de identidad
+                  <input id="umb-admission-id" required pattern="[0-9]+" inputmode="numeric" maxlength="20" placeholder="Ej. 1234567890" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 font-normal">
+                </label>
+                <label class="block text-sm font-semibold text-slate-900">
+                  Nombre completo
+                  <input id="umb-admission-name" required maxlength="120" placeholder="Ej. Ana Pérez" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 font-normal">
+                </label>
+                <label class="block text-sm font-semibold text-slate-900">
+                  Programa
+                  <input id="umb-admission-program" required maxlength="120" placeholder="Ej. Ingeniería de Sistemas" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 font-normal">
+                </label>
+                <label class="block text-sm font-semibold text-slate-900">
+                  Periodo académico
+                  <input id="umb-admission-period" required maxlength="30" placeholder="Ej. 2026-2" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 font-normal">
+                </label>
+              </div>
+              <button type="submit" class="mt-5 rounded-lg bg-umb-red px-5 py-3 text-sm font-bold text-white hover:bg-red-800">Generar certificado</button>
+            </form>
+          </div>
+        </div>
+
+        <div data-umb-screen="admision-resultado" hidden>
+          <div class="p-5 sm:p-8">
+            <div class="mx-auto max-w-2xl rounded-xl border border-slate-200 p-5 sm:p-8">
+              <h3 class="text-2xl font-bold text-slate-900" tabindex="-1">Estado de la solicitud de admisión</h3>
+              <p id="umb-admission-status" class="mt-2 text-sm text-slate-700" role="status"></p>
+              <div id="umb-admission-download" class="mt-5" hidden>
+                <a href="assets/demo-certificado-admision.pdf" download class="inline-block rounded-lg bg-umb-red px-5 py-3 text-sm font-bold text-white hover:bg-red-800">Descargar PDF de ejemplo</a>
+                <p class="mt-2 text-xs text-slate-600">El PDF de muestra contiene datos ficticios predeterminados.</p>
+              </div>
+              <button type="button" data-umb-go="admision" class="mt-5 text-sm font-semibold text-umb-red hover:underline">Hacer otra solicitud</button>
+            </div>
           </div>
         </div>
 
@@ -560,7 +609,7 @@
               </div>
               <button type="button" data-umb-go="acceso" class="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">Cerrar sesión</button>
             </div>
-            <div class="grid gap-4 md:grid-cols-3">
+            <div class="grid gap-4 md:grid-cols-2">
               <article class="flex flex-col rounded-xl border border-slate-200 p-5">
                 <i class="fa-solid fa-graduation-cap mb-4 text-xl text-umb-red" aria-hidden="true"></i>
                 <h4 class="font-bold text-slate-900">Certificado de Estudios</h4>
@@ -573,14 +622,8 @@
                 <p class="mb-5 mt-2 grow text-sm text-slate-600">Presenta las asignaturas y sus horarios de clase.</p>
                 <a href="assets/demo-certificado-horarios.pdf" download aria-label="Descargar PDF de ejemplo del Certificado de Horarios" class="rounded-lg border border-red-200 px-4 py-2.5 text-center text-sm font-bold text-umb-red hover:bg-red-50">Descargar PDF</a>
               </article>
-              <article class="flex flex-col rounded-xl border border-slate-200 p-5">
-                <i class="fa-solid fa-file-circle-check mb-4 text-xl text-umb-red" aria-hidden="true"></i>
-                <h4 class="font-bold text-slate-900">Certificado de Admisión</h4>
-                <p class="mb-5 mt-2 grow text-sm text-slate-600">Confirma la admisión a un programa académico.</p>
-                <a href="assets/demo-certificado-admision.pdf" download aria-label="Descargar PDF de ejemplo del Certificado de Admisión" class="rounded-lg border border-red-200 px-4 py-2.5 text-center text-sm font-bold text-umb-red hover:bg-red-50">Descargar PDF</a>
-              </article>
             </div>
-            <p class="mt-5 text-sm text-slate-600">Puedes descargar los tres ejemplos para evaluar el portal. En producción, la disponibilidad de cada certificado dependerá de tu estado académico.</p>
+            <p class="mt-5 text-sm text-slate-600">En producción, la disponibilidad de los certificados dependerá de tu estado académico.</p>
           </div>
         </div>
       </div>
@@ -927,15 +970,40 @@
     }
 
     const certificateDemo = document.getElementById('umb-demo');
-    certificateDemo.addEventListener('click', (event) => {
-      const button = event.target.closest('button[data-umb-go]');
-      if (!button) return;
+    const admissionForm = document.getElementById('umb-admission-form');
+    const admissionStatus = document.getElementById('umb-admission-status');
+    const admissionDownload = document.getElementById('umb-admission-download');
+    let admissionTimer;
 
-      const nextScreen = certificateDemo.querySelector(`[data-umb-screen="${button.dataset.umbGo}"]`);
+    function showCertificateScreen(screenName) {
+      clearTimeout(admissionTimer);
+      const nextScreen = certificateDemo.querySelector(`[data-umb-screen="${screenName}"]`);
       certificateDemo.querySelectorAll('[data-umb-screen]').forEach((screen) => {
         screen.hidden = screen !== nextScreen;
       });
       nextScreen.querySelector('h3').focus();
+    }
+
+    certificateDemo.addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-umb-go]');
+      if (button) showCertificateScreen(button.dataset.umbGo);
+    });
+
+    admissionForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      for (const input of admissionForm.querySelectorAll('input')) {
+        input.value = input.value.trim();
+      }
+      if (!admissionForm.reportValidity()) return;
+
+      admissionForm.reset();
+      admissionDownload.hidden = true;
+      showCertificateScreen('admision-resultado');
+      admissionStatus.textContent = 'Simulación: Blue Prism está procesando la solicitud…';
+      admissionTimer = setTimeout(() => {
+        admissionStatus.textContent = 'Simulación completada. El certificado de muestra está listo.';
+        admissionDownload.hidden = false;
+      }, 1100);
     });
 
     // Inicialización de Gráficas Chart.js con Paleta Institucional UMB
